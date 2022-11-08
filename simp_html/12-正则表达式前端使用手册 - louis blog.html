@@ -1,0 +1,982 @@
+
+                <html lang="en" class="simpread-font simpread-theme-root" style='undefined'>
+                    <head>
+                        <meta charset="utf-8">
+                        <meta http-equiv="content-type" content="text/html; charset=UTF-8;charset=utf-8">
+                        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+                        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1">
+                        <meta name="author" content="Kenshin"/>
+                        <meta name="description" content="简悦 SimpRead - 如杂志般沉浸式阅读体验的扩展" />
+                        <meta name="keywords" content="Chrome extension, Chrome 扩展, 阅读模式, 沉浸式阅读, 简悦, 简阅, read mode, reading mode, reader view, firefox, firefox addon, userscript, safari, opera, tampermonkey"/>
+                        <meta name="thumbnail" content="https://simpread-1254315611.cos.ap-shanghai.myqcloud.com/static/introduce-2.png"/>
+                        <meta property="og:title" content="简悦 SimpRead - 如杂志般沉浸式阅读体验的扩展"/>
+                        <meta property="og:type" content="website">
+                        <meta property="og:local" content="zh_CN"/>
+                        <meta property="og:url" content="http://ksria.com/simpread"/>
+                        <meta property="og:image" content="https://simpread-1254315611.cos.ap-shanghai.myqcloud.com/static/introduce-2.png"/>
+                        <meta property="og:image:type" content="image/png"/>
+                        <meta property="og:image:width" content="960"/>
+                        <meta property="og:image:height" content="355"/>
+                        <meta property="og:site_name" content="http://ksria.com/simpread"/>
+                        <meta property="og:description" content="简悦 SimpRead - 如杂志般沉浸式阅读体验的扩展"/>
+                        <style type="text/css">.simpread-font{font:300 16px/1.8 -apple-system,PingFang SC,Microsoft Yahei,Lantinghei SC,Hiragino Sans GB,Microsoft Sans Serif,WenQuanYi Micro Hei,sans-serif;color:#333;text-rendering:optimizelegibility;-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased}.simpread-hidden{display:none}.simpread-read-root{display:-webkit-flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;position:relative;margin:0;top:-1000px;left:0;width:100%;z-index:2147483646;overflow-x:hidden;opacity:0;-webkit-transition:all 1s cubic-bezier(.23,1,.32,1) .1s;transition:all 1s cubic-bezier(.23,1,.32,1) .1s}.simpread-read-root-show{top:0}.simpread-read-root-hide{top:1000px}sr-read{display:-webkit-flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-flow:column nowrap;flex-flow:column;margin:20px 20%;min-width:400px;min-height:400px;text-align:center}read-process{position:fixed;top:0;left:0;height:3px;width:100%;background-color:#64b5f6;-webkit-transition:width 2s;transition:width 2s;z-index:20000}sr-rd-content-error{display:block;position:relative;margin:0;margin-bottom:30px;padding:25px;background-color:rgba(0,0,0,.05)}sr-rd-footer{-webkit-box-orient:vertical;-ms-flex-direction:column;flex-direction:column;font-size:14px}sr-rd-footer,sr-rd-footer-group{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-direction:normal}sr-rd-footer-group{-webkit-box-orient:horizontal;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center}sr-rd-footer-line{width:100%;border-top:1px solid #e0e0e0}sr-rd-footer-text{min-width:150px}sr-rd-footer-copywrite{margin:10px 0 0;color:inherit}sr-rd-footer-copywrite abbr{-webkit-font-feature-settings:normal;font-feature-settings:normal;font-variant:normal;text-decoration:none}sr-rd-footer-copywrite .second{margin:10px 0}sr-rd-footer-copywrite .third a:hover{border:none!important}sr-rd-footer-copywrite .third a:first-child{margin-right:50px}sr-rd-footer-copywrite .sr-icon{display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;width:33px;height:33px;opacity:.8;-webkit-transition:opacity .5s ease;transition:opacity .5s ease;cursor:pointer}sr-rd-footer-copywrite .sr-icon:hover{opacity:1}sr-rd-footer-copywrite a,sr-rd-footer-copywrite a:link,sr-rd-footer-copywrite a:visited{margin:0;padding:0;color:inherit;background-color:transparent;font-size:inherit!important;line-height:normal;text-decoration:none;vertical-align:baseline;vertical-align:initial;border:none!important;box-sizing:border-box}sr-rd-footer-copywrite a:focus,sr-rd-footer-copywrite a:hover,sr-rd-footer a:active{color:inherit;text-decoration:none;border-bottom:1px dotted!important}.simpread-blocks{text-decoration:none!important}.simpread-blocks *{margin:0}.simpread-blocks a{padding:0;text-decoration:none!important}.simpread-blocks img{margin:0;padding:0;border:0;background:transparent;box-shadow:none}.simpread-focus-root{display:block;position:fixed;top:0;left:0;right:0;bottom:0;background-color:hsla(0,0%,92%,.9);z-index:2147483645;opacity:0;-webkit-transition:opacity 1s cubic-bezier(.23,1,.32,1) 0ms;transition:opacity 1s cubic-bezier(.23,1,.32,1) 0ms}.simpread-focus-highlight{position:relative;box-shadow:0 0 0 20px #fff;background-color:#fff;overflow:visible;z-index:2147483646}.sr-controlbar-bg sr-rd-crlbar,.sr-controlbar-bg sr-rd-crlbar fab{z-index:2147483647}sr-rd-crlbar.controlbar{position:fixed;right:0;bottom:0;width:100px;height:100%;opacity:0;-webkit-transition:opacity .5s ease;transition:opacity .5s ease}sr-rd-crlbar.controlbar:hover{opacity:1}sr-rd-crlbar fap *{box-sizing:border-box}@media (max-height:620px){fab{zoom:.8}}@media (max-height:783px){dialog-gp dialog-content{max-height:580px}dialog-gp dialog-footer{border-top:1px solid #e0e0e0}}.simpread-highlight-selector{outline:3px dashed #1976d2!important;cursor:pointer!important}.simpread-highlight-controlbar,.simpread-highlight-selector{background-color:#fafafa!important;opacity:.8!important;-webkit-transition:opacity .5s ease!important;transition:opacity .5s ease!important}.simpread-highlight-controlbar{position:relative!important;border:3px dashed #1976d2!important}simpread-highlight,sr-snapshot-ctlbar{position:fixed;top:0;left:0;right:0;padding:15px;height:50px;background-color:rgba(50,50,50,.9);box-shadow:0 2px 5px rgba(0,0,0,.26);box-sizing:border-box;z-index:2147483640}simpread-highlight,sr-highlight-ctl,sr-snapshot-ctlbar{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center}sr-highlight-ctl{margin:0 5px;width:50px;height:20px;color:#fff;background-color:#1976d2;border-radius:4px;box-shadow:0 3px 1px -2px rgba(0,0,0,.2),0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12);cursor:pointer}toc-bg{position:fixed;left:0;top:0;width:50px;height:200px;font-size:medium}toc-bg:hover{z-index:3}.toc-bg-hidden{opacity:0;-webkit-transition:opacity .5s ease;transition:opacity .5s ease}.toc-bg-hidden:hover{opacity:1;z-index:3}.toc-bg-hidden:hover toc{width:180px}toc *{all:unset}toc{position:fixed;left:0;top:100px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;padding:10px;width:0;max-width:200px;max-height:500px;overflow-x:hidden;overflow-y:hidden;cursor:pointer;border:1px solid hsla(0,0%,62%,.22);-webkit-transition:width .5s;transition:width .5s}toc:hover{overflow-y:auto}toc.mini:hover{width:200px!important}toc::-webkit-scrollbar{width:3px}toc::-webkit-scrollbar-thumb{border-radius:10px;background-color:hsla(36,2%,54%,.5)}toc outline{position:relative;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis;padding:2px 0;min-height:21px;line-height:21px;text-align:left}toc outline a,toc outline a:active,toc outline a:focus,toc outline a:visited{display:block;width:100%;color:inherit;font-size:11px;text-decoration:none!important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}toc outline a:hover{font-weight:700!important}toc outline a.toc-outline-theme-dark,toc outline a.toc-outline-theme-night{color:#fff!important}.toc-level-h1{padding-left:5px}.toc-level-h2{padding-left:15px}.toc-level-h3{padding-left:25px}.toc-level-h4{padding-left:35px}.toc-outline-active{border-left:2px solid #f44336}toc outline active{position:absolute;left:0;top:0;bottom:0;padding:0 0 0 3px;border-left:2px solid #e8e8e8}sr-kbd{background:-webkit-gradient(linear,0 0,0 100%,from(#fff785),to(#ffc542));border:1px solid #e3be23;-o-border-image:none;border-image:none;-o-border-image:initial;border-image:initial;position:absolute;left:0;padding:1px 3px 0;font-size:11px!important;font-weight:700;box-shadow:0 3px 7px 0 rgba(0,0,0,.3);overflow:hidden;border-radius:3px}.sr-kbd-a{position:relative}kbd-mapping{position:fixed;left:5px;bottom:5px;-ms-flex-flow:row;flex-flow:row;width:250px;height:500px;background-color:#fff;border:1px solid hsla(0,0%,62%,.22);box-shadow:0 2px 5px rgba(0,0,0,.26);border-radius:3px}kbd-mapping,kbd-maps{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}kbd-maps{margin:40px 0 20px;width:100%;overflow-x:auto}kbd-maps::-webkit-scrollbar-thumb{background-clip:padding-box;border-radius:10px;border:2px solid transparent;background-color:rgba(85,85,85,.55)}kbd-maps::-webkit-scrollbar{width:10px;-webkit-transition:width .7s cubic-bezier(.4,0,.2,1);transition:width .7s cubic-bezier(.4,0,.2,1)}kbd-mapping kbd-map-title{position:absolute;margin:5px 0;width:100%;font-size:14px;font-weight:700}kbd-maps-group{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start}kbd-maps-title{margin:5px 0;padding-left:53px;font-size:12px;font-weight:700}kbd-map kbd{display:inline-block;padding:3px 5px;font-size:11px;line-height:10px;color:#444d56;vertical-align:middle;background-color:#fafbfc;border:1px solid #c6cbd1;border-bottom-color:#959da5;border-radius:3px;box-shadow:inset 0 -1px 0 #959da5}kbd-map kbd-name{display:inline-block;text-align:right;width:50px}kbd-map kbd-desc{padding-left:3px}sharecard-bg{position:fixed;top:0;left:0;width:100%;height:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;background-color:rgba(0,0,0,.4);z-index:2147483647}sharecard{max-width:450px;background-color:#64b5f6}sharecard,sharecard-head{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}sharecard-head{margin:25px;color:#fff;border-radius:10px;box-shadow:0 2px 6px 0 rgba(0,0,0,.2),0 25px 50px 0 rgba(0,0,0,.15)}sharecard-card{-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}sharecard-card,sharecard-top{display:-webkit-box;display:-ms-flexbox;display:flex}sharecard-top{-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;padding-right:5px;height:65px;background-color:#fff;color:#878787;font-size:25px;font-weight:500;border-top-left-radius:10px;border-top-right-radius:10px}sharecard-top span.logos{display:block;width:48px;height:48px;margin:5px;background-repeat:no-repeat;background-position:50%;background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAABU1BMVEUAAAAnNJMnNZI3Q5onNJInNJMnNJInNJMnNJI8SJ0tOZY/S55EUKAoNJI6RpwoNJNIU6InNJInNJImNJI7SJwmNJJ2fLUiMJFKVaNCTJ9faK1HUaJOWKVSXaUnNJNYY6pye7cmM5JXYKhwebMjMI8mL4719fW9vb0oNZP/UlLz8/QqN5TAwMAnNJPv7+/Pz8/q6+/p6enNzc3Kysry8vMsOJXc3env7/LU1uXo29vR0dHOzs7ExMTwjo73bW37XV3Aj1TCYELl5u3n5+fW2Obn6O7f4OrZ2+g0QJkxPpgvO5bh4uvS1OTP0ePCwsJQW6ZLVqTs7fHd3d3V1dXqv79VX6lET6A1TIxXUIBSgHxWQnpelHf+WVnopkXqbC7j5Ozi4uLDw8NGUaFATJ9SgH3r6+vGyd7BxNva2trX19ejqM2gpczHx8dze7Zha67Z2dlTgH1aXQeSAAAAJnRSTlMA6ff+497Y8NL+/fv49P379sqab/BeOiX06tzVy8m/tKqpalA7G6oKj0EAAAJlSURBVEjHndNXWxpBFIDhcS2ICRLAkt4Dx4WhLk0E6R0MYoIISrWX5P9f5cwSIRC2+T1czMV5n2FnZwn2eWONUqCAv3H2Uf5Ra1hx4+0WEXtDQW0fCPYJ1EffEfIV4CSROAE4jsePoTFsNmTJF/IeIHF2lgCIn57GodlqDWXBK7IwBYatVlMWFAildPKX7I3m74Z9fsCiQChoimoFQAz04Ad2gH1n9fv9n9hgMNDr9euLWD6fLxQKxaLfb7dTSlahbFVdEPwIQtrAihZQgyKCtCagbQe3xh0QFMgy5MR11+ewYY5/qlZ7vT2xu93ULKjbFLpiUxnIIwjgKmVTLDUFXMrAi2NJWCRLIthTBo4xyOLKpwyqU6CuDCI41hFBCVdOhyLw4FgJ1skCAiyl9BSHbCorgo6VJXTru5hrVCQS8Yr5xLzX59YJSFpVFwD9U0BGC3hGdFpATgRupTGe9R9I1b1ePBvXKDyvq/O/44LT4/E4BUbSCAwj8Evq6HlnOBprx6JhJz8Gktc7xeaP9ndY+0coQvCccFBD4JW60UIY50ciLOAODAQRVOeCHm4Q3Xks6uRDY+CQ+AR4T2wMYh6+jMCIQOp78CFoj0H7EQgIuhI3dGaHCrwgADwCPjJvA372GRigCJg49FUdk3D87pq3zp4SA5zc1Zh9DxfwkpjgUg5Mv+lbeE3McC8Lpu7SA3wk2xzcqL2tN5DfIsQC8HB7UamUy6FQOpTO5QKBQDZbKnWSyUzGjdWCwaDA8+7Le4BNgm3qQGWchYh9s5hNq6wVbBlbwhZYOp3OYOA4zmgEypnM2zj8ByIdedKrH8vDAAAAAElFTkSuQmCC");zoom:.8}sharecard-content{padding:15px;max-height:500px;font-size:20px;text-align:justify;background-color:#2196f3;overflow-x:hidden;overflow-y:auto}sharecard-via{padding:10px;font-size:10px;background-color:#2196f3}sharecard-footer{-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;padding-right:5px;height:100px;background-color:#fff;color:#878787;font-size:15px;font-weight:500;border-bottom-left-radius:10px;border-bottom-right-radius:10px}sharecard-footer,sharecard-footer div{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center}sharecard-footer span.qrcode{display:block;width:100px;height:100px;margin:5px;background-repeat:no-repeat;background-position:50%;background-image:url("data:image/png;base64,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")}sharecard-control{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-align:center;-ms-flex-align:center;align-items:center;padding:0 19px;height:80px;background-color:#fff}simpread-snapshot{width:100%;height:100%;cursor:move;z-index:2147483645}simpread-snapshot,sr-mask{position:fixed;left:0;top:0}sr-mask{background-color:rgba(0,0,0,.1)}.simpread-feedback,.simpread-urlscheme{position:fixed;right:20px;bottom:20px;z-index:2147483646}simpread-feedback,simpread-urlscheme{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;padding:20px 20px 0;width:500px;color:rgba(51,51,51,.87);background-color:#fff;border-radius:3px;box-shadow:0 0 2px rgba(0,0,0,.12),0 2px 2px rgba(0,0,0,.26);overflow:hidden;-webkit-transform-origin:bottom;transform-origin:bottom;-webkit-transition:all .6s ease;transition:all .6s ease}simpread-feedback *,simpread-urlscheme *{font-size:12px!important;box-sizing:border-box}simpread-feedback.active,simpread-urlscheme.active{-webkit-animation-name:srFadeInUp;animation-name:srFadeInUp;-webkit-animation-duration:.45s;animation-duration:.45s;-webkit-animation-fill-mode:both;animation-fill-mode:both}simpread-feedback.hide,simpread-urlscheme.hide{-webkit-animation-name:srFadeInDown;animation-name:srFadeInDown;-webkit-animation-duration:.45s;animation-duration:.45s;-webkit-animation-fill-mode:both;animation-fill-mode:both}simpread-feedback sr-fb-label,simpread-urlscheme sr-urls-label{width:100%}simpread-feedback sr-fb-head,simpread-urlscheme sr-urls-head{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;margin-bottom:5px;width:100%}simpread-feedback sr-fb-content,simpread-urlscheme sr-urls-content{margin-bottom:5px;width:100%}simpread-feedback sr-urls-footer,simpread-urlscheme sr-urls-footer{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;width:100%}simpread-feedback sr-fb-a,simpread-urlscheme sr-urls-a{color:#2163f7;cursor:pointer}simpread-feedback text-field-state,simpread-urlscheme text-field-state{border-top:none rgba(34,101,247,.8)!important;border-left:none rgba(34,101,247,.8)!important;border-right:none rgba(34,101,247,.8)!important;border-bottom:2px solid rgba(34,101,247,.8)!important}simpread-feedback switch,simpread-urlscheme switch{margin-top:0!important}@-webkit-keyframes srFadeInUp{0%{opacity:0;-webkit-transform:translateY(100px);transform:translateY(100px)}to{opacity:1;-webkit-transform:translateY(0);transform:translateY(0)}}@keyframes srFadeInUp{0%{opacity:0;-webkit-transform:translateY(100px);transform:translateY(100px)}to{opacity:1;-webkit-transform:translateY(0);transform:translateY(0)}}@-webkit-keyframes srFadeInDown{0%{opacity:1;-webkit-transform:translateY(0);transform:translateY(0)}to{opacity:0;-webkit-transform:translateY(100px);transform:translateY(100px)}}@keyframes srFadeInDown{0%{opacity:1;-webkit-transform:translateY(0);transform:translateY(0)}to{opacity:0;-webkit-transform:translateY(100px);transform:translateY(100px)}}simpread-feedback sr-fb-head{font-weight:700}simpread-feedback sr-fb-content{-webkit-box-orient:vertical;-ms-flex-direction:column;flex-direction:column}simpread-feedback sr-fb-content,simpread-feedback sr-fb-footer{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-direction:normal}simpread-feedback sr-fb-footer{-webkit-box-orient:horizontal;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;width:100%}simpread-feedback sr-close{position:absolute;right:20px;cursor:pointer;-webkit-transition:all 1s cubic-bezier(.23,1,.32,1) .1s;transition:all 1s cubic-bezier(.23,1,.32,1) .1s;z-index:200}simpread-feedback sr-close:hover{-webkit-transform:rotate(-15deg) scale(1.3);transform:rotate(-15deg) scale(1.3)}simpread-feedback sr-stars{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;margin-top:10px}simpread-feedback sr-stars i{margin-right:10px;cursor:pointer}simpread-feedback sr-stars i svg{-webkit-transition:all 1s cubic-bezier(.23,1,.32,1) .1s;transition:all 1s cubic-bezier(.23,1,.32,1) .1s}simpread-feedback sr-stars i svg:hover{-webkit-transform:rotate(-15deg) scale(1.3);transform:rotate(-15deg) scale(1.3)}simpread-feedback sr-stars i.active svg{-webkit-transform:rotate(0) scale(1);transform:rotate(0) scale(1)}simpread-feedback sr-emojis{display:block;height:100px;overflow:hidden}simpread-feedback sr-emoji{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-transition:.3s;transition:.3s}simpread-feedback sr-emoji>svg{margin:15px 0;width:70px;height:70px;-ms-flex-negative:0;flex-shrink:0}simpread-feedback sr-stars-footer{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;margin:10px 0 20px}</style>
+                        <style type="text/css">.simpread-theme-root{font-size:62.5%!important}sr-rd-content,sr-rd-desc,sr-rd-title{width:100%}sr-rd-title{display:-webkit-box;margin:1em 0 .5em;overflow:hidden;text-overflow:ellipsis;text-rendering:optimizelegibility;-webkit-line-clamp:3;-webkit-box-orient:vertical}sr-rd-content{text-align:left;word-break:break-word}sr-rd-desc{text-align:justify;line-height:2.4;margin:0 0 1.2em;box-sizing:border-box}sr-rd-content{font-size:25.6px;font-size:1.6rem;line-height:1.6}sr-rd-content h1,sr-rd-content h1 *,sr-rd-content h2,sr-rd-content h2 *,sr-rd-content h3,sr-rd-content h3 *,sr-rd-content h4,sr-rd-content h4 *,sr-rd-content h5,sr-rd-content h5 *,sr-rd-content h6,sr-rd-content h6 *{word-break:break-all}sr-rd-content div,sr-rd-content p{display:block;float:inherit;line-height:1.6;font-size:25.6px;font-size:1.6rem}sr-rd-content div,sr-rd-content p,sr-rd-content pre,sr-rd-content sr-blockquote{margin:0 0 1.2em;word-break:break-word}sr-rd-content a{padding:0 5px;vertical-align:baseline;vertical-align:initial}sr-rd-content a,sr-rd-content a:link{color:inherit;font-size:inherit;font-weight:inherit;border:none}sr-rd-content a:hover{background:transparent}sr-rd-content img{margin:10px;padding:5px;max-width:100%;background:#fff;border:1px solid #bbb;box-shadow:1px 1px 3px #d4d4d4}sr-rd-content figcaption{text-align:center;font-size:14px}sr-rd-content sr-blockquote{display:block;position:relative;padding:15px 25px;text-align:left;line-height:inherit}sr-rd-content sr-blockquote:before{position:absolute}sr-rd-content sr-blockquote *{margin:0;font-size:inherit}sr-rd-content table{width:100%;margin:0 0 1.2em;word-break:keep-all;word-break:normal;overflow:auto;border:none}sr-rd-content table td,sr-rd-content table th{border:none}sr-rd-content ul{margin:0 0 1.2em;margin-left:1.3em;padding:0;list-style:disc}sr-rd-content ol{list-style:decimal;margin:0;padding:0}sr-rd-content ol li,sr-rd-content ul li{font-size:inherit;list-style:disc;margin:0 0 1.2em}sr-rd-content ol li{list-style:decimal;margin-left:1.3em}sr-rd-content ol li *,sr-rd-content ul li *{margin:0;text-align:left;text-align:initial}sr-rd-content li ol,sr-rd-content li ul{margin-bottom:.8em;margin-left:2em}sr-rd-content li ul{list-style:circle}sr-rd-content pre{font-family:Consolas,Monaco,Andale Mono,Source Code Pro,Liberation Mono,Courier,monospace;display:block;padding:15px;line-height:1.5;word-break:break-all;word-wrap:break-word;white-space:pre;overflow:auto}sr-rd-content pre,sr-rd-content pre *,sr-rd-content pre div{font-size:17.6px;font-size:1.1rem}sr-rd-content li pre code,sr-rd-content p pre code,sr-rd-content pre{background-color:transparent;border:none}sr-rd-content pre code{margin:0;padding:0}sr-rd-content pre code,sr-rd-content pre code *{font-size:17.6px;font-size:1.1rem}sr-rd-content pre p{margin:0;padding:0;color:inherit;font-size:inherit;line-height:inherit}sr-rd-content li code,sr-rd-content p code{margin:0 4px;padding:2px 4px;font-size:17.6px;font-size:1.1rem}sr-rd-content mark{margin:0 5px;padding:2px;background:#fffdd1;border-bottom:1px solid #ffedce}.sr-rd-content-img{width:90%;height:auto}.sr-rd-content-img-load{width:48px;height:48px;margin:0;padding:0;border-style:none;border-width:0;background-repeat:no-repeat;background-image:url(data:image/gif;base64,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)}.sr-rd-content-center{text-align:center;display:-webkit-box;-webkit-box-align:center;-webkit-box-pack:center;-webkit-box-orient:vertical}.sr-rd-content-center-small{display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex}.sr-rd-content-center-small img{margin:0;padding:0;border:0;box-shadow:none}img.simpread-img-broken{cursor:pointer}.sr-rd-content-nobeautify{margin:0;padding:0;border:0;box-shadow:0 0 0}sr-rd-mult{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;margin:0 0 16px;padding:16px 0 24px;width:100%;background-color:#fff;border-radius:4px;box-shadow:0 1px 2px 0 rgba(60,64,67,.3),0 2px 6px 2px rgba(60,64,67,.15)}sr-rd-mult:hover{-webkit-transition:all .45s 0ms;transition:all .45s 0ms;box-shadow:1px 1px 8px rgba(0,0,0,.16)}sr-rd-mult sr-rd-mult-content{padding:0 16px;overflow:auto}sr-rd-mult sr-rd-mult-avatar,sr-rd-mult sr-rd-mult-content{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}sr-rd-mult sr-rd-mult-avatar{-webkit-box-align:center;-ms-flex-align:center;align-items:center;margin:0 15px}sr-rd-mult sr-rd-mult-avatar span{display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;max-width:75px;overflow:hidden;text-overflow:ellipsis;text-align:left;font-size:16px;font-size:1rem}sr-rd-mult sr-rd-mult-avatar img{margin-bottom:0;max-width:50px;max-height:50px;width:50px;height:50px;border-radius:50%}sr-rd-mult sr-rd-mult-content img{max-width:80%}sr-rd-mult sr-rd-mult-avatar .sr-rd-content-center{margin:0}sr-page{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;width:100%}</style>
+                        <style type="text/css">sr-rd-theme-github{display:none}sr-rd-content h1,sr-rd-content h2,sr-rd-content h3,sr-rd-content h4,sr-rd-content h5,sr-rd-content h6{position:relative;margin-top:1em;margin-bottom:1pc;font-weight:700;line-height:1.4;text-align:left;color:#363636}sr-rd-content h1{padding-bottom:.3em;font-size:57.6px;font-size:3.6rem;line-height:1.2}sr-rd-content h2{padding-bottom:.3em;font-size:44.8px;font-size:2.8rem;line-height:1.225}sr-rd-content h3{font-size:38.4px;font-size:2.4rem;line-height:1.43}sr-rd-content h4{font-size:32px;font-size:2rem}sr-rd-content h5,sr-rd-content h6{font-size:25.6px;font-size:1.6rem}sr-rd-content h6{color:#777}sr-rd-content ol,sr-rd-content ul{list-style-type:disc;padding:0;padding-left:2em}sr-rd-content ol ol,sr-rd-content ul ol{list-style-type:lower-roman}sr-rd-content ol ol ol,sr-rd-content ol ul ol,sr-rd-content ul ol ol,sr-rd-content ul ul ol{list-style-type:lower-alpha}sr-rd-content table{width:100%;overflow:auto;word-break:normal;word-break:keep-all}sr-rd-content table th{font-weight:700}sr-rd-content table td,sr-rd-content table th{padding:6px 13px;border:1px solid #ddd}sr-rd-content table tr{background-color:#fff;border-top:1px solid #ccc}sr-rd-content table tr:nth-child(2n){background-color:#f8f8f8}sr-rd-content sr-blockquote{border-left:4px solid #ddd}.simpread-theme-root{background-color:#fff;color:#333}sr-rd-title{font-family:PT Sans,SF UI Display,\.PingFang SC,PingFang SC,Neue Haas Grotesk Text Pro,Arial Nova,Segoe UI,Microsoft YaHei,Microsoft JhengHei,Helvetica Neue,Source Han Sans SC,Noto Sans CJK SC,Source Han Sans CN,Noto Sans SC,Source Han Sans TC,Noto Sans CJK TC,Hiragino Sans GB,sans-serif;font-size:54.4px;font-size:3.4rem;font-weight:700;line-height:1.3}sr-rd-desc{position:relative;margin:0;margin-bottom:30px;padding:25px;padding-left:56px;font-size:28.8px;font-size:1.8rem;color:#777;background-color:rgba(0,0,0,.05);box-sizing:border-box}sr-rd-desc:before{content:"\201C";position:absolute;top:-28px;left:16px;font-size:80px;font-family:Arial;color:rgba(0,0,0,.15)}sr-rd-content,sr-rd-content *,sr-rd-content div,sr-rd-content p{color:#363636;font-weight:400;line-height:1.8}sr-rd-content b *,sr-rd-content strong,sr-rd-content strong * sr-rd-content b{-webkit-animation:none 0s ease 0s 1 normal none running;animation:none 0s ease 0s 1 normal none running;-webkit-backface-visibility:visible;backface-visibility:visible;background:transparent none repeat 0 0/auto auto padding-box border-box scroll;border:medium none currentColor;border-collapse:separate;-o-border-image:none;border-image:none;border-radius:0;border-spacing:0;bottom:auto;box-shadow:none;box-sizing:content-box;caption-side:top;clear:none;clip:auto;color:#000;-webkit-columns:auto;-moz-columns:auto;columns:auto;-webkit-column-count:auto;-moz-column-count:auto;column-count:auto;-webkit-column-fill:balance;-moz-column-fill:balance;column-fill:balance;-webkit-column-gap:normal;-moz-column-gap:normal;column-gap:normal;-webkit-column-rule:medium none currentColor;-moz-column-rule:medium none currentColor;column-rule:medium none currentColor;-webkit-column-span:1;-moz-column-span:1;column-span:1;-webkit-column-width:auto;-moz-column-width:auto;column-width:auto;content:normal;counter-increment:none;counter-reset:none;cursor:auto;direction:ltr;display:inline;empty-cells:show;float:none;font-family:serif;font-size:medium;font-style:normal;font-variant:normal;font-weight:400;font-stretch:normal;line-height:normal;height:auto;-webkit-hyphens:none;-ms-hyphens:none;hyphens:none;left:auto;letter-spacing:normal;list-style:disc outside none;margin:0;max-height:none;max-width:none;min-height:0;min-width:0;opacity:1;orphans:2;outline:medium none invert;overflow:visible;overflow-x:visible;overflow-y:visible;padding:0;page-break-after:auto;page-break-before:auto;page-break-inside:auto;-webkit-perspective:none;perspective:none;-webkit-perspective-origin:50% 50%;perspective-origin:50% 50%;position:static;right:auto;-moz-tab-size:8;-o-tab-size:8;tab-size:8;table-layout:auto;text-align:left;text-align-last:auto;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;top:auto;-webkit-transform:none;transform:none;-webkit-transform-origin:50% 50% 0;transform-origin:50% 50% 0;-webkit-transform-style:flat;transform-style:flat;-webkit-transition:none 0s ease 0s;transition:none 0s ease 0s;unicode-bidi:normal;vertical-align:baseline;visibility:visible;white-space:normal;widows:2;width:auto;word-spacing:normal;z-index:auto;all:initial}sr-rd-content a,sr-rd-content a:link{color:#4183c4;text-decoration:none}sr-rd-content a:active,sr-rd-content a:focus,sr-rd-content a:hover{color:#4183c4;text-decoration:underline}sr-rd-content pre{background-color:#f7f7f7;border-radius:3px}sr-rd-content li code,sr-rd-content p code{background-color:rgba(0,0,0,.04);border-radius:3px}.simpread-multi-root{background:#f8f9fa}</style>
+                        <style type="text/css"></style>
+                        <style type="text/css">@media (pointer:coarse){sr-read{margin:20px 5%!important;min-width:0!important;max-width:90%!important}sr-rd-title{margin-top:0;font-size:2.7rem}sr-rd-content sr-blockquote,sr-rd-desc{margin:10 0!important;padding:0 0 0 10px!important;width:90%;font-size:1.8rem;font-style:normal;line-height:1.7;text-align:justify}sr-rd-content{font-size:1.75rem;font-weight:300}sr-rd-content figure{margin:0;padding:0;text-align:center}sr-rd-content a,sr-rd-content a:link,sr-rd-content li code,sr-rd-content p code{font-size:inherit}sr-rd-footer{margin-top:20px}sr-blockquote,sr-blockquote *{margin:5px!important;padding:5px!important}sr-rd-content h1,sr-rd-content h2,sr-rd-content h3,sr-rd-content h4,sr-rd-content h5,sr-rd-content h6,sr-rd-title{font-family:PingFang SC,Verdana,Helvetica Neue,Microsoft Yahei,Hiragino Sans GB,Microsoft Sans Serif,WenQuanYi Micro Hei,sans-serif;color:#000;font-weight:100;line-height:1.35}sr-rd-content-h1,sr-rd-content-h2,sr-rd-content-h3,sr-rd-content-h4,sr-rd-content-h5,sr-rd-content-h6,sr-rd-content h1,sr-rd-content h2,sr-rd-content h3,sr-rd-content h4,sr-rd-content h5,sr-rd-content h6{margin-top:1.2em;margin-bottom:.6em;line-height:1.35}sr-rd-content-h1,sr-rd-content h1{font-size:1.8em}sr-rd-content-h2,sr-rd-content h2{font-size:1.6em}sr-rd-content-h3,sr-rd-content h3{font-size:1.4em}sr-rd-content-h4,sr-rd-content-h5,sr-rd-content-h6,sr-rd-content h4,sr-rd-content h5,sr-rd-content h6{font-size:1.2em}sr-rd-content-ul,sr-rd-content ul{margin-left:1.3em!important;list-style:disc}sr-rd-content-ol,sr-rd-content ol{list-style:decimal;margin-left:1.9em!important}sr-rd-content-ol ol,sr-rd-content-ol ul,sr-rd-content-ul ol,sr-rd-content-ul ul,sr-rd-content li ol,sr-rd-content li ul{margin-bottom:.8em;margin-left:2em!important}sr-rd-content img{margin:0;padding:0;border:0;max-width:100%!important;height:auto;box-shadow:0 20px 20px -10px rgba(0,0,0,.1)}sr-rd-mult{min-width:0;background-color:#fff;box-shadow:0 1px 6px rgba(32,33,36,.28);border-radius:8px}sr-rd-mult sr-rd-mult-avatar div{margin:0}sr-rd-mult sr-rd-mult-avatar .sr-rd-content-center-small{margin:7px 0!important}sr-rd-mult sr-rd-mult-avatar span{display:block}sr-rd-mult sr-rd-mult-content{padding-left:0}@media only screen and (max-device-width:1024px){.simpread-theme-root,html.simpread-theme-root{font-size:80%!important}sr-rd-mult sr-rd-mult-avatar img{width:50px;height:50px;min-width:50px;min-height:50px}toc-bg toc{width:10px!important}toc-bg:hover toc{width:auto!important}}@media only screen and (max-device-width:414px){.simpread-theme-root,html.simpread-theme-root{font-size:70%!important}sr-rd-mult sr-rd-mult-avatar img{width:30px;height:30px;min-width:30px;min-height:30px}}@media only screen and (max-device-width:320px){.simpread-theme-root,html.simpread-theme-root{font-size:90%!important}sr-rd-content p{margin-bottom:.5em}}}</style>
+                        <style type="text/css">sr-rd-content *, sr-rd-content p, sr-rd-content div {}sr-rd-content pre code, sr-rd-content pre code * {}sr-rd-desc {}sr-rd-content pre {}sr-rd-title {}</style>
+                        <style type="text/css"></style>
+                        <style type="text/css"></style>
+                        <style type="text/css"></style>
+                        <style type="text/css"></style>
+                        <style type="text/css">sr-rd-content *, sr-rd-content p, sr-rd-content div {
+        font-size: 15px;
+    }
+
+    .annote-perview, .annote-perview * {
+        color: rgb(85, 85, 85);
+        font-weight: 400;
+        line-height: 1.8;
+    }</style>
+                        
+                        
+                        <script>setTimeout(()=>{const e=location.hash.replace("#id=","");let t,a=!1;const n=t=>{for(let n of t){let t;if((t=e.length>6?n.getAttribute("data-id"):n.getAttribute("data-idx"))==e){n.scrollIntoView({behavior:"smooth",block:"start",inline:"nearest"}),a=!0;break}}};e&&(0==(t=document.getElementsByClassName("sr-unread-card")).length&&(t=document.getElementsByTagName("sr-annote")),n(t),a||n(t=document.getElementsByClassName("sr-annote")))},500);</script>
+                        <script>document.addEventListener("DOMContentLoaded",function(){if("localhost"==location.hostname){const t=document.getElementsByTagName("img");for(let o of t){const t=o.src;t.startsWith("http")&&(o.src=location.origin+"/proxy?url="+t)}}},!1);</script>
+                        <title>简悦 | 正则表达式前端使用手册 | louis blog</title>
+                    </head>
+                    <body>
+                        <sr-read style='font-family: "LXGW WenKai Screen";'>
+                            <sr-rd-title>正则表达式前端使用手册 | louis blog</sr-rd-title>
+                    <sr-rd-desc style="margin: 0;padding-top: 0;padding-bottom: 0;font-style: normal;font-size: 18px;">regexp 正则表达式 反向引用 贪婪模式 非贪婪模式 元字符 字符组 限定符 操作符 ES6 扩展 固化分组 占有量词优先 环视 顺序环视 逆序环视</sr-rd-desc>
+                    <sr-rd-content><p></p><h3 id="sr-toc-0"><a href="#导读" title="导读" one-link-mark="yes"></a>导读</h3><p>你有没有在搜索文本的时候绞尽脑汁，试了一个又一个表达式，还是不行.</p><p></p><p>你有没有在表单验证的时候，只是做做样子 (只要不为空就好), 然后烧香拜佛，虔诚祈祷，千万不要出错.</p><p></p><p>你有没有在使用 sed 和 grep 命令的时候，感觉莫名其妙，明明应该支持的元字符，却就是匹配不到.</p><p></p><p>甚至，你压根没遇到过上述情况，你只是一遍又一遍的调用 replace 而已 (把非搜索文本全部替换为空，然后就只剩搜索文本了), 面对别人家的简洁高效的语句，你只能在心中呐喊，replace 大法好.</p><p></p><p>为什么要学正则表达式。有位网友这么说：江湖传说里，程序员的正则表达式和医生的处方，道士的鬼符齐名，曰：普通人看不懂的三件神器。这个传说至少向我们透露了两点信息：一是正则表达式很牛，能和医生的处方，道士的鬼符齐名，并被大家提起，可见其江湖地位。二是正则表达式很难，这也从侧面说明了，如果你可以熟练的掌握并应用它，在装逼的路上，你将如日中天 (别问我中天是谁……) !</p><p></p><p>显然，有关正则表达的介绍，无须我多言。这里就借助 Jeffrey Friedl 的《精通正则表达式》一书的序言正式抛个砖.</p><p></p><sr-blockquote>
+<p>​    “如果罗列计算机软件领域的伟大发明，我相信绝对不会超过二十项，在这个名单当中，当然应该包括分组交换网络，Web, Lisp, 哈希算法，UNIX, 编译技术，关系模型，面向对象，XML 这些大名鼎鼎的家伙，而正则表达式也绝对不应该被漏掉. </p>
+<p>​     对很多实际工作而言，正则表达式简直是灵丹妙药，能够成百倍的提高开发效率和程序质量，正则表达式在生物信息学和人类基因图谱的研究中所发挥的关键作用，更是被传为佳话. CSDN 的创始人蒋涛先生在早年开发专业软件产品时，就曾经体验过这一工具的巨大威力，并且一直印象深刻.”</p>
+</sr-blockquote><p></p><p>因此，我们没有理由不去了解正则表达式，甚至是熟练掌握并运用它.</p><p></p><p>本文以正则基础语法开篇，结合具体实例，逐步讲解正则表达式匹配原理。代码实例使用语言包括 js, php, python, java (因有些匹配模式，js 并未支持，需要借助其他语言讲解). 内容包括初阶技能和高阶技能，适合新手学习和进阶。本文力求简单通俗易懂，同时为求全面，涉及知识较多，共计 12k 字，篇幅较长，请耐心阅读，如有阅读障碍请及时 [联系我][1].</p><p></p><h3 id="sr-toc-1"><a href="#回顾历史" title="回顾历史" one-link-mark="yes"></a>回顾历史</h3><p>要论正则表达式的渊源，最早可以追溯至对人类神经系统如何工作的早期研究. Warren McCulloch 和 Walter Pitts 这两位神经大咖 (神经生理学家) 研究出一种数学方式来描述这些神经网络.</p><p></p><p>1956 年，一位叫 Stephen Kleene 的数学家在 McCulloch 和 Pitts 早期工作的基础上，发表了一篇标题为” 神经网事件的表示法” 的论文，引入了正则表达式的概念.</p><p></p><p>随后，发现可以将这一工作应用于使用 Ken Thompson 的计算搜索算法的一些早期研究中。而 Ken Thompson 又是 Unix 的主要发明人。因此半个世纪以前的 Unix 中的 qed 编辑器 (1966 qed 编辑器问世) 成了第一个使用正则表达式的应用程序.</p><p></p><p>至此之后，正则表达式成为家喻户晓的文本处理工具，几乎各大编程语言都以支持正则表达式作为卖点，当然 JavaScript 也不例外.</p><p></p><h3 id="sr-toc-2"><a href="#正则表达式的定义" title="正则表达式的定义" one-link-mark="yes"></a>正则表达式的定义</h3><p>正则表达式是由普通字符和特殊字符 (也叫元字符或限定符) 组成的文字模板。如下便是简单的匹配连续数字的正则表达式:</p><p></p><pre>/[0-9]+/
+/\d+/
+</pre><p>“\d” 就是元字符，而 “+” 则是限定符.</p><p></p><h4 id="sr-toc-3"><a href="#元字符" title="元字符" one-link-mark="yes"></a>元字符</h4><table>
+<thead>
+<tr>
+<th>元字符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>.</td>
+<td> 匹配除换行符以外的任意字符</td>
+</tr>
+<tr>
+<td> \d</td>
+<td> 匹配数字，等价于字符组 [0-9]</td>
+</tr>
+<tr>
+<td>\w</td>
+<td> 匹配字母，数字，下划线</td>
+</tr>
+<tr>
+<td> \s</td>
+<td> 匹配任意的空白符 (包括制表符，空格，换行等)</td>
+</tr>
+<tr>
+<td>\b</td>
+<td> 匹配单词开始或结束的位置</td>
+</tr>
+<tr>
+<td> ^</td>
+<td> 匹配行首</td>
+</tr>
+<tr>
+<td> $</td>
+<td> 匹配行尾</td>
+</tr>
+</tbody>
+</table><p></p><h4 id="sr-toc-4"><a href="#反义元字符" title="反义元字符" one-link-mark="yes"></a>反义元字符</h4><table>
+<thead>
+<tr>
+<th>元字符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> \D</td>
+<td> 匹配非数字的任意字符，等价于 [^0-9]</td>
+</tr>
+<tr>
+<td>\W</td>
+<td> 匹配除字母，数字，下划线之外的任意字符</td>
+</tr>
+<tr>
+<td> \S</td>
+<td> 匹配非空白的任意字符</td>
+</tr>
+<tr>
+<td> \B</td>
+<td> 匹配非单词开始或结束的位置</td>
+</tr>
+<tr>
+<td> [^x]</td>
+<td> 匹配除 x 以外的任意字符</td>
+</tr>
+</tbody>
+</table><p></p><p>可以看出正则表达式严格区分大小写.</p><p></p><h4 id="sr-toc-5"><a href="#重复限定符" title="重复限定符" one-link-mark="yes"></a>重复限定符</h4><p>限定符共有 6 个，假设重复次数为 x 次，那么将有如下规则:</p><p></p><table>
+<thead>
+<tr>
+<th>限定符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> *</td>
+<td>x&gt;=0</td>
+</tr>
+<tr>
+<td>+</td>
+<td>x&gt;=1</td>
+</tr>
+<tr>
+<td>?</td>
+<td>x=0 or x=1</td>
+</tr>
+<tr>
+<td>{n}</td>
+<td>x=n</td>
+</tr>
+<tr>
+<td>{n,}</td>
+<td>x&gt;=n</td>
+</tr>
+<tr>
+<td>{n,m}</td>
+<td>n&lt;=x&lt;=m</td>
+</tr>
+</tbody>
+</table><p></p><h4 id="sr-toc-6"><a href="#字符组" title="字符组" one-link-mark="yes"></a>字符组</h4><p>[…] 匹配中括号内字符之一。如: [xyz]  匹配字符 x, y 或 z. 如果中括号中包含元字符，则元字符降级为普通字符，不再具有元字符的功能，如 [+.?] 匹配 加号，点号或问号.</p><p></p><h4 id="sr-toc-7"><a href="#排除性字符组" title="排除性字符组" one-link-mark="yes"></a>排除性字符组</h4><p>[^…] 匹配任何未列出的字符，. 如:  [^x]  匹配除 x 以外的任意字符.</p><p></p><h4 id="sr-toc-8"><a href="#多选结构" title="多选结构" one-link-mark="yes"></a>多选结构</h4><p>| 就是或的意思，表示两者中的一个。如: a|b 匹配 a 或者 b 字符.</p><p></p><h4 id="sr-toc-9"><a href="#括号" title="括号" one-link-mark="yes"></a>括号</h4><p>括号 常用来界定重复限定符的范围，以及将字符<strong>分组</strong>. 如: (ab)+ 可以匹配 abab.. 等，其中 ab 便是一个分组.</p><p></p><h4 id="sr-toc-10"><a href="#转义字符" title="转义字符" one-link-mark="yes"></a>转义字符</h4><p>\ 即转义字符，通常 <strong>\ * + ? | {[()] }^ $ . # 和 空白</strong> 这些字符都需要转义.</p><p></p><h4 id="sr-toc-11"><a href="#操作符的运算优先级" title="操作符的运算优先级" one-link-mark="yes"></a>操作符的运算优先级</h4><ol>
+<li>\ 转义符</li>
+<li> (), (?:), (?=), [] 圆括号或方括号</li>
+<li> *, +, ?, {n}, {n,}, {n,m} 限定符</li>
+<li> ^, $ 位置</li>
+<li> | “或” 操作</li>
+</ol><p></p><h4 id="sr-toc-12"><a href="#修饰符" title="修饰符" one-link-mark="yes"></a>修饰符</h4><p>javaScript 中正则表达式默认有如下五种修饰符:</p><p></p><ul>
+<li>g (全文查找), 如上述截图，实际上就开启了全文查找模式.</li>
+<li>i (忽略大小写查找)</li>
+<li>m (多行查找)</li>
+<li>y (ES6 新增的粘连修饰符)</li>
+<li>u (ES6 新增)</li>
+</ul><p></p><h4 id="sr-toc-13"><a href="#测试" title="测试" one-link-mark="yes"></a>测试</h4><p>我们来测试下上面的知识点，写一个匹配手机号码的正则表达式，如下:</p><p></p><pre>(\+86)?1\d{10}
+</pre><p></p><p>① “\+86” 匹配文本 “+86”, 后面接元字符问号，表示可匹配 1 次或 0 次，合起来表示 “(\+86)?” 匹配 “+86” 或者 “”.</p><p></p><p>② 普通字符”1” 匹配文本 “1”.</p><p></p><p>③ 元字符 “\d” 匹配数字 0 到 9, 区间量词 “{10}” 表示匹配 10 次，合起来表示 “\d {10}” 匹配连续的 10 个数字.</p><p></p><p>以上，匹配结果如下:</p><p></p><p><div class="sr-rd-content-center-small"><img class="" src="http://louiszhai.github.io/docImages/regexp01.png"></div></p><p></p><h3 id="sr-toc-14"><a href="#常用的正则表达式" title="常用的正则表达式" one-link-mark="yes"></a>常用的正则表达式</h3><ol>
+<li>汉字: ^[\u4e00-\u9fa5]{0,}$</li>
+<li>Email: ^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$</li>
+<li>URL: ^https?://([\w-]+.)+[\w-]+(/[\w-./?%&amp;=]*)?$</li>
+<li> 手机号码: ^1\d {10}$</li>
+<li> 身份证号: ^(\d {15}|\d {17}(\d|X))$</li>
+<li> 中国邮政编码: [1-9]\d {5}(?!\d) (邮政编码为 6 位数字)</li>
+</ol><p></p><h4 id="sr-toc-15"><a href="#密码验证" title="密码验证" one-link-mark="yes"></a>密码验证</h4><p>密码验证是常见的需求，一般来说，常规密码大致会满足规律: 6-16 位，数字，字母，字符至少包含两种，同时不能包含中文和空格。如下便是常规密码验证的正则描述:</p><p></p><pre>var reg = /(?!^[0-9]+$)(?!^[A-z]+$)(?!^[^A-z0-9]+$)^[^\s\u4e00-\u9fa5]{6,16}$/;
+</pre><p></p><h3 id="sr-toc-16"><a href="#正则的几大家族" title="正则的几大家族" one-link-mark="yes"></a>正则的几大家族</h3><h4 id="sr-toc-17"><a href="#正则表达式分类" title="正则表达式分类" one-link-mark="yes"></a>正则表达式分类</h4><p>在 linux 和 osx 下，常见的正则表达式，至少有以下三种: </p><p></p><ul>
+<li>基本的正则表达式 ( Basic Regular Expression 又叫 Basic RegEx  简称 <strong>BREs</strong> )</li>
+<li> 扩展的正则表达式 ( Extended Regular Expression 又叫 Extended RegEx 简称 <strong>EREs</strong> )</li>
+<li>Perl 的正则表达式 ( Perl Regular Expression 又叫 Perl RegEx 简称 <strong>PREs</strong> )</li>
+</ul><p></p><h4 id="sr-toc-18"><a href="#正则表达式比较" title="正则表达式比较" one-link-mark="yes"></a>正则表达式比较</h4><table>
+<thead>
+<tr>
+<th>字符</th>
+<th>说明</th>
+<th> Basic RegEx</th>
+<th>Extended RegEx</th>
+<th>python RegEx</th>
+<th>Perl regEx</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 转义</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td> ^</td>
+<td> 匹配行首，例如’^dog’匹配以字符串 dog 开头的行（注意：awk 指令中，’^’则是匹配字符串的开始）</td>
+<td>^</td>
+<td>^</td>
+<td>^</td>
+<td>^</td>
+</tr>
+<tr>
+<td>$</td>
+<td> 匹配行尾，例如：’^、dog\$’ 匹配以字符串 dog 为结尾的行（注意：awk 指令中，’$’则是匹配字符串的结尾）</td>
+<td>$</td>
+<td>$</td>
+<td>$</td>
+<td>$</td>
+</tr>
+<tr>
+<td>^$</td>
+<td> 匹配空行</td>
+<td> ^$</td>
+<td>^$</td>
+<td>^$</td>
+<td>^$</td>
+</tr>
+<tr>
+<td>^string$</td>
+<td> 匹配行，例如：’^dog$’匹配只含一个字符串 dog 的行</td>
+<td> ^string$</td>
+<td>^string$</td>
+<td>^string$</td>
+<td>^string$</td>
+</tr>
+<tr>
+<td>\&lt;</td>
+<td> 匹配单词，例如：’\&lt;frog’ （等价于’\bfrog’），匹配以 frog 开头的单词</td>
+<td> \&lt;</td>
+<td>\&lt;</td>
+<td><strong> 不支持</strong></td>
+<td><strong>不支持</strong>（但可以使用 \b 来匹配单词，例如：’\bfrog’）</td>
+</tr>
+<tr>
+<td>&gt;</td>
+<td> 匹配单词，例如：’frog&gt;‘（等价于’frog\b ‘），匹配以 frog 结尾的单词</td>
+<td> &gt;</td>
+<td>&gt;</td>
+<td><strong> 不支持</strong></td>
+<td><strong>不支持</strong>（但可以使用 \b 来匹配单词，例如：’frog\b’）</td>
+</tr>
+<tr>
+<td>\<x></x></td>
+<td> 匹配一个单词或者一个特定字符，例如：’\<frog\>‘（等价于’\bfrog\b’）、’\<g\>‘</g\></frog\></td>
+<td>\<x></x></td>
+<td>\<x></x></td>
+<td><strong> 不支持</strong></td>
+<td><strong>不支持</strong>（但可以使用 \b 来匹配单词，例如：’\bfrog\b’</td>
+</tr>
+<tr>
+<td>()</td>
+<td> 匹配表达式，例如：不支持’（frog）’</td>
+<td><strong>不支持</strong>（但可以使用，如：dog</td>
+<td>()</td>
+<td>()</td>
+<td>()</td>
+</tr>
+<tr>
+<td></td>
+<td> 匹配表达式，例如：不支持’（frog）’</td>
+<td></td>
+<td><strong>不支持</strong>（同 ())</td>
+<td><strong> 不支持</strong>（同 ())</td>
+<td><strong> 不支持</strong>（同 ())</td>
+</tr>
+<tr>
+<td>？</td>
+<td>匹配前面的子表达式 0 次或 1 次（等价于 {0,1}），例如：where (is)? 能匹配”where” 以及”whereis”</td>
+<td><strong> 不支持</strong>（同 \?)</td>
+<td>？</td>
+<td>？</td>
+<td>？</td>
+</tr>
+<tr>
+<td>\?</td>
+<td> 匹配前面的子表达式 0 次或 1 次（等价于’{0,1}‘），例如：’whereis\? ‘能匹配 “where” 以及”whereis”</td>
+<td>\?</td>
+<td><strong> 不支持</strong>（同？)</td>
+<td><strong> 不支持</strong>（同？)</td>
+<td><strong> 不支持</strong>（同？)</td>
+</tr>
+<tr>
+<td>?</td>
+<td> 当该字符紧跟在任何一个其他限制符（*, +, ?, {n},{n,}, {n,m}） 后面时，匹配模式是非贪婪的。非贪婪模式尽可能少的匹配所搜索的字符串，而默认的贪婪模式则尽可能多的匹配所搜索的字符串。例如，对于字符串 “oooo”，’o+?’ 将匹配单个”o”，而 ‘o+’ 将匹配所有 ‘o’</td>
+<td><strong>不支持</strong></td>
+<td><strong>不支持</strong></td>
+<td><strong>不支持</strong></td>
+<td><strong>不支持</strong></td>
+</tr>
+<tr>
+<td>.</td>
+<td> 匹配除换行符（’\n’）之外的任意单个字符（注意：awk 指令中的句点能匹配换行符）</td>
+<td>.</td>
+<td>.（如果要匹配包括 “\n” 在内的任何一个字符，请使用: [\s\S]</td>
+<td>.</td>
+<td>.（如果要匹配包括 “\n” 在内的任何一个字符，请使用：’ [.\n] ‘</td>
+</tr>
+<tr>
+<td>*</td>
+<td> 匹配前面的子表达式 0 次或多次（等价于 {0,}），例如：zo* 能匹配 “z” 以及 “zoo”</td>
+<td>*</td>
+<td>*</td>
+<td>*</td>
+<td>*</td>
+</tr>
+<tr>
+<td>+</td>
+<td> 匹配前面的子表达式 1 次或多次（等价于’{1,}‘），例如：’whereis+ ‘能匹配 “whereis” 以及”whereisis”</td>
+<td>+</td>
+<td><strong> 不支持</strong>（同 +)</td>
+<td><strong> 不支持</strong>（同 +)</td>
+<td><strong> 不支持</strong>（同 +)</td>
+</tr>
+<tr>
+<td>+</td>
+<td> 匹配前面的子表达式 1 次或多次（等价于 {1,}），例如：zo + 能匹配 “zo” 以及 “zoo”，但不能匹配 “z”</td>
+<td><strong> 不支持</strong>（同 \+)</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+</tr>
+<tr>
+<td>{n}</td>
+<td>n 必须是一个 0 或者正整数，匹配子表达式 n 次，例如：zo {2} 能匹配</td>
+<td><strong>不支持</strong>（同 \{n\})</td>
+<td>{n}</td>
+<td>{n}</td>
+<td>{n}</td>
+</tr>
+<tr>
+<td>{n,}</td>
+<td>“zooz”，但不能匹配 “Bob” n 必须是一个 0 或者正整数，匹配子表达式大于等于 n 次，例如：go {2,}</td>
+<td><strong> 不支持</strong>（同 \{n,\})</td>
+<td>{n,}</td>
+<td>{n,}</td>
+<td>{n,}</td>
+</tr>
+<tr>
+<td>{n,m}</td>
+<td> 能匹配 “good”，但不能匹配 godm 和 n 均为非负整数，其中 n &lt;= m，最少匹配 n 次且最多匹配 m 次 ，例如：o {1,3} 将配”fooooood” 中的前三个 o（请注意在逗号和两个数之间不能有空格）</td>
+<td><strong>不支持</strong>（同 \{n,m\})</td>
+<td>{n,m}</td>
+<td>{n,m}</td>
+<td>{n,m}</td>
+</tr>
+<tr>
+<td>x l y</td>
+<td> 匹配 x 或 y</td>
+<td><strong> 不支持</strong>（同 x \l y</td>
+<td>x l y</td>
+<td>x l y</td>
+<td>x l y</td>
+</tr>
+<tr>
+<td>[0-9]</td>
+<td> 匹配从 0 到 9 中的任意一个数字字符（注意：要写成递增）</td>
+<td>[0-9]</td>
+<td>[0-9]</td>
+<td>[0-9]</td>
+<td>[0-9]</td>
+</tr>
+<tr>
+<td>[xyz]</td>
+<td> 字符集合，匹配所包含的任意一个字符，例如：’[abc]’可以匹配”lay” 中的 ‘a’（注意：如果元字符，例如：. * 等，它们被放在 [ ] 中，那么它们将变成一个普通字符）</td>
+<td>[xyz]</td>
+<td>[xyz]</td>
+<td>[xyz]</td>
+<td>[xyz]</td>
+</tr>
+<tr>
+<td>[^xyz]</td>
+<td> 负值字符集合，匹配未包含的任意一个字符（注意：不包括换行符），例如：’[^abc]’ 可以匹配 “Lay” 中的’L’（注意：[^xyz] 在 awk 指令中则是匹配未包含的任意一个字符 + 换行符）</td>
+<td>[^xyz]</td>
+<td>[^xyz]</td>
+<td>[^xyz]</td>
+<td>[^xyz]</td>
+</tr>
+<tr>
+<td>[A-Za-z]</td>
+<td> 匹配大写字母或者小写字母中的任意一个字符（注意：要写成递增）</td>
+<td>[A-Za-z]</td>
+<td>[A-Za-z]</td>
+<td>[A-Za-z]</td>
+<td>[A-Za-z]</td>
+</tr>
+<tr>
+<td>[^A-Za-z]</td>
+<td> 匹配除了大写与小写字母之外的任意一个字符（注意：写成递增）</td>
+<td>[^A-Za-z]</td>
+<td>[^A-Za-z]</td>
+<td>[^A-Za-z]</td>
+<td>[^A-Za-z]</td>
+</tr>
+<tr>
+<td>\d</td>
+<td> 匹配从 0 到 9 中的任意一个数字字符（等价于 [0-9]）</td>
+<td><strong>不支持</strong></td>
+<td><strong>不支持</strong></td>
+<td> \d</td>
+<td>\d</td>
+</tr>
+<tr>
+<td>\D</td>
+<td> 匹配非数字字符（等价于 [^0-9]）</td>
+<td><strong>不支持</strong></td>
+<td><strong>不支持</strong></td>
+<td> \D</td>
+<td>\D</td>
+</tr>
+<tr>
+<td>\S</td>
+<td> 匹配任何非空白字符（等价于 [^\f\n\r\t\v]）</td>
+<td><strong>不支持</strong></td>
+<td><strong>不支持</strong></td>
+<td> \S</td>
+<td>\S</td>
+</tr>
+<tr>
+<td>\s</td>
+<td> 匹配任何空白字符，包括空格、制表符、换页符等等（等价于 [\f\n\r\t\v]）</td>
+<td><strong>不支持</strong></td>
+<td><strong>不支持</strong></td>
+<td> \s</td>
+<td>\s</td>
+</tr>
+<tr>
+<td>\W</td>
+<td> 匹配任何非单词字符 (等价于 [^A-Za-z0-9_])</td>
+<td>\W</td>
+<td>\W</td>
+<td>\W</td>
+<td>\W</td>
+</tr>
+<tr>
+<td>\w</td>
+<td> 匹配包括下划线的任何单词字符（等价于 [A-Za-z0-9_]）</td>
+<td>\w</td>
+<td>\w</td>
+<td>\w</td>
+<td>\w</td>
+</tr>
+<tr>
+<td>\B</td>
+<td> 匹配非单词边界，例如：’er\B’ 能匹配 “verb” 中的’er’，但不能匹配”never” 中的’er’</td>
+<td>\B</td>
+<td>\B</td>
+<td>\B</td>
+<td>\B</td>
+</tr>
+<tr>
+<td>\b</td>
+<td> 匹配一个单词边界，也就是指单词和空格间的位置，例如： ‘er\b’ 可以匹配”never” 中的 ‘er’，但不能匹配 “verb” 中的’er’</td>
+<td>\b</td>
+<td>\b</td>
+<td>\b</td>
+<td>\b</td>
+</tr>
+<tr>
+<td>\t</td>
+<td> 匹配一个横向制表符（等价于 \x09 和 \cI）</td>
+<td><strong>不支持</strong></td>
+<td><strong>不支持</strong></td>
+<td> \t</td>
+<td>\t</td>
+</tr>
+<tr>
+<td>\v</td>
+<td> 匹配一个垂直制表符（等价于 \x0b 和 \cK）</td>
+<td><strong>不支持</strong></td>
+<td><strong>不支持</strong></td>
+<td> \v</td>
+<td>\v</td>
+</tr>
+<tr>
+<td>\n</td>
+<td> 匹配一个换行符（等价于 \x0a 和 \cJ）</td>
+<td><strong>不支持</strong></td>
+<td><strong>不支持</strong></td>
+<td> \n</td>
+<td>\n</td>
+</tr>
+<tr>
+<td>\f</td>
+<td> 匹配一个换页符（等价于 \x0c 和 \cL）</td>
+<td><strong>不支持</strong></td>
+<td><strong>不支持</strong></td>
+<td> \f</td>
+<td>\f</td>
+</tr>
+<tr>
+<td>\r</td>
+<td> 匹配一个回车符（等价于 \x0d 和 \cM）</td>
+<td><strong>不支持</strong></td>
+<td><strong>不支持</strong></td>
+<td> \r</td>
+<td>\r</td>
+</tr>
+<tr>
+<td>\</td>
+<td> 匹配转义字符本身”\”</td>
+<td>\</td>
+<td>\</td>
+<td>\</td>
+<td>\</td>
+</tr>
+<tr>
+<td>\cx</td>
+<td> 匹配由 x 指明的控制字符，例如：\cM 匹配一个 Control-M 或回车符，x 的值必须为 A-Z 或 a-z 之一，否则，将 c 视为一个原义的 ‘c’ 字符</td>
+<td><strong>不支持</strong></td>
+<td><strong>不支持</strong></td>
+<td></td>
+<td> \cx</td>
+</tr>
+<tr>
+<td>\xn</td>
+<td> 匹配 n，其中 n 为十六进制转义值。十六进制转义值必须为确定的两个数字长，例如：’\x41’ 匹配 “A”。’\x041’ 则等价于’\x04’ &amp; “1”。正则表达式中可以使用 ASCII 编码</td>
+<td><strong>不支持</strong></td>
+<td><strong>不支持</strong></td>
+<td></td>
+<td> \xn</td>
+</tr>
+<tr>
+<td>\num</td>
+<td> 匹配 num，其中 num 是一个正整数。表示对所获取的匹配的引用</td>
+<td><strong>不支持</strong></td>
+<td> \num</td>
+<td>\num</td>
+<td></td>
+</tr>
+<tr>
+<td>[:alnum:]</td>
+<td> 匹配任何一个字母或数字（[A-Za-z0-9]），例如：’[[:alnum:]] ‘</td>
+<td>[:alnum:]</td>
+<td>[:alnum:]</td>
+<td>[:alnum:]</td>
+<td>[:alnum:]</td>
+</tr>
+<tr>
+<td>[:alpha:]</td>
+<td> 匹配任何一个字母（[A－Za－z]）， 例如：’ [[:alpha:]] ‘</td>
+<td>[:alpha:]</td>
+<td>[:alpha:]</td>
+<td>[:alpha:]</td>
+<td>[:alpha:]</td>
+</tr>
+<tr>
+<td>[:digit:]</td>
+<td> 匹配任何一个数字（[0-9]），例如：’[[:digit:]] ‘</td>
+<td>[:digit:]</td>
+<td>[:digit:]</td>
+<td>[:digit:]</td>
+<td>[:digit:]</td>
+</tr>
+<tr>
+<td>[:lower:]</td>
+<td> 匹配任何一个小写字母（[a-z]）， 例如：’ [[:lower:]] ‘</td>
+<td>[:lower:]</td>
+<td>[:lower:]</td>
+<td>[:lower:]</td>
+<td>[:lower:]</td>
+</tr>
+<tr>
+<td>[:upper:]</td>
+<td> 匹配任何一个大写字母（[A-Z]）</td>
+<td>[:upper:]</td>
+<td>[:upper:]</td>
+<td>[:upper:]</td>
+<td>[:upper:]</td>
+</tr>
+<tr>
+<td>[:space:]</td>
+<td> 任何一个空白字符： 支持制表符、空格，例如：’ [[:space:]] ‘</td>
+<td>[:space:]</td>
+<td>[:space:]</td>
+<td>[:space:]</td>
+<td>[:space:]</td>
+</tr>
+<tr>
+<td>[:blank:]</td>
+<td> 空格和制表符（横向和纵向），例如：’[[:blank:]]’ó’[\s\t\v]’</td>
+<td>[:blank:]</td>
+<td>[:blank:]</td>
+<td>[:blank:]</td>
+<td>[:blank:]</td>
+</tr>
+<tr>
+<td>[:graph:]</td>
+<td> 任何一个可以看得见的且可以打印的字符（注意：不包括空格和换行符等），例如：’[[:graph:]] ‘</td>
+<td>[:graph:]</td>
+<td>[:graph:]</td>
+<td>[:graph:]</td>
+<td>[:graph:]</td>
+</tr>
+<tr>
+<td>[:print:]</td>
+<td> 任何一个可以打印的字符（注意：不包括：[:cntrl:]、字符串结束符’\0’、EOF 文件结束符（-1）， 但包括空格符号），例如：’[[:print:]] ‘</td>
+<td>[:print:]</td>
+<td>[:print:]</td>
+<td>[:print:]</td>
+<td>[:print:]</td>
+</tr>
+<tr>
+<td>[:cntrl:]</td>
+<td> 任何一个控制字符（ASCII 字符集中的前 32 个字符，即：用十进制表示为从 0 到 31，例如：换行符、制表符等等），例如：’ [[:cntrl:]]’</td>
+<td>[:cntrl:]</td>
+<td>[:cntrl:]</td>
+<td>[:cntrl:]</td>
+<td>[:cntrl:]</td>
+</tr>
+<tr>
+<td>[:punct:]</td>
+<td> 任何一个标点符号（不包括：[:alnum:]、[:cntrl:]、[:space:] 这些字符集）</td>
+<td>[:punct:]</td>
+<td>[:punct:]</td>
+<td>[:punct:]</td>
+<td>[:punct:]</td>
+</tr>
+<tr>
+<td>[:xdigit:]</td>
+<td> 任何一个十六进制数（即：0-9，a-f，A-F）</td>
+<td>[:xdigit:]</td>
+<td>[:xdigit:]</td>
+<td>[:xdigit:]</td>
+<td>[:xdigit:]</td>
+</tr>
+</tbody>
+</table><p></p><p><strong>注意</strong> </p><p></p><ul>
+<li> js 中支持的是 EREs.</li>
+<li> 当使用 BREs (基本正则表达式) 时，必须在下列这些符号 (?,+,|,{,},(,)) 前加上转义字符 \ .</li>
+<li> 上述 [[:xxxx:]] 形式的正则表达式，是 php 中内置的通用字符簇，js 中并不支持.</li>
+</ul><p></p><h3 id="sr-toc-19"><a href="#linux-osx下常用命令与正则表达式的关系" title="linux/osx下常用命令与正则表达式的关系" one-link-mark="yes"></a>linux/osx 下常用命令与正则表达式的关系</h3><p>我曾经尝试在 grep 和 sed 命令中书写正则表达式，经常发现不能使用元字符，而且有时候需要转义，有时候不需要转义，始终不能摸清它的规律。如果恰好你也有同样的困惑，那么请往下看，相信应该能有所收获.</p><p></p><h4 id="sr-toc-20"><a href="#grep-egrep-sed-awk-正则表达式特点" title="grep , egrep , sed , awk  正则表达式特点" one-link-mark="yes"></a>grep , egrep , sed , awk  正则表达式特点</h4><ol>
+<li><p>grep 支持：BREs、EREs、PREs 正则表达式</p>
+<p>grep 指令后不跟任何参数，则表示要使用 “BREs”</p>
+<p>grep 指令后跟 ”-E” 参数，则表示要使用 “EREs”</p>
+<p>grep 指令后跟 “-P” 参数，则表示要使用 “PREs”</p>
+</li>
+<li><p>egrep 支持：EREs、PREs 正则表达式</p>
+<p>egrep 指令后不跟任何参数，则表示要使用 “EREs”</p>
+<p>egrep 指令后跟 “-P” 参数，则表示要使用 “PREs”</p>
+</li>
+<li><p>sed 支持: BREs、EREs</p>
+<p>sed 指令默认是使用 “BREs”</p>
+<p>sed 指令后跟 “-r” 参数，则表示要使用 “EREs”</p>
+</li>
+<li><p>awk 支持 EREs, 并且默认使用 “EREs”</p>
+</li>
+</ol><p></p><h3 id="sr-toc-21"><a href="#正则表达式初阶技能" title="正则表达式初阶技能" one-link-mark="yes"></a>正则表达式初阶技能</h3><h4 id="sr-toc-22"><a href="#贪婪模式与非贪婪模式" title="贪婪模式与非贪婪模式" one-link-mark="yes"></a>贪婪模式与非贪婪模式</h4><p>默认情况下，所有的限定词都是贪婪模式，表示尽可能多的去捕获字符；而在限定词后增加？，则是非贪婪模式，表示尽可能少的去捕获字符。如下:</p><p></p><pre>var str = "aaab",
+    reg1 = /a+/, 
+    reg2 = /a+?/;
+console.log(str.match(reg1)); 
+console.log(str.match(reg2)); 
+</pre><p></p><p>实际上，非贪婪模式非常有效，特别是当匹配 html 标签时。比如匹配一个配对出现的 div, 方案一可能会匹配到很多的 div 标签对，而方案二则只会匹配一个 div 标签对.</p><p></p><pre>var str = "&lt;div class='v1'&gt;&lt;div class='v2'&gt;test&lt;/div&gt;&lt;input type='text'/&gt;&lt;/div&gt;";
+var reg1 = /&lt;div.*&lt;\/div&gt;/; 
+var reg2 = /&lt;div.*?&lt;\/div&gt;/;
+console.log(str.match(reg1));
+console.log(str.match(reg2));
+</pre><p></p><h5><a href="#区间量词的非贪婪模式" title="区间量词的非贪婪模式" one-link-mark="yes"></a>区间量词的非贪婪模式</h5><p>一般情况下，非贪婪模式，我们使用的是”*?”, 或 “+?” 这种形式，还有一种是 “{n,m}?”.</p><p></p><p>区间量词”{n,m}” 也是匹配优先，虽有匹配次数上限，但是在到达上限之前，它依然是尽可能多的匹配，而”{n,m}?” 则表示在区间范围内，尽可能少的匹配.</p><p></p><p><strong>需要注意的是</strong>: </p><p></p><ul>
+<li>能达到同样匹配结果的贪婪与非贪婪模式，通常是贪婪模式的匹配效率较高.</li>
+<li> 所有的非贪婪模式，都可以通过修改量词修饰的子表达式，转换为贪婪模式.</li>
+<li> 贪婪模式可以与<code>固化分组</code> (后面会讲到) 结合，提升匹配效率，而非贪婪模式却不可以.</li>
+</ul><p></p><h4 id="sr-toc-23"><a href="#分组" title="分组" one-link-mark="yes"></a>分组</h4><p>正则的分组主要通过小括号来实现，括号包裹的子表达式作为一个分组，括号后可以紧跟限定词表示重复次数。如下，小括号内包裹的 abc 便是一个分组:</p><p></p><pre>/(abc)+/.test("abc123") == true
+</pre><p></p><p>那么分组有什么用呢？一般来说，分组是为了方便的表示重复次数，除此之外，还有一个作用就是用于捕获，请往下看.</p><p></p><h4 id="sr-toc-24"><a href="#捕获性分组" title="捕获性分组" one-link-mark="yes"></a>捕获性分组</h4><p>捕获性分组，通常由一对小括号加上子表达式组成。捕获性分组会创建反向引用，每个反向引用都由一个编号或名称来标识，js 中主要是通过 <code>$+编号</code> 或者 <code>\+编号</code> 表示法进行引用。如下便是一个捕获性分组的例子.</p><p></p><pre>var color = "#808080";
+var output = color.replace(/#(\d+)/,"$1"+"~~");
+console.log(RegExp.$1);
+console.log(output);
+</pre><p></p><p>以上，(\d+) 表示一个捕获性分组，<code>RegExp.$1</code> 指向该分组捕获的内容. <code>$+编号</code> 只能在正则表达式之外使用.</p><p></p><p>实际上，捕获性分组捕获到的内容不仅可以在正则表达式外部引用，还可以在正则表达式内部引用。</p><p></p><h4 id="sr-toc-25"><a href="#反向引用" title="反向引用" one-link-mark="yes"></a>反向引用</h4><p>能在正则表达式内部使用的引用只有『反向引用』，其格式为 <code>\+数字</code> ，通常用于匹配不同位置相同部分的子串。如下：</p><p></p><pre>var url = "www.google.google.com";
+var re = /([a-z]+)\.\1/;
+console.log(url.replace(re,"$1"));
+</pre><p></p><p>以上，相同部分的”google” 字符串只被替换一次。</p><p></p><p>实例之后，我们来看看反向引用的原理。</p><p></p><sr-blockquote>
+<p>正则表达式匹配时，各个捕获性分组匹配到的内容，会依次保存在内存中一个特定的组里，通过 <code>\+数字</code>的方式可以在正则中引用组里的内容，这种引用称作<strong>反向引用</strong>。捕获性分组匹配成功之前，它的内容的是不确定的，一旦匹配成功，组里的内容也就确定了。</p>
+</sr-blockquote><p></p><p>打个比方就是，假如有字符串 <code>abcaabcabbcabcc</code>，对于正则表达式 <code>/([abc])\1/</code>，捕获性分组中的子表达式 <code>[abc]</code>，虽然可以匹配”a”、”b” 或 “c”，但是一旦匹配成功了，反向引用的内容也就是确定了，那么相对的，反向引用的子表达式 <code>\1</code> 将依次匹配”a”、”b” 或 “c”。因此实际上，捕获性分组 <code>[abc]</code> 和反向引用 <code>\1</code> 将同时捕获”a”、”b” 或 “c” 中的同一个字符，即有三种可能捕获的结果：”aa”，”bb” 或 “cc”。如下：</p><p></p><pre>"abcaabcabbcabcc".match(/([abc])\1/g); 
+</pre><p></p><p>反向引用中 <code>\n</code> 指向正则表达式前面第 n 个捕获性分组匹配到的内容，这里面有一个问题，对于子表达式 <code>\12</code>，有下面两种可能：</p><p></p><ul>
+<li>指向第 1 个捕获性分组匹配到的内容，同时匹配普通字符 2，目前 IE 浏览器按照这种方式解析正则。</li>
+<li>指向第 12 个捕获性分组匹配到的内容，目前非 IE 等现代浏览器都是这样解析正则的。</li>
+</ul><p></p><p>有关反向引用，其他非 JavaScript 语言中，还没有仔细测试，猜测跟现代浏览器的处理方式一致。为避免各语言或者浏览器解析不一致，因此建议<strong>反向引用不要索引大于 9 的捕获性分组</strong>。不仅如此，反向引用如果不存在，正则将会匹配失败。如下：</p><p></p><pre>"abcaabcabbcabcc".match(/([abc])\2/g); 
+</pre><p></p><p>由于不存在第二个捕获性分组，因此反向引用子表达式 <code>\2</code> 匹配失败，进而整个表达式匹配失败。</p><p></p><p><strong>反向引用常用来匹配重复出现的字符串，而不是重复出现的子表达式，这点要尤为注意。</strong>因此如果想要匹配 4 个或 2 个数字的话，使用如下正则表达式是万万不行的。</p><p></p><pre>"1234567890".match(/(\d){4}|\1{2}/g); // ["1234", "5678", "", "", ""]
+</pre><p></p><p>以上正则表达式，想用反向引用 <code>\1</code> 代替前面的捕获性分组 <code>\d</code>，这是不可行的。修饰符 g 表示全文查找，因此前两次匹配到了 “1234” 和 “5678”，此时正则引擎的指针处于数字 8 的后面，再往后匹配显然子表达式 <code>(\d){4}</code> 无法匹配了，此时第一个捕获组匹配到空字符串，那么反向引用 <code>\1</code> 将指向空字符串，也就是一个位置（有些类似后面将要讲到的零宽断言），对于”890” 子字符串，8、9 或 0 后面共有 3 个位置可供反向引用匹配，故最终又匹配到三个空字符串。正确的正则表达式如下：</p><p></p><pre>"1234567890".match(/\d{4}|\d{2}/g); 
+</pre><p></p><p>只能重复写一次子表达式 <code>\d</code>。</p><p></p><h4 id="sr-toc-26"><a href="#非捕获性分组" title="非捕获性分组" one-link-mark="yes"></a>非捕获性分组</h4><p>非捕获性分组，通常由一对括号加上”?:” 加上子表达式组成，非捕获性分组不会创建反向引用，就好像没有括号一样。如下:</p><p></p><pre>var color = "#808080";
+var output = color.replace(/#(?:\d+)/,"$1"+"~~");
+console.log(RegExp.$1);
+console.log(output);
+</pre><p></p><p>以上，(?:\d+) 表示一个非捕获性分组，由于分组不捕获任何内容，所以，<code>RegExp.$1</code> 就指向了空字符串.</p><p></p><p>同时，由于 <code>$1</code> 的反向引用不存在，因此最终它被当成了普通字符串进行替换.</p><p></p><p>实际上，捕获性分组和无捕获性分组在搜索效率方面也没什么不同，没有哪一个比另一个更快.</p><p></p><h4 id="sr-toc-27"><a href="#命名分组" title="命名分组" one-link-mark="yes"></a>命名分组</h4><p>语法: (?<name>…)</name></p><p></p><p>命名分组也是捕获性分组，它将匹配的字符串捕获到一个组名称或编号名称中，在获得匹配结果后，可通过分组名进行获取。如下是一个 python 的命名分组的例子.</p><p></p><pre>import re
+data = "#808080"
+regExp = r"#(?P&lt;one&gt;\d+)"
+replaceString = "\g&lt;one&gt;" + "~~"
+print re.sub(regExp,replaceString,data) 
+</pre><p></p><p>python 的命名分组表达式与标准格式相比，在？后多了一大写的 P 字符，并且 python 通过 “\g &lt; 命名&gt;” 表示法进行引用. (如果是捕获性分组，python 通过”\g &lt; 编号 &gt;” 表示法进行引用)</p><p></p><p>与 python 不同的是，javaScript 中并不支持命名分组.</p><p></p><h4 id="sr-toc-28"><a href="#固化分组" title="固化分组" one-link-mark="yes"></a>固化分组</h4><p>固化分组，又叫原子组.</p><p></p><p>语法: (?&gt;…)</p><p></p><p>如上所述，我们在使用非贪婪模式时，匹配过程中可能会进行多次的回溯，回溯越多，正则表达式的运行效率就越低。而固化分组就是用来减少回溯次数的.</p><p></p><p>实际上，固化分组 (?&gt;…) 的匹配与正常的匹配并无分别，它并不会改变匹配结果。唯一的不同就是：固化分组匹配结束时，它匹配到的文本已经固化为一个单元，只能作为整体而保留或放弃，括号内的子表达式中未尝试过的备用状态都会被放弃，所以回溯永远也不能选择其中的状态 (因此不能参与回溯). 下面我们来通过一个例子更好地理解固化分组.</p><p></p><p>假如要处理一批数据，原格式为 123.456, 因为浮点数显示问题，部分数据格式会变为 123.456000000789 这种，现要求只保留小数点后 2~3 位，但是最后一位不能为 0, 那么这个正则怎么写呢？</p><p></p><pre>var str = "123.456000000789";
+str = str.replace(/(\.\d\d[1-9]?)\d*/,"$1"); 
+</pre><p></p><p>以上的正则，对于”123.456” 这种格式的数据，将白白处理一遍。为了提高效率，我们将正则最后的一个”*” 改为”+”. 如下:</p><p></p><pre>var str = "123.456";
+str = str.replace(/(\.\d\d[1-9]?)\d+/,"$1"); 
+</pre><p></p><p>此时，“\d\d [1-9]?” 子表达式，匹配是 “45”, 而不是 “456”, 这是因为正则末尾使用了”+”, 表示末尾至少要匹配一个数字，因此末尾的子表达式”\d+” 匹配到了 “6”. 显然 “123.45” 不是我们期望的匹配结果，那我们应该怎么做呢？能否让 “[1-9]?” 一旦匹配成功，便不再进行回溯，这里就要用到我们上面说的固化分组.</p><p></p><p>“(\.\d\d (?&gt;[1-9]?))\d+” 便是上述正则的固化分组形式。由于字符串 “123.456” 不满足该固化分组的正则，所以，匹配会失败，符合我们期望.</p><p></p><p>下面我们来分析下固化分组的正则 (\.\d\d (?&gt;[1-9]?))\d+ 为什么匹配不到字符串”123.456”.</p><p></p><p>很明显，对于上述固化分组，只存在两种匹配结果.</p><p></p><p>情况①: 若 [1-9] 匹配失败，正则会返回？留下的备用状态。然后匹配脱离固化分组，继续前进到 [\d+]. 当控制权离开固化分组时，没有备用状态需要放弃 (因固化分组中根本没有创建任何备用状态).</p><p></p><p>情况②: 若 [1-9] 匹配成功，匹配脱离固化分组之后，? 保存的备用状态仍然存在，但是，由于它属于已经结束的固化分组，所以会被抛弃.</p><p></p><p>对于字符串 “123.456”, 由于 [1-9] 能够匹配成功，所以它符合情况②. 下面我们来还原情况②的执行现场. </p><p></p><ol>
+<li>匹配所处的状态：匹配已经走到了 “6” 的位置，匹配将继续前进；==&gt;</li>
+<li> 子表达式 \d+ 发现无法匹配，正则引擎便尝试回溯；==&gt;</li>
+<li> 查看是否存在备用状态以供回溯？==&gt;</li>
+<li>“?” 保存的备用状态属于已经结束的固化分组，所以该备用状态会被放弃；==&gt;</li>
+<li> 此时固化分组匹配到的 “6”, 便不能用于正则引擎的回溯；==&gt;</li>
+<li> 尝试回溯失败；==&gt;</li>
+<li> 正则匹配失败.==&gt;</li>
+<li> 文本 “123.456” 没有被正则表达式匹配上，符合预期.</li>
+</ol><p></p><p>相应的流程图如下:</p><p></p><p><div class="sr-rd-content-center"><img class="" src="http://louiszhai.github.io/docImages/regexp02.png" style="width: auto;"></div></p><p></p><p>遗憾的是，javaScript, java 和 python 中并不支持固化分组的语法，不过，它在 php 和. NET 中表现良好。下面提供了一个 php 版的固化分组形式的正则表达式，以供尝试.</p><p></p><pre>$str = "123.456";
+echo preg_replace("/(\.\d\d(?&gt;[1-9]?))\d+/","\\1",$str); 
+</pre><p></p><p>不仅如此，php 还提供了占有量词优先的语法。如下:</p><p></p><pre>$str = "123.456";
+echo preg_replace("/(\.\d\d[1-9]?+)\d+/","\\1",$str); 
+</pre><p></p><p>虽然 java 不支持固化分组的语法，但 java 也提供了占有量词优先的语法，同样能够避免正则回溯。如下: </p><p></p><pre>String str = "123.456";
+System.out.println(str.replaceAll("(\\.\\d\\d[1-9]?+)\\d+", "$1"));
+</pre><p></p><p>值得注意的是: java 中 replaceAll 方法需要转义反斜杠.</p><p></p><h3 id="sr-toc-29"><a href="#正则表达式高阶技能-零宽断言" title="正则表达式高阶技能-零宽断言" one-link-mark="yes"></a>正则表达式高阶技能 - 零宽断言</h3><p>如果说正则分组是写轮眼，那么零宽断言就是万花筒写轮眼终极奥义 - 须佐能乎 (这里借火影忍术打个比方). 合理地使用零宽断言，能够能分组之不能，极大地增强正则匹配能力，它甚至可以帮助你在匹配条件非常模糊的情况下快速地定位文本.</p><p></p><p>零宽断言，又叫环视。环视只进行子表达式的匹配，匹配到的内容不保存到最终的匹配结果，由于匹配是零宽度的，故最终匹配到的只是一个位置. </p><p></p><p>环视按照方向划分，有顺序和逆序两种 (也叫前瞻和后瞻), 按照是否匹配有肯定和否定两种，组合之，便有 4 种环视. 4 种环视并不复杂，如下便是它们的描述.</p><p></p><table>
+<thead>
+<tr>
+<th><strong>字符</strong></th>
+<th><strong>描述</strong></th>
+<th><strong>示例</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> (?:<em>pattern</em>)</td>
+<td> 非捕获性分组，匹配 pattern 的位置，但不捕获匹配结果。也就是说不创建反向引用，就好像没有括号一样.</td>
+<td>‘abcd (?:e) 匹配’abcde</td>
+</tr>
+<tr>
+<td>(?=<em>pattern</em>)</td>
+<td><strong> 顺序肯定环视</strong> , 匹配后面是 pattern 的位置，不捕获匹配结果.</td>
+<td>‘Windows (?=2000)’匹配 “Windows2000” 中的 “Windows”; 不匹配 “Windows3.1” 中的 “Windows”</td>
+</tr>
+<tr>
+<td>(?!<em>pattern</em>)</td>
+<td><strong> 顺序否定环视</strong> , 匹配后面不是 pattern 的位置，不捕获匹配结果.</td>
+<td>‘Windows (?!2000)’匹配 “Windows3.1” 中的 “Windows”; 不匹配 “Windows2000” 中的 “Windows”</td>
+</tr>
+<tr>
+<td>(?&lt;=<em>pattern</em>)</td>
+<td><strong> 逆序肯定环视</strong> , 匹配前面是 pattern 的位置，不捕获匹配结果.</td>
+<td>‘(?&lt;=Office) 2000’匹配 “ Office2000” 中的 “2000”; 不匹配 “Windows2000” 中的 “2000”</td>
+</tr>
+<tr>
+<td>(?&lt;!<em>pattern</em>)</td>
+<td><strong> 逆序否定环视</strong> , 匹配前面不是 pattern 的位置，不捕获匹配结果.</td>
+<td>‘(?&lt;!Office) 2000’匹配 “ Windows2000” 中的 “2000”; 不匹配 “ Office2000” 中的 “2000”</td>
+</tr>
+</tbody>
+</table><p></p><p>非捕获性分组由于结构与环视相似，故列在表中，以做对比。以上 4 种环视中，目前 javaScript 中只支持前两种，也就是只支持 <strong>顺序肯定环视</strong> 和 <strong>顺序否定环视</strong>. 下面我们通过实例来帮助理解下:</p><p></p><pre>var str = "123abc789",s;
+
+s = str.replace(/abc/,456);
+console.log(s); 
+
+
+s = str.replace(/3(?=abc)/,3456);
+console.log(s); 
+
+
+s = str.replace(/3(?!abc)/,3456);
+console.log(s); 
+</pre><p></p><p>下面通过 python 来演示下 <strong>逆序肯定环视</strong> 和 <strong>逆序否定环视</strong> 的用法.</p><p></p><pre>import re
+data = "123abc789"
+
+regExp = r"(?&lt;=123)[a-z]+"
+replaceString = "456"
+print re.sub(regExp,replaceString,data) 
+
+
+regExp = r"(?&lt;!123)[a-z]+"
+replaceString = "456"
+print re.sub(regExp,replaceString,data) 
+</pre><p></p><p>需要注意的是: python 和 perl 语言中的 <strong>逆序环视</strong> 的子表达式只能使用定长的文本。比如将上述 “(?&lt;=123)” (逆序肯定环视) 子表达式写成 “(?&lt;=[0-9]+)”, python 解释器将会报错: “error: look-behind requires fixed-width pattern”.</p><p></p><h4 id="sr-toc-30"><a href="#场景回顾" title="场景回顾" one-link-mark="yes"></a>场景回顾</h4><h5><a href="#获取html片段" title="获取html片段" one-link-mark="yes"></a>获取 html 片段</h5><p>假如现在，js 通过 ajax 获取到一段 html 代码如下:</p><p></p><pre>var responseText = "&lt;div data='dev.xxx.txt'&gt;&lt;/div&gt;&lt;img src='dev.xxx.png' /&gt;";
+</pre><p></p><p>现我们需要替换 img 标签的 src 属性中的 “dev” 字符串 为 “test” 字符串. </p><p></p><p>① 由于上述 responseText 字符串中包含至少两个子字符串 “dev”, 显然不能直接 replace 字符串 “dev” 为 “test”. </p><p></p><p>② 同时由于 js 中不支持逆序环视，我们也不能在正则中判断前缀为 “src=’”, 然后再替换”dev”. </p><p></p><p>③ 我们注意到 img 标签的 src 属性以 “.png” 结尾，基于此，就可以使用顺序肯定环视。如下:</p><p></p><pre>var reg = /dev(?=[^']*png)/; 
+var str = responseText.replace(reg,"test");
+console.log(str);
+</pre><p></p><p>当然，以上不止顺序肯定环视一种解法，捕获性分组同样可以做到。那么环视高级在哪里呢？环视高级的地方就在于它通过一次捕获就可以定位到一个位置，对于复杂的文本替换场景，常有奇效，而分组则需要更多的操作。请往下看.</p><p></p><h5><a href="#千位分割符" title="千位分割符" one-link-mark="yes"></a>千位分割符</h5><sr-blockquote>
+<p>千位分隔符，顾名思义，就是数字中的逗号。参考西方的习惯，数字之中加入一个符号，避免因数字太长难以直观的看出它的值。故而数字之中，每隔三位添加一个逗号，即千位分隔符.</p>
+</sr-blockquote><p></p><p>那么怎么将一串数字转化为千位分隔符形式呢？</p><p></p><pre>var str = "1234567890";
+(+str).toLocaleString();
+</pre><p></p><p>如上，<code>toLocaleString()</code> 返回当前对象的” 本地化” 字符串形式. </p><p></p><ul>
+<li>如果该对象是 Number 类型，那么将返回该数值的按照特定符号分割的字符串形式.</li>
+<li> 如果该对象是 Array 类型，那么先将数组中的每项转化为字符串，然后将这些字符串以指定分隔符连接起来并返回.</li>
+</ul><p></p><p><code>toLocaleString</code> 方法特殊，有本地化特性，对于天朝，默认的分隔符是英文逗号。因此使用它恰好可以将数值转化为千位分隔符形式的字符串。如果考虑到国际化，以上方法就有可能会失效了.</p><p></p><p>我们尝试使用环视来处理下.</p><p></p><pre>function thousand(str){
+  return str.replace(/(?!^)(?=([0-9]{3})+$)/g,',');
+}
+console.log(thousand(str));
+console.log(thousand("123456"));
+console.log(thousand("1234567879876543210"));
+</pre><p></p><p>上述使用到的正则分为两块. <code>(?!^)</code> 和 <code>(?=([0-9]{3})+$)</code>. 我们先来看后面的部分，然后逐步分析之.</p><p></p><ol>
+<li>“[0-9]{3}” 表示连续 3 位数字.</li>
+<li>“([0-9]{3})+” 表示连续 3 位数字至少出现一次或更多次.</li>
+<li>“([0-9]{3})+$” 表示连续 3 的正整数倍的数字，直到字符串末尾.</li>
+<li> 那么 <code>(?=([0-9]{3})+$)</code> 就表示匹配一个零宽度的位置，并且从这个位置到字符串末尾，中间拥有 3 的正整数倍的数字.</li>
+<li> 正则表达式使用全局匹配 g, 表示匹配到一个位置后，它会继续匹配，直至匹配不到.</li>
+<li> 将这个位置替换为逗号，实际上就是每 3 位数字添加一个逗号.</li>
+<li> 当然对于字符串”123456” 这种刚好拥有 3 的正整数倍的数字的，当然不能在 1 前面添加逗号。那么使用 <code>(?!^)</code> 就指定了这个替换的位置不能为起始位置.</li>
+</ol><p></p><p>千位分隔符实例，展示了环视的强大，一步到位.</p><p></p><h3 id="sr-toc-31"><a href="#正则表达式在JS中的应用" title="正则表达式在JS中的应用" one-link-mark="yes"></a>正则表达式在 JS 中的应用</h3><h4 id="sr-toc-32"><a href="#ES6对正则的扩展" title="ES6对正则的扩展" one-link-mark="yes"></a>ES6 对正则的扩展</h4><p>ES6 对正则扩展了又两种修饰符 (其他语言可能不支持):</p><p></p><ul>
+<li>y (粘连 sticky 修饰符), 与 g 类似，也是全局匹配，并且下一次匹配都是从上一次匹配成功的下一个位置开始，不同之处在于，g 修饰符只要剩余位置中存在匹配即可，而 y 修饰符确保匹配必须从剩余的第一个位置开始.</li>
+</ul><p></p><pre>var s = "abc_ab_a";
+var r1 = /[a-z]+/g;
+var r2 = /[a-z]+/y;
+console.log(r1.exec(s),r1.lastIndex); 
+console.log(r2.exec(s),r2.lastIndex); 
+
+console.log(r1.exec(s),r1.lastIndex); 
+console.log(r2.exec(s),r2.lastIndex); 
+</pre><p></p><p>如上，由于第二次匹配的开始位置是下标 3,  对应的字符串是 “_”, 而使用 y 修饰符的正则对象 r2, 需要从剩余的第一个位置开始，所以匹配失败，返回 null.</p><p></p><p>正则对象的 sticky 属性，表示是否设置了 y 修饰符。这点将会在后面讲到.</p><p></p><ul>
+<li>u 修饰符，提供了对正则表达式添加 4 字节码点的支持。比如 “𝌆” 字符是一个 4 字节字符，直接使用正则匹配将会失败，而使用 u 修饰符后，将会等到正确的结果.</li>
+</ul><p></p><pre>var s = "𝌆";
+console.log(/^.$/.test(s));
+console.log(/^.$/u.test(s));
+</pre><p></p><h5><a href="#UCS-2字节码" title="UCS-2字节码" one-link-mark="yes"></a>UCS-2 字节码</h5><p>有关字节码点，稍微提下. javaScript 只能处理 UCS-2 编码 (js 于 1995 年 5 月被 Brendan Eich 花费 10 天设计出来，比 1996 年 7 月发布的编码规范 UTF-16 早了一年多，当时只有 UCS-2 可选). 由于 UCS-2 先天不足，造成了所有字符在 js 中都是 2 个字节。如果是 4 个字节的字符，将会默认被当作两个双字节字符处理。因此 js 的字符处理函数都会受到限制，无法返回正确结果。如下:</p><p></p><pre>var s = "𝌆";
+console.log(s == "\uD834\uDF06");
+console.log(s.length);
+</pre><p></p><p>幸运的是，ES6 可以自动识别 4 字节的字符。因此遍历字符串可以直接使用 for of 循环。同时，js 中如果直接使用码点表示 Unicode 字符，对于 4 字节字符，ES5 里是没办法识别的。为此 ES6 修复了这个问题，只需将码点放在大括号内即可.</p><p></p><pre>console.log(s === "\u1D306");
+console.log(s === "\u{1D306}");
+</pre><p></p><h5><a href="#附-ES6新增的处理4字节码的函数" title="附: ES6新增的处理4字节码的函数" one-link-mark="yes"></a>附: ES6 新增的处理 4 字节码的函数</h5><ul>
+<li><strong>String.fromCodePoint()</strong>：从 Unicode 码点返回对应字符</li>
+<li><strong> String.prototype.codePointAt()</strong>：从字符返回对应的码点</li>
+<li><strong> String.prototype.at()</strong>：返回字符串给定位置的字符</li>
+</ul><p></p><p>有关 js 中的 unicode 字符集，请参考阮一峰老师的 <a href="http://www.ruanyifeng.com/blog/2014/12/unicode.html" target="_blank" rel="external" one-link-mark="yes"><code>Unicode与JavaScript详解</code></a>.</p><p></p><p>以上是 ES6 对正则的扩展。另一个方面，从方法上看，javaScript 中与正则表达式有关的方法有: </p><p></p><table>
+<thead>
+<tr>
+<th>方法名</th>
+<th> compile</th>
+<th>test</th>
+<th>exec</th>
+<th>match</th>
+<th>search</th>
+<th>replace</th>
+<th>split</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 所属对象</td>
+<td> RegExp</td>
+<td>RegExp</td>
+<td>RegExp</td>
+<td>String</td>
+<td>String</td>
+<td>String</td>
+<td>String</td>
+</tr>
+</tbody>
+</table><p></p><p>由上，一共有 7 个与 js 相关的方法，这些方法分别来自于 RegExp 与 String 对象。首先我们先来看看 js 中的正则类 RegExp.</p><p></p><h4 id="sr-toc-33"><a href="#RegExp" title="RegExp" one-link-mark="yes"></a>RegExp</h4><p>RegExp 对象表示正则表达式，主要用于对字符串执行模式匹配.</p><p></p><p>语法: new RegExp (pattern [, flags])</p><p></p><p>参数 <em>pattern</em> 是一个字符串，指定了正则表达式字符串或其他的正则表达式对象.</p><p></p><p>参数 <em>flags</em> 是一个可选的字符串，包含属性 “g”、”i” 和 “m”, 分别用于指定全局匹配、区分大小写的匹配和多行匹配。如果 <em>pattern</em> 是正则表达式，而不是字符串，则必须省略该参数.</p><p></p><pre>var pattern = "[0-9]";
+var reg = new RegExp(pattern,"g");
+
+var reg = /[0-9]/g;
+</pre><p></p><p>以上，通过对象字面量和构造函数创建正则表达式，有个小插曲.</p><p></p><p>“对于正则表达式的直接量，ECMAscript 3 规定在每次它时都会返回同一个 RegExp 对象，因此用直接量创建的正则表达式的会共享一个实例。直到 ECMAScript 5 才规定每次返回不同的实例.”</p><p></p><p>所以，现在我们基本不用担心这个问题，只需要注意在低版本的非 IE 浏览器中尽量使用构造函数创建正则 (这点上，IE 一直遵守 ES5 规定，其他浏览器的低级版本遵循 ES3 规定).</p><p></p><p>RegExp 实例对象包含如下属性:</p><p></p><table>
+<thead>
+<tr>
+<th>实例属性</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> global</td>
+<td> 是否包含全局标志 (true/false)</td>
+</tr>
+<tr>
+<td>ignoreCase</td>
+<td> 是否包含区分大小写标志 (true/false)</td>
+</tr>
+<tr>
+<td>multiline</td>
+<td> 是否包含多行标志 (true/false)</td>
+</tr>
+<tr>
+<td>source</td>
+<td> 返回创建 RegExp 对象实例时指定的表达式文本字符串形式</td>
+</tr>
+<tr>
+<td> lastIndex</td>
+<td> 表示原字符串中匹配的字符串末尾的后一个位置，默认为 0</td>
+</tr>
+<tr>
+<td>flags(ES6)</td>
+<td> 返回正则表达式的修饰符</td>
+</tr>
+<tr>
+<td> sticky(ES6)</td>
+<td> 是否设置了 y (粘连) 修饰符 (true/false)</td>
+</tr>
+</tbody>
+</table><p></p><h5><a href="#compile" title="compile" one-link-mark="yes"></a>compile</h5><p>compile 方法用于在执行过程中改变和重新编译正则表达式.</p><p></p><p>语法: compile (pattern [, flags])</p><p></p><p>参数介绍请参考上述 RegExp 构造器。用法如下:</p><p></p><pre>var reg = new RegExp("abc", "gi"); 
+var reg2 = reg.compile("new abc", "g");
+console.log(reg);
+console.log(reg2);
+</pre><p></p><p>可见 compile 方法会改变原正则表达式对象，并重新编译，而且它的返回值为空.</p><p></p><h5><a href="#test" title="test" one-link-mark="yes"></a>test</h5><p>test 方法用于检测一个字符串是否匹配某个正则规则，只要是字符串中含有与正则规则匹配的文本，该方法就返回 true, 否则返回 false.</p><p></p><p>语法: test (string), 用法如下:</p><p></p><pre>console.log(/[0-9]+/.test("abc123"));
+console.log(/[0-9]+/.test("abc"));
+</pre><p></p><p>以上，字符串”abc123” 包含数字，故 test 方法返回 true; 而 字符串”abc” 不包含数字，故返回 false.</p><p></p><p>如果需要使用 test 方法测试字符串是否完成匹配某个正则规则，那么可以在正则表达式里增加开始 (^) 和结束 ($) 元字符。如下: </p><p></p><pre>console.log(/^[0-9]+$/.test("abc123"));
+</pre><p></p><p>以上，由于字符串”abc123” 并非以数字开始，也并非以数字结束，故 test 方法返回 false.</p><p></p><p>实际上，如果正则表达式带有全局标志 (带有参数 g) 时，test 方法还受正则对象的 lastIndex 属性影响，如下:</p><p></p><pre>var reg = /[a-z]+/;
+console.log(reg.test("abc"));
+console.log(reg.test("de"));
+
+var reg = /[a-z]+/g;
+console.log(reg.test("abc"));
+console.log(reg.lastIndex);
+console.log(reg.test("de"));
+</pre><p></p><p>该影响将在 exec 方法讲解中予以分析.</p><p></p><h5><a href="#exec" title="exec" one-link-mark="yes"></a>exec</h5><p>exec 方法用于检测字符串对正则表达式的匹配，如果找到了匹配的文本，则返回一个结果数组，否则返回 null.</p><p></p><p>语法: exec (string)</p><p></p><p>exec 方法返回的数组中包含两个额外的属性，index 和 input. 并且该数组具有如下特点:</p><p></p><ul>
+<li>第 0 个项表示正则表达式捕获的文本</li>
+<li>第 1~n 项表示第 1~n 个反向引用，依次指向第 1~n 个分组捕获的文本，可以使用 RegExp.$ + “编号 1~n”  依次获取分组中的文本</li>
+<li> index 表示匹配字符串的初始位置</li>
+<li> input 表示正在检索的字符串</li>
+</ul><p></p><p>无论正则表达式有无全局标示”g”, exec 的表现都相同。但正则表达式对象的表现却有些不同。下面我们来详细说明下正则表达式对象的表现都有哪些不同.</p><p></p><p>假设正则表达式对象为 reg , 检测的字符为 string , reg.exec (string) 返回值为 array.</p><p></p><p>若 reg 包含全局标示”g”, 那么 reg.lastIndex 属性表示原字符串中匹配的字符串末尾的后一个位置，即下次匹配开始的位置，此时 reg.lastIndex == array.index (匹配开始的位置) + array [0].length (匹配字符串的长度). 如下:</p><p></p><pre>var reg = /([a-z]+)/gi,
+    string = "World Internet Conference";
+var array = reg.exec(string);
+console.log(array);
+console.log(RegExp.$1);
+console.log(reg.lastIndex);
+</pre><p></p><p>随着检索继续，array.index 的值将往后递增，也就是说，reg.lastIndex 的值也会同步往后递增。因此，我们也可以通过反复调用 exec 方法来遍历字符串中所有的匹配文本。直到 exec 方法再也匹配不到文本时，它将返回 null, 并把 reg.lastIndex 属性重置为 0. </p><p></p><p>接着上述例子，我们继续执行代码，看看上面说的对不对，如下所示:</p><p></p><pre>array = reg.exec(string);
+console.log(array);
+console.log(reg.lastIndex);
+
+array = reg.exec(string);
+console.log(array);
+console.log(reg.lastIndex);
+
+array = reg.exec(string);
+console.log(array);
+console.log(reg.lastIndex);
+</pre><p></p><p>以上代码中，随着反复调用 exec 方法，reg.lastIndex 属性最终被重置为 0.</p><p></p><p><strong>问题回顾</strong></p><p></p><p>在 test 方法的讲解中，我们留下了一个问题。如果正则表达式带有全局标志 g, 以上 test 方法的执行结果将受 reg.lastIndex 影响，不仅如此，exec 方法也一样。由于 reg.lastIndex 的值并不总是为零，并且它决定了下次匹配开始的位置，如果在一个字符串中完成了一次匹配之后要开始检索新的字符串，那就必须要手动地把 lastIndex 属性重置为 0. 避免出现下面这种错误:</p><p></p><pre>var reg = /[0-9]+/g,
+    str1 = "123abc",
+    str2 = "123456";
+reg.exec(str1);
+console.log(reg.lastIndex);
+var array = reg.exec(str2);
+console.log(array);
+</pre><p></p><p>以上代码，正确执行结果应该是 “123456”,  因此建议在第二次执行 exec 方法前，增加一句 “reg.lastIndex = 0;”.</p><p></p><p>若 reg 不包含全局标示”g”, 那么 exec 方法的执行结果 (array) 将与 string.match (reg) 方法执行结果完全相同.</p><p></p><h4 id="sr-toc-34"><a href="#String" title="String" one-link-mark="yes"></a>String</h4><p>match, search, replace, split 方法请参考 <a href="http://louiszhai.github.io/2016/01/12/js.String/" one-link-mark="yes"><code>字符串常用方法</code></a> 中的讲解.</p><p></p><p>如下展示了使用捕获性分组处理文本模板，最终生成完整字符串的过程:</p><p></p><pre>var tmp = "An ${a} a ${b} keeps the ${c} away";
+var obj = {
+  a:"apple",
+  b:"day",
+  c:"doctor"
+};
+function tmpl(t,o){
+  return t.replace(/\${(.)}/g,function(m,p){
+    console.log('m:'+m+' p:'+p);
+    return o[p];
+  });
+}
+tmpl(tmp,obj);
+</pre><p></p><p>上述功能使用 ES6 可这么实现:</p><p></p><pre>var obj = {
+  a:"apple",
+  b:"day",
+  c:"doctor"
+};
+with(obj){
+  console.log(`An ${a} a ${b} keeps the ${c} away`);
+}
+</pre><p></p><h3 id="sr-toc-35"><a href="#正则表达式在H5中的应用" title="正则表达式在H5中的应用" one-link-mark="yes"></a>正则表达式在 H5 中的应用</h3><p>H5 中新增了 pattern 属性，规定了用于验证输入字段的模式，pattern 的模式匹配支持正则表达式的书写方式。默认 pattern 属性是全部匹配，即无论正则表达式中有无 “^”, “$” 元字符，它都是匹配所有文本.</p><p></p><p>注: pattern 适用于以下 input 类型：text, search, url, telephone, email 以及 password. 如果需要取消表单验证，在 form 标签上增加 novalidate 属性即可.</p><p></p><h3 id="sr-toc-36"><a href="#正则引擎" title="正则引擎" one-link-mark="yes"></a>正则引擎</h3><p>目前正则引擎有两种，DFA 和 NFA, NFA 又可以分为传统型 NFA 和 POSIX NFA.</p><p></p><ul>
+<li>DFA Deterministic finite automaton 确定型有穷自动机</li>
+<li> NFA Non-deterministic finite automaton　非确定型有穷自动机</li>
+<li> Traditional NFA</li>
+<li>POSIX NFA</li>
+</ul><p></p><p>DFA 引擎不支持回溯，匹配快速，并且不支持捕获组，因此也就不支持反向引用。上述 awk, egrep 命令均支持 DFA 引擎. </p><p></p><p>POSIX NFA 主要指符合 POSIX 标准的 NFA 引擎，像 javaScript, java, php, python, c# 等语言均实现了 NFA 引擎.</p><p></p><p>有关正则表达式详细的匹配原理，暂时没在网上看到适合的文章，建议选读 Jeffrey Friedl 的 &lt;精通正则表达式&gt;[第三版] 中第 4 章 - 表达式的匹配原理 (p143-p183), Jeffrey Friedl 对正则表达式有着深刻的理解，相信他能够帮助您更好的学习正则.</p><p></p><p>有关 NFA 引擎的简单实现，可以参考文章 <a href="http://www.cnblogs.com/catch/p/3722082.html" target="_blank" rel="external" one-link-mark="yes">基于 ε-NFA 的正则表达式引擎 - twoon</a>.</p><p></p><h3 id="sr-toc-37"><a href="#总结" title="总结" one-link-mark="yes"></a>总结</h3><p>在学习正则的初级阶段，重在理解 ①贪婪与非贪婪模式，②分组，③捕获性与非捕获性分组，④命名分组，⑤固化分组，体会设计的精妙之处。而高级阶段，主要在于熟练运用⑥零宽断言 (或环视) 解决问题，并且熟悉正则匹配的原理. </p><p></p><p>实际上，正则在 javaScript 中的功能不算强大，js 仅仅支持了①贪婪与非贪婪模式，②分组，③捕获性与非捕获性分组 以及 ⑥零宽断言中的顺序环视。如果再稍微熟悉些 js 中 7 种与正则有关的方法 (compile, test, exec, match, search, replace, split), 那么处理文本或字符串将游刃有余.</p><p></p><p>正则表达式，在文本处理方面天赋异禀，它的功能十分强大，很多时候甚至是唯一解决方案。正则不局限于 js, 当下热门的编辑器 (比如 Sublime, Atom) 以及 IDE (比如 WebStorm, IntelliJ IDEA) 都支持它。您甚至可以在任何时候任何语言中，尝试使用正则解决问题，也许之前不能解决的问题，现在可以轻松的解决.</p><p></p><p>附其他语言正则资料:</p><p></p><ul>
+<li><a href="http://wiki.ubuntu.org.cn/Python%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97" target="_blank" rel="external" one-link-mark="yes">Python 正则表达式操作指南</a></li>
+<li><a href="http://blog.csdn.net/allwefantasy/article/details/3136570/" target="_blank" rel="external" one-link-mark="yes">java 正则表达式</a></li>
+</ul><p></p><p></p><p>本文就讨论这么多内容，大家有什么问题或好的想法欢迎在下方参与留言和评论.</p><p></p><p>本文作者: <a href="https://github.com/Louiszhai" target="_blank" rel="external" one-link-mark="yes">louis</a></p><p></p><p>本文简介：本文断断续续历时两个月而成，共计 1.3W 字，为求简洁全面地还原前端场景中正则的使用规律，搜集了大量正则相关资料，并剔除不少冗余字句，码字不易，喜欢的请点个赞👍或者收藏，我将持续保持更新.</p><p></p><p>本文链接: <a href="http://louiszhai.github.io/2016/06/13/regexp/" one-link-mark="yes">http://louiszhai.github.io/2016/06/13/regexp/</a></p><p></p><p>参考文章</p><p></p><ul>
+<li>Jeffrey Friedl 的 &lt;精通正则表达式&gt;[第三版]</li>
+<li><a href="http://blog.csdn.net/fdl19881/article/details/7800877" target="_blank" rel="external" one-link-mark="yes">linux shell 正则表达式 (BREs,EREs,PREs) 差异比较</a></li>
+<li><a href="http://www.jb51.net/article/28035.htm" target="_blank" rel="external" one-link-mark="yes">正则表达式之捕获组 / 非捕获组介绍</a></li>
+<li><a href="http://www.cnblogs.com/kissdodog/archive/2013/04/22/3036649.html" target="_blank" rel="external" one-link-mark="yes">正则表达式 (一) – 元字符</a></li>
+<li><a href="http://blog.csdn.net/hguisu/article/details/8244560" target="_blank" rel="external" one-link-mark="yes">正则表达式详解</a></li>
+<li><a href="http://www.cnblogs.com/taek/archive/2012/02/08/2342741.html" target="_blank" rel="external" one-link-mark="yes">正则表达式之固化分组</a></li>
+<li><a href="http://www.jb51.net/article/31491.htm" target="_blank" rel="external" one-link-mark="yes">正则表达式之 贪婪与非贪婪模式详解（概述）</a></li>
+<li><a href="http://blog.csdn.net/nebula1982/article/details/6659702" target="_blank" rel="external" one-link-mark="yes">JAVASCRIPT 正则表达式学习–&gt; 基础与零宽断言</a></li>
+<li><a href="http://www.ruanyifeng.com/blog/2014/12/unicode.html" target="_blank" rel="external" one-link-mark="yes">Unicode 与 JavaScript 详解</a></li>
+</ul><p></p></sr-rd-content>
+                            <toc-bg><toc class="simpread-font simpread-theme-root" data-reactid=".1"><outline class="toc-level-h3" data-reactid=".1.0" style="width: 155px;"><active data-reactid=".1.0.0"></active><a class="toc-outline-theme-github" href="#sr-toc-0" data-reactid=".1.0.1"><span data-reactid=".1.0.1.0">导读</span></a></outline><outline class="toc-level-h3" data-reactid=".1.1" style="width: 155px;"><active data-reactid=".1.1.0"></active><a class="toc-outline-theme-github" href="#sr-toc-1" data-reactid=".1.1.1"><span data-reactid=".1.1.1.0">回顾历史</span></a></outline><outline class="toc-level-h3" data-reactid=".1.2" style="width: 155px;"><active data-reactid=".1.2.0"></active><a class="toc-outline-theme-github" href="#sr-toc-2" data-reactid=".1.2.1"><span data-reactid=".1.2.1.0">正则表达式的定义</span></a></outline><outline class="toc-level-h4" data-reactid=".1.3" style="width: 145px;"><active data-reactid=".1.3.0"></active><a class="toc-outline-theme-github" href="#sr-toc-3" data-reactid=".1.3.1"><span data-reactid=".1.3.1.0">元字符</span></a></outline><outline class="toc-level-h4" data-reactid=".1.4" style="width: 145px;"><active data-reactid=".1.4.0"></active><a class="toc-outline-theme-github" href="#sr-toc-4" data-reactid=".1.4.1"><span data-reactid=".1.4.1.0">反义元字符</span></a></outline><outline class="toc-level-h4" data-reactid=".1.5" style="width: 145px;"><active data-reactid=".1.5.0"></active><a class="toc-outline-theme-github" href="#sr-toc-5" data-reactid=".1.5.1"><span data-reactid=".1.5.1.0">重复限定符</span></a></outline><outline class="toc-level-h4" data-reactid=".1.6" style="width: 145px;"><active data-reactid=".1.6.0"></active><a class="toc-outline-theme-github" href="#sr-toc-6" data-reactid=".1.6.1"><span data-reactid=".1.6.1.0">字符组</span></a></outline><outline class="toc-level-h4" data-reactid=".1.7" style="width: 145px;"><active data-reactid=".1.7.0"></active><a class="toc-outline-theme-github" href="#sr-toc-7" data-reactid=".1.7.1"><span data-reactid=".1.7.1.0">排除性字符组</span></a></outline><outline class="toc-level-h4" data-reactid=".1.8" style="width: 145px;"><active data-reactid=".1.8.0"></active><a class="toc-outline-theme-github" href="#sr-toc-8" data-reactid=".1.8.1"><span data-reactid=".1.8.1.0">多选结构</span></a></outline><outline class="toc-level-h4" data-reactid=".1.9" style="width: 145px;"><active data-reactid=".1.9.0"></active><a class="toc-outline-theme-github" href="#sr-toc-9" data-reactid=".1.9.1"><span data-reactid=".1.9.1.0">括号</span></a></outline><outline class="toc-level-h4" data-reactid=".1.a" style="width: 145px;"><active data-reactid=".1.a.0"></active><a class="toc-outline-theme-github" href="#sr-toc-10" data-reactid=".1.a.1"><span data-reactid=".1.a.1.0">转义字符</span></a></outline><outline class="toc-level-h4" data-reactid=".1.b" style="width: 145px;"><active data-reactid=".1.b.0"></active><a class="toc-outline-theme-github" href="#sr-toc-11" data-reactid=".1.b.1"><span data-reactid=".1.b.1.0">操作符的运算优先级</span></a></outline><outline class="toc-level-h4" data-reactid=".1.c" style="width: 145px;"><active data-reactid=".1.c.0"></active><a class="toc-outline-theme-github" href="#sr-toc-12" data-reactid=".1.c.1"><span data-reactid=".1.c.1.0">修饰符</span></a></outline><outline class="toc-level-h4" data-reactid=".1.d" style="width: 145px;"><active data-reactid=".1.d.0"></active><a class="toc-outline-theme-github" href="#sr-toc-13" data-reactid=".1.d.1"><span data-reactid=".1.d.1.0">测试</span></a></outline><outline class="toc-level-h3" data-reactid=".1.e" style="width: 155px;"><active data-reactid=".1.e.0"></active><a class="toc-outline-theme-github" href="#sr-toc-14" data-reactid=".1.e.1"><span data-reactid=".1.e.1.0">常用的正则表达式</span></a></outline><outline class="toc-level-h4" data-reactid=".1.f" style="width: 145px;"><active data-reactid=".1.f.0"></active><a class="toc-outline-theme-github" href="#sr-toc-15" data-reactid=".1.f.1"><span data-reactid=".1.f.1.0">密码验证</span></a></outline><outline class="toc-level-h3" data-reactid=".1.g" style="width: 155px;"><active data-reactid=".1.g.0"></active><a class="toc-outline-theme-github" href="#sr-toc-16" data-reactid=".1.g.1"><span data-reactid=".1.g.1.0">正则的几大家族</span></a></outline><outline class="toc-level-h4" data-reactid=".1.h" style="width: 145px;"><active data-reactid=".1.h.0"></active><a class="toc-outline-theme-github" href="#sr-toc-17" data-reactid=".1.h.1"><span data-reactid=".1.h.1.0">正则表达式分类</span></a></outline><outline class="toc-level-h4" data-reactid=".1.i" style="width: 145px;"><active data-reactid=".1.i.0" ></active><a class="toc-outline-theme-github" href="#sr-toc-18" data-reactid=".1.i.1"><span data-reactid=".1.i.1.0">正则表达式比较</span></a></outline><outline class="toc-level-h3" data-reactid=".1.j" style="width: 155px;"><active data-reactid=".1.j.0"></active><pangu> </pangu><a class="toc-outline-theme-github" href="#sr-toc-19" data-reactid=".1.j.1"><span data-reactid=".1.j.1.0">linux/osx 下常用命令与正则表达式的关系</span></a></outline><outline class="toc-level-h4" data-reactid=".1.k" style="width: 145px;"><active data-reactid=".1.k.0"></active><pangu> </pangu><a class="toc-outline-theme-github" href="#sr-toc-20" data-reactid=".1.k.1"><span data-reactid=".1.k.1.0">grep , egrep , sed , awk  正则表达式特点</span></a></outline><outline class="toc-level-h3" data-reactid=".1.l" style="width: 155px;"><active data-reactid=".1.l.0"></active><a class="toc-outline-theme-github" href="#sr-toc-21" data-reactid=".1.l.1"><span data-reactid=".1.l.1.0">正则表达式初阶技能</span></a></outline><outline class="toc-level-h4" data-reactid=".1.m" style="width: 145px;"><active data-reactid=".1.m.0"></active><a class="toc-outline-theme-github" href="#sr-toc-22" data-reactid=".1.m.1"><span data-reactid=".1.m.1.0">贪婪模式与非贪婪模式</span></a></outline><outline class="toc-level-h4" data-reactid=".1.n" style="width: 145px;"><active data-reactid=".1.n.0"></active><a class="toc-outline-theme-github" href="#sr-toc-23" data-reactid=".1.n.1"><span data-reactid=".1.n.1.0">分组</span></a></outline><outline class="toc-level-h4" data-reactid=".1.o" style="width: 145px;"><active data-reactid=".1.o.0"></active><a class="toc-outline-theme-github" href="#sr-toc-24" data-reactid=".1.o.1"><span data-reactid=".1.o.1.0">捕获性分组</span></a></outline><outline class="toc-level-h4" data-reactid=".1.p" style="width: 145px;"><active data-reactid=".1.p.0"></active><a class="toc-outline-theme-github" href="#sr-toc-25" data-reactid=".1.p.1"><span data-reactid=".1.p.1.0">反向引用</span></a></outline><outline class="toc-level-h4" data-reactid=".1.q" style="width: 145px;"><active data-reactid=".1.q.0"></active><a class="toc-outline-theme-github" href="#sr-toc-26" data-reactid=".1.q.1"><span data-reactid=".1.q.1.0">非捕获性分组</span></a></outline><outline class="toc-level-h4" data-reactid=".1.r" style="width: 145px;"><active data-reactid=".1.r.0"></active><a class="toc-outline-theme-github" href="#sr-toc-27" data-reactid=".1.r.1"><span data-reactid=".1.r.1.0">命名分组</span></a></outline><outline class="toc-level-h4" data-reactid=".1.s" style="width: 145px;"><active data-reactid=".1.s.0"></active><a class="toc-outline-theme-github" href="#sr-toc-28" data-reactid=".1.s.1"><span data-reactid=".1.s.1.0">固化分组</span></a></outline><outline class="toc-level-h3" data-reactid=".1.t" style="width: 155px;"><active data-reactid=".1.t.0"></active><a class="toc-outline-theme-github" href="#sr-toc-29" data-reactid=".1.t.1"><span data-reactid=".1.t.1.0">正则表达式高阶技能 - 零宽断言</span></a></outline><outline class="toc-level-h4" data-reactid=".1.u" style="width: 145px;"><active data-reactid=".1.u.0"></active><a class="toc-outline-theme-github" href="#sr-toc-30" data-reactid=".1.u.1"><span data-reactid=".1.u.1.0">场景回顾</span></a></outline><outline class="toc-level-h3" data-reactid=".1.v" style="width: 155px;"><active data-reactid=".1.v.0"></active><a class="toc-outline-theme-github" href="#sr-toc-31" data-reactid=".1.v.1"><span data-reactid=".1.v.1.0">正则表达式在 JS 中的应用</span></a></outline><outline class="toc-level-h4" data-reactid=".1.w" style="width: 145px;"><active data-reactid=".1.w.0"></active><pangu> </pangu><a class="toc-outline-theme-github" href="#sr-toc-32" data-reactid=".1.w.1"><span data-reactid=".1.w.1.0">ES6 对正则的扩展</span></a></outline><outline class="toc-level-h4" data-reactid=".1.x" style="width: 145px;"><active data-reactid=".1.x.0"></active><pangu> </pangu><a class="toc-outline-theme-github" href="#sr-toc-33" data-reactid=".1.x.1"><span data-reactid=".1.x.1.0">RegExp</span></a></outline><outline class="toc-level-h4" data-reactid=".1.y" style="width: 145px;"><active data-reactid=".1.y.0"></active><a class="toc-outline-theme-github" href="#sr-toc-34" data-reactid=".1.y.1"><span data-reactid=".1.y.1.0">String</span></a></outline><outline class="toc-level-h3" data-reactid=".1.z" style="width: 155px;"><active data-reactid=".1.z.0"></active><pangu> </pangu><a class="toc-outline-theme-github" href="#sr-toc-35" data-reactid=".1.z.1"><span data-reactid=".1.z.1.0">正则表达式在 H5 中的应用</span></a></outline><outline class="toc-level-h3" data-reactid=".1.10" style="width: 155px;"><active data-reactid=".1.10.0"></active><a class="toc-outline-theme-github" href="#sr-toc-36" data-reactid=".1.10.1"><span data-reactid=".1.10.1.0">正则引擎</span></a></outline><outline class="toc-level-h3" data-reactid=".1.11" style="width: 155px;"><active data-reactid=".1.11.0"></active><a class="toc-outline-theme-github" href="#sr-toc-37" data-reactid=".1.11.1"><span data-reactid=".1.11.1.0">总结</span></a></outline></toc></toc-bg>
+                            <sr-rd-footer>
+                                <sr-rd-footer-group>
+                                    <sr-rd-footer-line></sr-rd-footer-line>
+                                    <sr-rd-footer-text>全文完</sr-rd-footer-text>
+                                    <sr-rd-footer-line></sr-rd-footer-line>
+                                </sr-rd-footer-group>
+                                <sr-rd-footer-copywrite>
+                                    <div>本文由 <a href="http://ksria.com/simpread" target="_blank">简悦 SimpRead</a> 转码，用以提升阅读体验，<a href="https://louiszhai.github.io/2016/06/13/regexp/" target="_blank">原文地址 </a></div>
+                                </sr-rd-footer-copywrite>
+                            </sr-rd-footer>
+                        </sr-read>
+                    </body>
+                </html>

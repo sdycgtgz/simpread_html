@@ -1,0 +1,1506 @@
+
+                <html lang="en" class="simpread-font simpread-theme-root" style='undefined'>
+                    <head>
+                        <meta charset="utf-8">
+                        <meta http-equiv="content-type" content="text/html; charset=UTF-8;charset=utf-8">
+                        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+                        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1">
+                        <meta name="author" content="Kenshin"/>
+                        <meta name="description" content="简悦 SimpRead - 如杂志般沉浸式阅读体验的扩展" />
+                        <meta name="keywords" content="Chrome extension, Chrome 扩展, 阅读模式, 沉浸式阅读, 简悦, 简阅, read mode, reading mode, reader view, firefox, firefox addon, userscript, safari, opera, tampermonkey"/>
+                        <meta name="thumbnail" content="https://simpread-1254315611.cos.ap-shanghai.myqcloud.com/static/introduce-2.png"/>
+                        <meta property="og:title" content="简悦 SimpRead - 如杂志般沉浸式阅读体验的扩展"/>
+                        <meta property="og:type" content="website">
+                        <meta property="og:local" content="zh_CN"/>
+                        <meta property="og:url" content="http://ksria.com/simpread"/>
+                        <meta property="og:image" content="https://simpread-1254315611.cos.ap-shanghai.myqcloud.com/static/introduce-2.png"/>
+                        <meta property="og:image:type" content="image/png"/>
+                        <meta property="og:image:width" content="960"/>
+                        <meta property="og:image:height" content="355"/>
+                        <meta property="og:site_name" content="http://ksria.com/simpread"/>
+                        <meta property="og:description" content="简悦 SimpRead - 如杂志般沉浸式阅读体验的扩展"/>
+                        <style type="text/css">.simpread-font{font:300 16px/1.8 -apple-system,PingFang SC,Microsoft Yahei,Lantinghei SC,Hiragino Sans GB,Microsoft Sans Serif,WenQuanYi Micro Hei,sans-serif;color:#333;text-rendering:optimizelegibility;-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased}.simpread-hidden{display:none}.simpread-read-root{display:-webkit-flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;position:relative;margin:0;top:-1000px;left:0;width:100%;z-index:2147483646;overflow-x:hidden;opacity:0;-webkit-transition:all 1s cubic-bezier(.23,1,.32,1) .1s;transition:all 1s cubic-bezier(.23,1,.32,1) .1s}.simpread-read-root-show{top:0}.simpread-read-root-hide{top:1000px}sr-read{display:-webkit-flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-flow:column nowrap;flex-flow:column;margin:20px 20%;min-width:400px;min-height:400px;text-align:center}read-process{position:fixed;top:0;left:0;height:3px;width:100%;background-color:#64b5f6;-webkit-transition:width 2s;transition:width 2s;z-index:20000}sr-rd-content-error{display:block;position:relative;margin:0;margin-bottom:30px;padding:25px;background-color:rgba(0,0,0,.05)}sr-rd-footer{-webkit-box-orient:vertical;-ms-flex-direction:column;flex-direction:column;font-size:14px}sr-rd-footer,sr-rd-footer-group{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-direction:normal}sr-rd-footer-group{-webkit-box-orient:horizontal;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center}sr-rd-footer-line{width:100%;border-top:1px solid #e0e0e0}sr-rd-footer-text{min-width:150px}sr-rd-footer-copywrite{margin:10px 0 0;color:inherit}sr-rd-footer-copywrite abbr{-webkit-font-feature-settings:normal;font-feature-settings:normal;font-variant:normal;text-decoration:none}sr-rd-footer-copywrite .second{margin:10px 0}sr-rd-footer-copywrite .third a:hover{border:none!important}sr-rd-footer-copywrite .third a:first-child{margin-right:50px}sr-rd-footer-copywrite .sr-icon{display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;width:33px;height:33px;opacity:.8;-webkit-transition:opacity .5s ease;transition:opacity .5s ease;cursor:pointer}sr-rd-footer-copywrite .sr-icon:hover{opacity:1}sr-rd-footer-copywrite a,sr-rd-footer-copywrite a:link,sr-rd-footer-copywrite a:visited{margin:0;padding:0;color:inherit;background-color:transparent;font-size:inherit!important;line-height:normal;text-decoration:none;vertical-align:baseline;vertical-align:initial;border:none!important;box-sizing:border-box}sr-rd-footer-copywrite a:focus,sr-rd-footer-copywrite a:hover,sr-rd-footer a:active{color:inherit;text-decoration:none;border-bottom:1px dotted!important}.simpread-blocks{text-decoration:none!important}.simpread-blocks *{margin:0}.simpread-blocks a{padding:0;text-decoration:none!important}.simpread-blocks img{margin:0;padding:0;border:0;background:transparent;box-shadow:none}.simpread-focus-root{display:block;position:fixed;top:0;left:0;right:0;bottom:0;background-color:hsla(0,0%,92%,.9);z-index:2147483645;opacity:0;-webkit-transition:opacity 1s cubic-bezier(.23,1,.32,1) 0ms;transition:opacity 1s cubic-bezier(.23,1,.32,1) 0ms}.simpread-focus-highlight{position:relative;box-shadow:0 0 0 20px #fff;background-color:#fff;overflow:visible;z-index:2147483646}.sr-controlbar-bg sr-rd-crlbar,.sr-controlbar-bg sr-rd-crlbar fab{z-index:2147483647}sr-rd-crlbar.controlbar{position:fixed;right:0;bottom:0;width:100px;height:100%;opacity:0;-webkit-transition:opacity .5s ease;transition:opacity .5s ease}sr-rd-crlbar.controlbar:hover{opacity:1}sr-rd-crlbar fap *{box-sizing:border-box}@media (max-height:620px){fab{zoom:.8}}@media (max-height:783px){dialog-gp dialog-content{max-height:580px}dialog-gp dialog-footer{border-top:1px solid #e0e0e0}}.simpread-highlight-selector{outline:3px dashed #1976d2!important;cursor:pointer!important}.simpread-highlight-controlbar,.simpread-highlight-selector{background-color:#fafafa!important;opacity:.8!important;-webkit-transition:opacity .5s ease!important;transition:opacity .5s ease!important}.simpread-highlight-controlbar{position:relative!important;border:3px dashed #1976d2!important}simpread-highlight,sr-snapshot-ctlbar{position:fixed;top:0;left:0;right:0;padding:15px;height:50px;background-color:rgba(50,50,50,.9);box-shadow:0 2px 5px rgba(0,0,0,.26);box-sizing:border-box;z-index:2147483640}simpread-highlight,sr-highlight-ctl,sr-snapshot-ctlbar{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center}sr-highlight-ctl{margin:0 5px;width:50px;height:20px;color:#fff;background-color:#1976d2;border-radius:4px;box-shadow:0 3px 1px -2px rgba(0,0,0,.2),0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12);cursor:pointer}toc-bg{position:fixed;left:0;top:0;width:50px;height:200px;font-size:medium}toc-bg:hover{z-index:3}.toc-bg-hidden{opacity:0;-webkit-transition:opacity .5s ease;transition:opacity .5s ease}.toc-bg-hidden:hover{opacity:1;z-index:3}.toc-bg-hidden:hover toc{width:180px}toc *{all:unset}toc{position:fixed;left:0;top:100px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;padding:10px;width:0;max-width:200px;max-height:500px;overflow-x:hidden;overflow-y:hidden;cursor:pointer;border:1px solid hsla(0,0%,62%,.22);-webkit-transition:width .5s;transition:width .5s}toc:hover{overflow-y:auto}toc.mini:hover{width:200px!important}toc::-webkit-scrollbar{width:3px}toc::-webkit-scrollbar-thumb{border-radius:10px;background-color:hsla(36,2%,54%,.5)}toc outline{position:relative;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis;padding:2px 0;min-height:21px;line-height:21px;text-align:left}toc outline a,toc outline a:active,toc outline a:focus,toc outline a:visited{display:block;width:100%;color:inherit;font-size:11px;text-decoration:none!important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}toc outline a:hover{font-weight:700!important}toc outline a.toc-outline-theme-dark,toc outline a.toc-outline-theme-night{color:#fff!important}.toc-level-h1{padding-left:5px}.toc-level-h2{padding-left:15px}.toc-level-h3{padding-left:25px}.toc-level-h4{padding-left:35px}.toc-outline-active{border-left:2px solid #f44336}toc outline active{position:absolute;left:0;top:0;bottom:0;padding:0 0 0 3px;border-left:2px solid #e8e8e8}sr-kbd{background:-webkit-gradient(linear,0 0,0 100%,from(#fff785),to(#ffc542));border:1px solid #e3be23;-o-border-image:none;border-image:none;-o-border-image:initial;border-image:initial;position:absolute;left:0;padding:1px 3px 0;font-size:11px!important;font-weight:700;box-shadow:0 3px 7px 0 rgba(0,0,0,.3);overflow:hidden;border-radius:3px}.sr-kbd-a{position:relative}kbd-mapping{position:fixed;left:5px;bottom:5px;-ms-flex-flow:row;flex-flow:row;width:250px;height:500px;background-color:#fff;border:1px solid hsla(0,0%,62%,.22);box-shadow:0 2px 5px rgba(0,0,0,.26);border-radius:3px}kbd-mapping,kbd-maps{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}kbd-maps{margin:40px 0 20px;width:100%;overflow-x:auto}kbd-maps::-webkit-scrollbar-thumb{background-clip:padding-box;border-radius:10px;border:2px solid transparent;background-color:rgba(85,85,85,.55)}kbd-maps::-webkit-scrollbar{width:10px;-webkit-transition:width .7s cubic-bezier(.4,0,.2,1);transition:width .7s cubic-bezier(.4,0,.2,1)}kbd-mapping kbd-map-title{position:absolute;margin:5px 0;width:100%;font-size:14px;font-weight:700}kbd-maps-group{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start}kbd-maps-title{margin:5px 0;padding-left:53px;font-size:12px;font-weight:700}kbd-map kbd{display:inline-block;padding:3px 5px;font-size:11px;line-height:10px;color:#444d56;vertical-align:middle;background-color:#fafbfc;border:1px solid #c6cbd1;border-bottom-color:#959da5;border-radius:3px;box-shadow:inset 0 -1px 0 #959da5}kbd-map kbd-name{display:inline-block;text-align:right;width:50px}kbd-map kbd-desc{padding-left:3px}sharecard-bg{position:fixed;top:0;left:0;width:100%;height:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;background-color:rgba(0,0,0,.4);z-index:2147483647}sharecard{max-width:450px;background-color:#64b5f6}sharecard,sharecard-head{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}sharecard-head{margin:25px;color:#fff;border-radius:10px;box-shadow:0 2px 6px 0 rgba(0,0,0,.2),0 25px 50px 0 rgba(0,0,0,.15)}sharecard-card{-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}sharecard-card,sharecard-top{display:-webkit-box;display:-ms-flexbox;display:flex}sharecard-top{-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;padding-right:5px;height:65px;background-color:#fff;color:#878787;font-size:25px;font-weight:500;border-top-left-radius:10px;border-top-right-radius:10px}sharecard-top span.logos{display:block;width:48px;height:48px;margin:5px;background-repeat:no-repeat;background-position:50%;background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAABU1BMVEUAAAAnNJMnNZI3Q5onNJInNJMnNJInNJMnNJI8SJ0tOZY/S55EUKAoNJI6RpwoNJNIU6InNJInNJImNJI7SJwmNJJ2fLUiMJFKVaNCTJ9faK1HUaJOWKVSXaUnNJNYY6pye7cmM5JXYKhwebMjMI8mL4719fW9vb0oNZP/UlLz8/QqN5TAwMAnNJPv7+/Pz8/q6+/p6enNzc3Kysry8vMsOJXc3env7/LU1uXo29vR0dHOzs7ExMTwjo73bW37XV3Aj1TCYELl5u3n5+fW2Obn6O7f4OrZ2+g0QJkxPpgvO5bh4uvS1OTP0ePCwsJQW6ZLVqTs7fHd3d3V1dXqv79VX6lET6A1TIxXUIBSgHxWQnpelHf+WVnopkXqbC7j5Ozi4uLDw8NGUaFATJ9SgH3r6+vGyd7BxNva2trX19ejqM2gpczHx8dze7Zha67Z2dlTgH1aXQeSAAAAJnRSTlMA6ff+497Y8NL+/fv49P379sqab/BeOiX06tzVy8m/tKqpalA7G6oKj0EAAAJlSURBVEjHndNXWxpBFIDhcS2ICRLAkt4Dx4WhLk0E6R0MYoIISrWX5P9f5cwSIRC2+T1czMV5n2FnZwn2eWONUqCAv3H2Uf5Ra1hx4+0WEXtDQW0fCPYJ1EffEfIV4CSROAE4jsePoTFsNmTJF/IeIHF2lgCIn57GodlqDWXBK7IwBYatVlMWFAildPKX7I3m74Z9fsCiQChoimoFQAz04Ad2gH1n9fv9n9hgMNDr9euLWD6fLxQKxaLfb7dTSlahbFVdEPwIQtrAihZQgyKCtCagbQe3xh0QFMgy5MR11+ewYY5/qlZ7vT2xu93ULKjbFLpiUxnIIwjgKmVTLDUFXMrAi2NJWCRLIthTBo4xyOLKpwyqU6CuDCI41hFBCVdOhyLw4FgJ1skCAiyl9BSHbCorgo6VJXTru5hrVCQS8Yr5xLzX59YJSFpVFwD9U0BGC3hGdFpATgRupTGe9R9I1b1ePBvXKDyvq/O/44LT4/E4BUbSCAwj8Evq6HlnOBprx6JhJz8Gktc7xeaP9ndY+0coQvCccFBD4JW60UIY50ciLOAODAQRVOeCHm4Q3Xks6uRDY+CQ+AR4T2wMYh6+jMCIQOp78CFoj0H7EQgIuhI3dGaHCrwgADwCPjJvA372GRigCJg49FUdk3D87pq3zp4SA5zc1Zh9DxfwkpjgUg5Mv+lbeE3McC8Lpu7SA3wk2xzcqL2tN5DfIsQC8HB7UamUy6FQOpTO5QKBQDZbKnWSyUzGjdWCwaDA8+7Le4BNgm3qQGWchYh9s5hNq6wVbBlbwhZYOp3OYOA4zmgEypnM2zj8ByIdedKrH8vDAAAAAElFTkSuQmCC");zoom:.8}sharecard-content{padding:15px;max-height:500px;font-size:20px;text-align:justify;background-color:#2196f3;overflow-x:hidden;overflow-y:auto}sharecard-via{padding:10px;font-size:10px;background-color:#2196f3}sharecard-footer{-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;padding-right:5px;height:100px;background-color:#fff;color:#878787;font-size:15px;font-weight:500;border-bottom-left-radius:10px;border-bottom-right-radius:10px}sharecard-footer,sharecard-footer div{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center}sharecard-footer span.qrcode{display:block;width:100px;height:100px;margin:5px;background-repeat:no-repeat;background-position:50%;background-image:url("data:image/png;base64,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")}sharecard-control{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-align:center;-ms-flex-align:center;align-items:center;padding:0 19px;height:80px;background-color:#fff}simpread-snapshot{width:100%;height:100%;cursor:move;z-index:2147483645}simpread-snapshot,sr-mask{position:fixed;left:0;top:0}sr-mask{background-color:rgba(0,0,0,.1)}.simpread-feedback,.simpread-urlscheme{position:fixed;right:20px;bottom:20px;z-index:2147483646}simpread-feedback,simpread-urlscheme{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;padding:20px 20px 0;width:500px;color:rgba(51,51,51,.87);background-color:#fff;border-radius:3px;box-shadow:0 0 2px rgba(0,0,0,.12),0 2px 2px rgba(0,0,0,.26);overflow:hidden;-webkit-transform-origin:bottom;transform-origin:bottom;-webkit-transition:all .6s ease;transition:all .6s ease}simpread-feedback *,simpread-urlscheme *{font-size:12px!important;box-sizing:border-box}simpread-feedback.active,simpread-urlscheme.active{-webkit-animation-name:srFadeInUp;animation-name:srFadeInUp;-webkit-animation-duration:.45s;animation-duration:.45s;-webkit-animation-fill-mode:both;animation-fill-mode:both}simpread-feedback.hide,simpread-urlscheme.hide{-webkit-animation-name:srFadeInDown;animation-name:srFadeInDown;-webkit-animation-duration:.45s;animation-duration:.45s;-webkit-animation-fill-mode:both;animation-fill-mode:both}simpread-feedback sr-fb-label,simpread-urlscheme sr-urls-label{width:100%}simpread-feedback sr-fb-head,simpread-urlscheme sr-urls-head{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;margin-bottom:5px;width:100%}simpread-feedback sr-fb-content,simpread-urlscheme sr-urls-content{margin-bottom:5px;width:100%}simpread-feedback sr-urls-footer,simpread-urlscheme sr-urls-footer{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;width:100%}simpread-feedback sr-fb-a,simpread-urlscheme sr-urls-a{color:#2163f7;cursor:pointer}simpread-feedback text-field-state,simpread-urlscheme text-field-state{border-top:none rgba(34,101,247,.8)!important;border-left:none rgba(34,101,247,.8)!important;border-right:none rgba(34,101,247,.8)!important;border-bottom:2px solid rgba(34,101,247,.8)!important}simpread-feedback switch,simpread-urlscheme switch{margin-top:0!important}@-webkit-keyframes srFadeInUp{0%{opacity:0;-webkit-transform:translateY(100px);transform:translateY(100px)}to{opacity:1;-webkit-transform:translateY(0);transform:translateY(0)}}@keyframes srFadeInUp{0%{opacity:0;-webkit-transform:translateY(100px);transform:translateY(100px)}to{opacity:1;-webkit-transform:translateY(0);transform:translateY(0)}}@-webkit-keyframes srFadeInDown{0%{opacity:1;-webkit-transform:translateY(0);transform:translateY(0)}to{opacity:0;-webkit-transform:translateY(100px);transform:translateY(100px)}}@keyframes srFadeInDown{0%{opacity:1;-webkit-transform:translateY(0);transform:translateY(0)}to{opacity:0;-webkit-transform:translateY(100px);transform:translateY(100px)}}simpread-feedback sr-fb-head{font-weight:700}simpread-feedback sr-fb-content{-webkit-box-orient:vertical;-ms-flex-direction:column;flex-direction:column}simpread-feedback sr-fb-content,simpread-feedback sr-fb-footer{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-direction:normal}simpread-feedback sr-fb-footer{-webkit-box-orient:horizontal;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;width:100%}simpread-feedback sr-close{position:absolute;right:20px;cursor:pointer;-webkit-transition:all 1s cubic-bezier(.23,1,.32,1) .1s;transition:all 1s cubic-bezier(.23,1,.32,1) .1s;z-index:200}simpread-feedback sr-close:hover{-webkit-transform:rotate(-15deg) scale(1.3);transform:rotate(-15deg) scale(1.3)}simpread-feedback sr-stars{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;margin-top:10px}simpread-feedback sr-stars i{margin-right:10px;cursor:pointer}simpread-feedback sr-stars i svg{-webkit-transition:all 1s cubic-bezier(.23,1,.32,1) .1s;transition:all 1s cubic-bezier(.23,1,.32,1) .1s}simpread-feedback sr-stars i svg:hover{-webkit-transform:rotate(-15deg) scale(1.3);transform:rotate(-15deg) scale(1.3)}simpread-feedback sr-stars i.active svg{-webkit-transform:rotate(0) scale(1);transform:rotate(0) scale(1)}simpread-feedback sr-emojis{display:block;height:100px;overflow:hidden}simpread-feedback sr-emoji{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-transition:.3s;transition:.3s}simpread-feedback sr-emoji>svg{margin:15px 0;width:70px;height:70px;-ms-flex-negative:0;flex-shrink:0}simpread-feedback sr-stars-footer{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;margin:10px 0 20px}</style>
+                        <style type="text/css">.simpread-theme-root{font-size:62.5%!important}sr-rd-content,sr-rd-desc,sr-rd-title{width:100%}sr-rd-title{display:-webkit-box;margin:1em 0 .5em;overflow:hidden;text-overflow:ellipsis;text-rendering:optimizelegibility;-webkit-line-clamp:3;-webkit-box-orient:vertical}sr-rd-content{text-align:left;word-break:break-word}sr-rd-desc{text-align:justify;line-height:2.4;margin:0 0 1.2em;box-sizing:border-box}sr-rd-content{font-size:25.6px;font-size:1.6rem;line-height:1.6}sr-rd-content h1,sr-rd-content h1 *,sr-rd-content h2,sr-rd-content h2 *,sr-rd-content h3,sr-rd-content h3 *,sr-rd-content h4,sr-rd-content h4 *,sr-rd-content h5,sr-rd-content h5 *,sr-rd-content h6,sr-rd-content h6 *{word-break:break-all}sr-rd-content div,sr-rd-content p{display:block;float:inherit;line-height:1.6;font-size:25.6px;font-size:1.6rem}sr-rd-content div,sr-rd-content p,sr-rd-content pre,sr-rd-content sr-blockquote{margin:0 0 1.2em;word-break:break-word}sr-rd-content a{padding:0 5px;vertical-align:baseline;vertical-align:initial}sr-rd-content a,sr-rd-content a:link{color:inherit;font-size:inherit;font-weight:inherit;border:none}sr-rd-content a:hover{background:transparent}sr-rd-content img{margin:10px;padding:5px;max-width:100%;background:#fff;border:1px solid #bbb;box-shadow:1px 1px 3px #d4d4d4}sr-rd-content figcaption{text-align:center;font-size:14px}sr-rd-content sr-blockquote{display:block;position:relative;padding:15px 25px;text-align:left;line-height:inherit}sr-rd-content sr-blockquote:before{position:absolute}sr-rd-content sr-blockquote *{margin:0;font-size:inherit}sr-rd-content table{width:100%;margin:0 0 1.2em;word-break:keep-all;word-break:normal;overflow:auto;border:none}sr-rd-content table td,sr-rd-content table th{border:none}sr-rd-content ul{margin:0 0 1.2em;margin-left:1.3em;padding:0;list-style:disc}sr-rd-content ol{list-style:decimal;margin:0;padding:0}sr-rd-content ol li,sr-rd-content ul li{font-size:inherit;list-style:disc;margin:0 0 1.2em}sr-rd-content ol li{list-style:decimal;margin-left:1.3em}sr-rd-content ol li *,sr-rd-content ul li *{margin:0;text-align:left;text-align:initial}sr-rd-content li ol,sr-rd-content li ul{margin-bottom:.8em;margin-left:2em}sr-rd-content li ul{list-style:circle}sr-rd-content pre{font-family:Consolas,Monaco,Andale Mono,Source Code Pro,Liberation Mono,Courier,monospace;display:block;padding:15px;line-height:1.5;word-break:break-all;word-wrap:break-word;white-space:pre;overflow:auto}sr-rd-content pre,sr-rd-content pre *,sr-rd-content pre div{font-size:17.6px;font-size:1.1rem}sr-rd-content li pre code,sr-rd-content p pre code,sr-rd-content pre{background-color:transparent;border:none}sr-rd-content pre code{margin:0;padding:0}sr-rd-content pre code,sr-rd-content pre code *{font-size:17.6px;font-size:1.1rem}sr-rd-content pre p{margin:0;padding:0;color:inherit;font-size:inherit;line-height:inherit}sr-rd-content li code,sr-rd-content p code{margin:0 4px;padding:2px 4px;font-size:17.6px;font-size:1.1rem}sr-rd-content mark{margin:0 5px;padding:2px;background:#fffdd1;border-bottom:1px solid #ffedce}.sr-rd-content-img{width:90%;height:auto}.sr-rd-content-img-load{width:48px;height:48px;margin:0;padding:0;border-style:none;border-width:0;background-repeat:no-repeat;background-image:url(data:image/gif;base64,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)}.sr-rd-content-center{text-align:center;display:-webkit-box;-webkit-box-align:center;-webkit-box-pack:center;-webkit-box-orient:vertical}.sr-rd-content-center-small{display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex}.sr-rd-content-center-small img{margin:0;padding:0;border:0;box-shadow:none}img.simpread-img-broken{cursor:pointer}.sr-rd-content-nobeautify{margin:0;padding:0;border:0;box-shadow:0 0 0}sr-rd-mult{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;margin:0 0 16px;padding:16px 0 24px;width:100%;background-color:#fff;border-radius:4px;box-shadow:0 1px 2px 0 rgba(60,64,67,.3),0 2px 6px 2px rgba(60,64,67,.15)}sr-rd-mult:hover{-webkit-transition:all .45s 0ms;transition:all .45s 0ms;box-shadow:1px 1px 8px rgba(0,0,0,.16)}sr-rd-mult sr-rd-mult-content{padding:0 16px;overflow:auto}sr-rd-mult sr-rd-mult-avatar,sr-rd-mult sr-rd-mult-content{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}sr-rd-mult sr-rd-mult-avatar{-webkit-box-align:center;-ms-flex-align:center;align-items:center;margin:0 15px}sr-rd-mult sr-rd-mult-avatar span{display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;max-width:75px;overflow:hidden;text-overflow:ellipsis;text-align:left;font-size:16px;font-size:1rem}sr-rd-mult sr-rd-mult-avatar img{margin-bottom:0;max-width:50px;max-height:50px;width:50px;height:50px;border-radius:50%}sr-rd-mult sr-rd-mult-content img{max-width:80%}sr-rd-mult sr-rd-mult-avatar .sr-rd-content-center{margin:0}sr-page{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;width:100%}</style>
+                        <style type="text/css">sr-rd-theme-github{display:none}sr-rd-content h1,sr-rd-content h2,sr-rd-content h3,sr-rd-content h4,sr-rd-content h5,sr-rd-content h6{position:relative;margin-top:1em;margin-bottom:1pc;font-weight:700;line-height:1.4;text-align:left;color:#363636}sr-rd-content h1{padding-bottom:.3em;font-size:57.6px;font-size:3.6rem;line-height:1.2}sr-rd-content h2{padding-bottom:.3em;font-size:44.8px;font-size:2.8rem;line-height:1.225}sr-rd-content h3{font-size:38.4px;font-size:2.4rem;line-height:1.43}sr-rd-content h4{font-size:32px;font-size:2rem}sr-rd-content h5,sr-rd-content h6{font-size:25.6px;font-size:1.6rem}sr-rd-content h6{color:#777}sr-rd-content ol,sr-rd-content ul{list-style-type:disc;padding:0;padding-left:2em}sr-rd-content ol ol,sr-rd-content ul ol{list-style-type:lower-roman}sr-rd-content ol ol ol,sr-rd-content ol ul ol,sr-rd-content ul ol ol,sr-rd-content ul ul ol{list-style-type:lower-alpha}sr-rd-content table{width:100%;overflow:auto;word-break:normal;word-break:keep-all}sr-rd-content table th{font-weight:700}sr-rd-content table td,sr-rd-content table th{padding:6px 13px;border:1px solid #ddd}sr-rd-content table tr{background-color:#fff;border-top:1px solid #ccc}sr-rd-content table tr:nth-child(2n){background-color:#f8f8f8}sr-rd-content sr-blockquote{border-left:4px solid #ddd}.simpread-theme-root{background-color:#fff;color:#333}sr-rd-title{font-family:PT Sans,SF UI Display,\.PingFang SC,PingFang SC,Neue Haas Grotesk Text Pro,Arial Nova,Segoe UI,Microsoft YaHei,Microsoft JhengHei,Helvetica Neue,Source Han Sans SC,Noto Sans CJK SC,Source Han Sans CN,Noto Sans SC,Source Han Sans TC,Noto Sans CJK TC,Hiragino Sans GB,sans-serif;font-size:54.4px;font-size:3.4rem;font-weight:700;line-height:1.3}sr-rd-desc{position:relative;margin:0;margin-bottom:30px;padding:25px;padding-left:56px;font-size:28.8px;font-size:1.8rem;color:#777;background-color:rgba(0,0,0,.05);box-sizing:border-box}sr-rd-desc:before{content:"\201C";position:absolute;top:-28px;left:16px;font-size:80px;font-family:Arial;color:rgba(0,0,0,.15)}sr-rd-content,sr-rd-content *,sr-rd-content div,sr-rd-content p{color:#363636;font-weight:400;line-height:1.8}sr-rd-content b *,sr-rd-content strong,sr-rd-content strong * sr-rd-content b{-webkit-animation:none 0s ease 0s 1 normal none running;animation:none 0s ease 0s 1 normal none running;-webkit-backface-visibility:visible;backface-visibility:visible;background:transparent none repeat 0 0/auto auto padding-box border-box scroll;border:medium none currentColor;border-collapse:separate;-o-border-image:none;border-image:none;border-radius:0;border-spacing:0;bottom:auto;box-shadow:none;box-sizing:content-box;caption-side:top;clear:none;clip:auto;color:#000;-webkit-columns:auto;-moz-columns:auto;columns:auto;-webkit-column-count:auto;-moz-column-count:auto;column-count:auto;-webkit-column-fill:balance;-moz-column-fill:balance;column-fill:balance;-webkit-column-gap:normal;-moz-column-gap:normal;column-gap:normal;-webkit-column-rule:medium none currentColor;-moz-column-rule:medium none currentColor;column-rule:medium none currentColor;-webkit-column-span:1;-moz-column-span:1;column-span:1;-webkit-column-width:auto;-moz-column-width:auto;column-width:auto;content:normal;counter-increment:none;counter-reset:none;cursor:auto;direction:ltr;display:inline;empty-cells:show;float:none;font-family:serif;font-size:medium;font-style:normal;font-variant:normal;font-weight:400;font-stretch:normal;line-height:normal;height:auto;-webkit-hyphens:none;-ms-hyphens:none;hyphens:none;left:auto;letter-spacing:normal;list-style:disc outside none;margin:0;max-height:none;max-width:none;min-height:0;min-width:0;opacity:1;orphans:2;outline:medium none invert;overflow:visible;overflow-x:visible;overflow-y:visible;padding:0;page-break-after:auto;page-break-before:auto;page-break-inside:auto;-webkit-perspective:none;perspective:none;-webkit-perspective-origin:50% 50%;perspective-origin:50% 50%;position:static;right:auto;-moz-tab-size:8;-o-tab-size:8;tab-size:8;table-layout:auto;text-align:left;text-align-last:auto;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;top:auto;-webkit-transform:none;transform:none;-webkit-transform-origin:50% 50% 0;transform-origin:50% 50% 0;-webkit-transform-style:flat;transform-style:flat;-webkit-transition:none 0s ease 0s;transition:none 0s ease 0s;unicode-bidi:normal;vertical-align:baseline;visibility:visible;white-space:normal;widows:2;width:auto;word-spacing:normal;z-index:auto;all:initial}sr-rd-content a,sr-rd-content a:link{color:#4183c4;text-decoration:none}sr-rd-content a:active,sr-rd-content a:focus,sr-rd-content a:hover{color:#4183c4;text-decoration:underline}sr-rd-content pre{background-color:#f7f7f7;border-radius:3px}sr-rd-content li code,sr-rd-content p code{background-color:rgba(0,0,0,.04);border-radius:3px}.simpread-multi-root{background:#f8f9fa}</style>
+                        <style type="text/css"></style>
+                        <style type="text/css">@media (pointer:coarse){sr-read{margin:20px 5%!important;min-width:0!important;max-width:90%!important}sr-rd-title{margin-top:0;font-size:2.7rem}sr-rd-content sr-blockquote,sr-rd-desc{margin:10 0!important;padding:0 0 0 10px!important;width:90%;font-size:1.8rem;font-style:normal;line-height:1.7;text-align:justify}sr-rd-content{font-size:1.75rem;font-weight:300}sr-rd-content figure{margin:0;padding:0;text-align:center}sr-rd-content a,sr-rd-content a:link,sr-rd-content li code,sr-rd-content p code{font-size:inherit}sr-rd-footer{margin-top:20px}sr-blockquote,sr-blockquote *{margin:5px!important;padding:5px!important}sr-rd-content h1,sr-rd-content h2,sr-rd-content h3,sr-rd-content h4,sr-rd-content h5,sr-rd-content h6,sr-rd-title{font-family:PingFang SC,Verdana,Helvetica Neue,Microsoft Yahei,Hiragino Sans GB,Microsoft Sans Serif,WenQuanYi Micro Hei,sans-serif;color:#000;font-weight:100;line-height:1.35}sr-rd-content-h1,sr-rd-content-h2,sr-rd-content-h3,sr-rd-content-h4,sr-rd-content-h5,sr-rd-content-h6,sr-rd-content h1,sr-rd-content h2,sr-rd-content h3,sr-rd-content h4,sr-rd-content h5,sr-rd-content h6{margin-top:1.2em;margin-bottom:.6em;line-height:1.35}sr-rd-content-h1,sr-rd-content h1{font-size:1.8em}sr-rd-content-h2,sr-rd-content h2{font-size:1.6em}sr-rd-content-h3,sr-rd-content h3{font-size:1.4em}sr-rd-content-h4,sr-rd-content-h5,sr-rd-content-h6,sr-rd-content h4,sr-rd-content h5,sr-rd-content h6{font-size:1.2em}sr-rd-content-ul,sr-rd-content ul{margin-left:1.3em!important;list-style:disc}sr-rd-content-ol,sr-rd-content ol{list-style:decimal;margin-left:1.9em!important}sr-rd-content-ol ol,sr-rd-content-ol ul,sr-rd-content-ul ol,sr-rd-content-ul ul,sr-rd-content li ol,sr-rd-content li ul{margin-bottom:.8em;margin-left:2em!important}sr-rd-content img{margin:0;padding:0;border:0;max-width:100%!important;height:auto;box-shadow:0 20px 20px -10px rgba(0,0,0,.1)}sr-rd-mult{min-width:0;background-color:#fff;box-shadow:0 1px 6px rgba(32,33,36,.28);border-radius:8px}sr-rd-mult sr-rd-mult-avatar div{margin:0}sr-rd-mult sr-rd-mult-avatar .sr-rd-content-center-small{margin:7px 0!important}sr-rd-mult sr-rd-mult-avatar span{display:block}sr-rd-mult sr-rd-mult-content{padding-left:0}@media only screen and (max-device-width:1024px){.simpread-theme-root,html.simpread-theme-root{font-size:80%!important}sr-rd-mult sr-rd-mult-avatar img{width:50px;height:50px;min-width:50px;min-height:50px}toc-bg toc{width:10px!important}toc-bg:hover toc{width:auto!important}}@media only screen and (max-device-width:414px){.simpread-theme-root,html.simpread-theme-root{font-size:70%!important}sr-rd-mult sr-rd-mult-avatar img{width:30px;height:30px;min-width:30px;min-height:30px}}@media only screen and (max-device-width:320px){.simpread-theme-root,html.simpread-theme-root{font-size:90%!important}sr-rd-content p{margin-bottom:.5em}}}</style>
+                        <style type="text/css">sr-rd-content *, sr-rd-content p, sr-rd-content div {}sr-rd-content pre code, sr-rd-content pre code * {}sr-rd-desc {}sr-rd-content pre {}sr-rd-title {}</style>
+                        <style type="text/css"></style>
+                        <style type="text/css"></style>
+                        <style type="text/css"></style>
+                        <style type="text/css"></style>
+                        <style type="text/css">sr-rd-content *, sr-rd-content p, sr-rd-content div {
+        font-size: 15px;
+    }
+
+    .annote-perview, .annote-perview * {
+        color: rgb(85, 85, 85);
+        font-weight: 400;
+        line-height: 1.8;
+    }</style>
+                        
+                        
+                        <script>setTimeout(()=>{const e=location.hash.replace("#id=","");let t,a=!1;const n=t=>{for(let n of t){let t;if((t=e.length>6?n.getAttribute("data-id"):n.getAttribute("data-idx"))==e){n.scrollIntoView({behavior:"smooth",block:"start",inline:"nearest"}),a=!0;break}}};e&&(0==(t=document.getElementsByClassName("sr-unread-card")).length&&(t=document.getElementsByTagName("sr-annote")),n(t),a||n(t=document.getElementsByClassName("sr-annote")))},500);</script>
+                        <script>document.addEventListener("DOMContentLoaded",function(){if("localhost"==location.hostname){const t=document.getElementsByTagName("img");for(let o of t){const t=o.src;t.startsWith("http")&&(o.src=location.origin+"/proxy?url="+t)}}},!1);</script>
+                        <title>简悦 | guchangan1/All-Defense-Tool: 本项目集成了全网优秀的攻防工具项目，包含自动化利用，子域名、敏感目录、端口等扫描，各大中间件，cms 漏洞利用工具以及应急响应等资料。</title>
+                    </head>
+                    <body>
+                        <sr-read style='font-family: "LXGW WenKai Screen";'>
+                            <sr-rd-title>guchangan1/All-Defense-Tool: 本项目集成了全网优秀的攻防工具项目，包含自动化利用，子域名、敏感目录、端口等扫描，各大中间件，cms 漏洞利用工具以及应急响应等资料。</sr-rd-title>
+                    <sr-rd-desc style="margin: 0;padding-top: 0;padding-bottom: 0;font-style: normal;font-size: 18px;">本项目集成了全网优秀的攻防工具项目，包含自动化利用，子域名、敏感目录、端口等扫描，各大中间件，cms 漏洞利用工具以及应急响应等资料。</sr-rd-desc>
+                    <sr-rd-content><h1 dir="auto" id="sr-toc-0"><a aria-hidden="true" href="#all-defense-tool" one-link-mark="yes"><svg viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>All-Defense-Tool</h1><p></p><p dir="auto">首先恭喜你发现了宝藏。本项目集成了全网优秀的攻防武器项目，包含信息收集工具（自动化利用工具、资产发现工具、目录扫描工具、子域名收集工具....etc...），漏洞利用工具（各大 CMS 利用工具、中间件利用工具等项目），内网渗透工具、应急响应工具、甲方运维工具、等其他安全资料项目，供攻防双方使用。如果你有更好的建议，欢迎提出请求，本文收录全网优秀工具，欢迎大佬提交。</p><p></p><h1 dir="auto" id="sr-toc-1"><a aria-hidden="true" href="#目录" one-link-mark="yes"><svg viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>目录</h1><p></p><ul dir="auto">
+<li><a href="#%E5%8D%8A%E5%85%A8%E8%87%AA%E5%8A%A8%E5%8C%96%E5%88%A9%E7%94%A8%E5%B7%A5%E5%85%B7" one-link-mark="yes">半 / 全自动化利用工具</a></li>
+<li><a href="#%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E5%B7%A5%E5%85%B7" one-link-mark="yes">信息收集工具</a>
+<ul dir="auto">
+<li><a href="#%E8%B5%84%E4%BA%A7%E5%8F%91%E7%8E%B0%E5%B7%A5%E5%85%B7" one-link-mark="yes">资产发现工具</a></li>
+<li><a href="#%E5%AD%90%E5%9F%9F%E5%90%8D%E6%94%B6%E9%9B%86%E5%B7%A5%E5%85%B7" one-link-mark="yes">子域名收集工具</a></li>
+<li><a href="#%E7%9B%AE%E5%BD%95%E6%89%AB%E6%8F%8F%E5%B7%A5%E5%85%B7" one-link-mark="yes">目录扫描工具</a></li>
+<li><a href="#%E6%8C%87%E7%BA%B9%E8%AF%86%E5%88%AB%E5%B7%A5%E5%85%B7" one-link-mark="yes">指纹识别工具</a></li>
+<li><a href="#%E7%AB%AF%E5%8F%A3%E6%89%AB%E6%8F%8F%E5%B7%A5%E5%85%B7" one-link-mark="yes">端口扫描工具</a></li>
+<li><a href="#burp%E6%B5%8F%E8%A7%88%E5%99%A8%E6%8F%92%E4%BB%B6" one-link-mark="yes">Burp + 浏览器插件</a></li>
+</ul>
+</li>
+<li><a href="#%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8%E5%B7%A5%E5%85%B7" one-link-mark="yes">漏洞利用工具</a>
+<ul dir="auto">
+<li><a href="#%E4%BF%A1%E6%81%AF%E6%B3%84%E9%9C%B2%E5%88%A9%E7%94%A8%E5%B7%A5%E5%85%B7" one-link-mark="yes">信息泄露利用工具</a></li>
+<li><a href="#%E6%BC%8F%E6%B4%9E%E6%89%AB%E6%8F%8F%E6%A1%86%E6%9E%B6%E5%B7%A5%E5%85%B7" one-link-mark="yes">漏洞扫描框架 / 工具</a></li>
+<li><a href="#%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8%E5%B7%A5%E5%85%B7" one-link-mark="yes">中间件漏洞利用工具</a></li>
+<li><a href="#%E9%87%8D%E7%82%B9cms%E5%88%A9%E7%94%A8%E5%B7%A5%E5%85%B7" one-link-mark="yes">重点 cms 利用工具</a></li>
+<li><a href="#%E5%B8%B8%E8%A7%84%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8%E5%B7%A5%E5%85%B7" one-link-mark="yes">常规漏洞利用工具</a></li>
+<li><a href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E5%88%A9%E7%94%A8%E5%B7%A5%E5%85%B7" one-link-mark="yes">数据库利用工具</a></li>
+<li><a href="#%E7%88%86%E7%A0%B4%E5%B7%A5%E5%85%B7" one-link-mark="yes">爆破工具</a></li>
+<li><a href="#%E5%AD%97%E5%85%B8%E6%94%B6%E9%9B%86" one-link-mark="yes">字典收集</a></li>
+</ul>
+</li>
+<li><a href="#%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F%E5%B7%A5%E5%85%B7" one-link-mark="yes">内网渗透工具</a>
+<ul dir="auto">
+<li><a href="#webshell%E6%89%98%E7%AE%A1%E5%B7%A5%E5%85%B7" one-link-mark="yes">webshell 托管工具</a></li>
+<li><a href="#%E5%AF%86%E7%A0%81%E6%8F%90%E5%8F%96%E5%B7%A5%E5%85%B7" one-link-mark="yes">密码提取工具</a></li>
+<li><a href="#%E6%A8%AA%E5%90%91%E7%A7%BB%E5%8A%A8%E5%B7%A5%E5%85%B7" one-link-mark="yes">横向移动工具</a></li>
+<li><a href="#%E9%9A%A7%E9%81%93%E4%BB%A3%E7%90%86%E5%B7%A5%E5%85%B7" one-link-mark="yes">隧道代理工具</a></li>
+</ul>
+</li>
+<li><a href="#%E8%BF%90%E7%BB%B4%E7%94%B2%E6%96%B9%E9%98%B2%E5%AE%88%E6%96%B9%E5%B7%A5%E5%85%B7" one-link-mark="yes">运维 &amp; 甲方 &amp; 防守方工具</a>
+<ul dir="auto">
+<li><a href="#linux%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94%E5%B7%A5%E5%85%B7" one-link-mark="yes">Linux 应急响应工具</a></li>
+<li><a href="#windows%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94%E5%B7%A5%E5%85%B7" one-link-mark="yes">Windows 应急响应工具</a></li>
+<li><a href="#%E5%86%85%E5%AD%98%E9%A9%AC%E6%9F%A5%E6%9D%80%E5%B7%A5%E5%85%B7" one-link-mark="yes">内存马查杀工具</a></li>
+<li><a href="#xxxx" one-link-mark="yes">xxxx</a></li>
+</ul>
+</li>
+<li><a href="#%E5%AE%89%E5%85%A8%E8%B5%84%E6%96%99%E6%95%B4%E7%90%86" one-link-mark="yes">安全资料整理</a></li>
+</ul><p></p><h1 dir="auto" id="sr-toc-2"><a aria-hidden="true" href="#半全自动化利用工具" one-link-mark="yes"><svg viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>半 / 全自动化利用工具</h1><p></p><table>
+<thead>
+<tr>
+<th>项目简介</th>
+<th>项目地址</th>
+<th>项目名称</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>一条龙服务，只需要输入根域名即可全方位收集相关资产，并检测漏洞。也可以输入多个域名、C 段 IP 等，具体案例见下文。</td>
+<td><a href="https://github.com/0x727/ShuiZe_0x727" one-link-mark="yes">https://github.com/0x727/ShuiZe_0x727</a></td>
+<td>ShuiZe_0x727</td>
+</tr>
+<tr>
+<td> 单兵作战武器库，你值得拥有 </td>
+<td><a href="https://github.com/yaklang/yakit" one-link-mark="yes">https://github.com/yaklang/yakit</a></td>
+<td>yakit</td>
+</tr>
+<tr>
+<td> 自动化侦查框架 </td>
+<td><a href="https://github.com/yogeshojha/rengine" one-link-mark="yes">https://github.com/yogeshojha/rengine</a></td>
+<td>rengine</td>
+</tr>
+<tr>
+<td> 一个高度可定制 Web 自动化扫描框架 </td>
+<td><a href="https://github.com/r3curs1v3-pr0xy/vajra" one-link-mark="yes">https://github.com/r3curs1v3-pr0xy/vajra</a></td>
+<td>vajra</td>
+</tr>
+<tr>
+<td>reconFTW 集成了 30 个工具的信息收集利器 </td>
+<td><a href="https://github.com/six2dez/reconftw" one-link-mark="yes">https://github.com/six2dez/reconftw</a></td>
+<td>reconftw</td>
+</tr>
+<tr>
+<td> 自动化巡航扫描框架（可用于红队打点评估）</td>
+<td><a href="https://github.com/b0bac/ApolloScanner" one-link-mark="yes">https://github.com/b0bac/ApolloScanner</a></td>
+<td>ApolloScanner</td>
+</tr>
+<tr>
+<td>nemo_go 自动化信息收集 </td>
+<td><a href="https://github.com/hanc00l/nemo_go" one-link-mark="yes">https://github.com/hanc00l/nemo_go</a></td>
+<td>nemo_go</td>
+</tr>
+<tr>
+<td> 分布式资产信息收集和漏洞扫描平台 </td>
+<td><a href="https://github.com/1in9e/gosint" one-link-mark="yes">https://github.com/1in9e/gosint</a></td>
+<td>gosint</td>
+</tr>
+<tr>
+<td>GUI 界面的自动化工具 </td>
+<td><a href="https://github.com/lz520520/railgun" one-link-mark="yes">https://github.com/lz520520/railgun</a></td>
+<td>Railgun</td>
+</tr>
+<tr>
+<td> 在线 cms 识别 | 信息泄露 | 工控 | 系统 | 物联网安全 | cms 漏洞扫描 | nmap 端口扫描 | 子域名获取 | 待续..</td>
+<td><a href="https://github.com/iceyhexman/onlinetools" one-link-mark="yes">https://github.com/iceyhexman/onlinetools</a></td>
+<td> 在线工具集</td>
+</tr>
+<tr>
+<td>一个辅助平常渗透测试项目或者攻防项目快速打点的综合工具 </td>
+<td><a href="https://github.com/P1-Team/AlliN" one-link-mark="yes">https://github.com/P1-Team/AlliN</a></td>
+<td>AlliN</td>
+</tr>
+<tr>
+<td>Acunetix Web 漏洞扫描程序 GUI 版本]</td>
+<td><a href="https://github.com/x364e3ab6/AWVS-13-SCAN-PLUS" one-link-mark="yes">https://github.com/x364e3ab6/AWVS-13-SCAN-PLUS</a></td>
+<td>AWVS-GUI</td>
+</tr>
+<tr>
+<td> 从子域名、端口服务、漏洞、爬虫等一体化的资产管理系统 </td>
+<td><a href="https://github.com/CTF-MissFeng/bayonet" one-link-mark="yes">https://github.com/CTF-MissFeng/bayonet</a></td>
+<td>bayonet</td>
+</tr>
+<tr>
+<td> 可针对指定 IP 段、资产清单、存活网段自动化进行端口扫描以及 TCP 指纹识别和 Banner 抓取 </td>
+<td><a href="https://github.com/lcvvvv/kscan" one-link-mark="yes">https://github.com/lcvvvv/kscan</a></td>
+<td>kscan</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table><p></p><h1 dir="auto" id="sr-toc-3"><a aria-hidden="true" href="#信息收集工具" one-link-mark="yes"><svg viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>信息收集工具</h1><p></p><h2 dir="auto" id="sr-toc-4"><a aria-hidden="true" href="#资产发现工具" one-link-mark="yes"><svg viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>资产发现工具</h2><p></p><table>
+<thead>
+<tr>
+<th>项目简介</th>
+<th>项目地址</th>
+<th>项目名称</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> reconFTW 集成了 30 个工具的信息收集利器 </td>
+<td><a href="https://github.com/six2dez/reconftw" one-link-mark="yes">https://github.com/six2dez/reconftw</a></td>
+<td>reconftw</td>
+</tr>
+<tr>
+<td> 资产无限巡航扫描系统 </td>
+<td><a href="https://github.com/awake1t/linglong" one-link-mark="yes">https://github.com/awake1t/linglong</a></td>
+<td>linglong</td>
+</tr>
+<tr>
+<td>SRC 子域名资产监控 </td>
+<td><a href="https://github.com/LangziFun/LangSrcCurise" one-link-mark="yes">https://github.com/LangziFun/LangSrcCurise</a></td>
+<td>LangSrcCurise</td>
+</tr>
+<tr>
+<td> 快速侦察与目标关联的互联网资产，构建基础资产信息库。</td>
+<td><a href="https://github.com/TophantTechnology/ARL" one-link-mark="yes">https://github.com/TophantTechnology/ARL</a></td>
+<td>ARL (灯塔)</td>
+</tr>
+<tr>
+<td> 移动端 (Android、iOS、WEB、H5、静态网站) 信息收集扫描工具 </td>
+<td><a href="https://github.com/kelvinBen/AppInfoScanner" one-link-mark="yes">https://github.com/kelvinBen/AppInfoScanner</a></td>
+<td>AppInfoScanner</td>
+</tr>
+<tr>
+<td>Grecon</td>
+<td><a href="https://github.com/TebbaaX/GRecon" one-link-mark="yes">https://github.com/TebbaaX/GRecon</a></td>
+<td> 集成 GoogleHacking 语法来进行信息收集</td>
+</tr>
+<tr>
+<td> waybackurls</td>
+<td><a href="https://github.com/tomnomnom/waybackurls" one-link-mark="yes">https://github.com/tomnomnom/waybackurls</a></td>
+<td> 从第三方平台获取目标网页内容</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table><p></p><h2 dir="auto" id="sr-toc-5"><a aria-hidden="true" href="#子域名收集工具" one-link-mark="yes"><svg viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>子域名收集工具</h2><p></p><table>
+<thead>
+<tr>
+<th>项目简介</th>
+<th>项目地址</th>
+<th>项目名称</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>在线子域名收集 </td>
+<td><a href="https://rapiddns.io/subdomain" rel="nofollow" one-link-mark="yes">https://rapiddns.io/subdomain</a></td>
+<td> 在线收集</td>
+</tr>
+<tr>
+<td> ssl 证书扫域名 </td>
+<td><a href="https://myssl.com/" rel="nofollow" one-link-mark="yes">https://myssl.com/ </a></td>
+<td>myssl</td>
+</tr>
+<tr>
+<td> 一款功能强大的子域收集工具 </td>
+<td><a href="https://github.com/shmilylty/OneForAll" one-link-mark="yes">https://github.com/shmilylty/OneForAll</a></td>
+<td>oneforall</td>
+</tr>
+<tr>
+<td>ksubdomain 无状态子域名爆破工具 </td>
+<td><a href="https://github.com/knownsec/ksubdomain" one-link-mark="yes">https://github.com/knownsec/ksubdomain</a></td>
+<td>ksubdomain</td>
+</tr>
+<tr>
+<td> 好用且强大的子域名扫描工具 </td>
+<td><a href="https://github.com/yunxu1/dnsub" one-link-mark="yes">https://github.com/yunxu1/dnsub</a></td>
+<td>dnsub</td>
+</tr>
+<tr>
+<td>Layer 子域名挖掘机 </td>
+<td><a href="https://github.com/euphrat1ca/LayerDomainFinder" one-link-mark="yes">https://github.com/euphrat1ca/LayerDomainFinder</a></td>
+<td>Layer</td>
+</tr>
+<tr>
+<td>src 子域名监控 </td>
+<td><a href="https://github.com/LangziFun/LangSrcCurise" one-link-mark="yes">https://github.com/LangziFun/LangSrcCurise</a></td>
+<td>LangSrcCurise</td>
+</tr>
+<tr>
+<td> 通过使用被动在线资源来发现网站的有效子域 </td>
+<td><a href="https://github.com/projectdiscovery/subfinder" one-link-mark="yes">https://github.com/projectdiscovery/subfinder</a></td>
+<td>subfinder</td>
+</tr>
+<tr>
+<td> 从 github 上发现子域名 </td>
+<td><a href="https://github.com/gwen001/github-subdomains" one-link-mark="yes">https://github.com/gwen001/github-subdomains</a></td>
+<td>github-subdomains</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table><p></p><h2 dir="auto" id="sr-toc-6"><a aria-hidden="true" href="#目录扫描工具" one-link-mark="yes"><svg viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>目录扫描工具</h2><p></p><table>
+<thead>
+<tr>
+<th>项目简介</th>
+<th>项目地址</th>
+<th>项目名称</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> Web path scanner  目录扫描工具 </td>
+<td><a href="https://github.com/maurosoria/dirsearch" one-link-mark="yes">https://github.com/maurosoria/dirsearch</a></td>
+<td>dirsearch</td>
+</tr>
+<tr>
+<td> 用 Rust 编写的快速，简单，递归的内容发现工具 </td>
+<td><a href="https://github.com/epi052/feroxbuster" one-link-mark="yes">https://github.com/epi052/feroxbuster</a></td>
+<td>feroxbuster</td>
+</tr>
+<tr>
+<td> 用 Go 编写的模糊测试工具 </td>
+<td><a href="https://github.com/ffuf/ffuf" one-link-mark="yes">https://github.com/ffuf/ffuf</a></td>
+<td>ffuf</td>
+</tr>
+<tr>
+<td> 一个高级 web 目录、文件扫描工具 </td>
+<td><a href="https://github.com/H4ckForJob/dirmap" one-link-mark="yes">https://github.com/H4ckForJob/dirmap</a></td>
+<td>dirmap</td>
+</tr>
+<tr>
+<td> 网站的敏感目录发掘工具 </td>
+<td><a href="https://github.com/deibit/cansina" one-link-mark="yes">https://github.com/deibit/cansina</a></td>
+<td>cansina</td>
+</tr>
+<tr>
+<td> 御剑后台扫描工具珍藏版 </td>
+<td><a href="https://www.fujieace.com/hacker/tools/yujian.html" rel="nofollow" one-link-mark="yes">https://www.fujieace.com/hacker/tools/yujian.html</a></td>
+<td> 御剑</td>
+</tr>
+<tr>
+<td>使用 GoLang 开发的目录 / 子域扫描器 </td>
+<td><a href="https://github.com/ReddyyZ/urlbrute" one-link-mark="yes">https://github.com/ReddyyZ/urlbrute</a></td>
+<td>urlbrute</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table><p></p><h2 dir="auto" id="sr-toc-7"><a aria-hidden="true" href="#指纹识别工具" one-link-mark="yes"><svg viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>指纹识别工具</h2><p></p><table>
+<thead>
+<tr>
+<th>项目简介</th>
+<th>项目地址</th>
+<th>项目名称</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>红队重点攻击系统指纹探测工具 </td>
+<td><a href="https://github.com/EdgeSecurityTeam/EHole" one-link-mark="yes">https://github.com/EdgeSecurityTeam/EHole</a></td>
+<td>EHole (棱洞) 2.0</td>
+</tr>
+<tr>
+<td> 功能齐全的 Web 指纹识别和分享平台，内置了一万多条互联网开源的指纹信息。</td>
+<td><a href="https://github.com/b1ackc4t/14Finger" one-link-mark="yes">https://github.com/b1ackc4t/14Finger</a></td>
+<td>14Finger</td>
+</tr>
+<tr>
+<td> 一个 web 应用程序指纹识别工具 </td>
+<td><a href="https://github.com/urbanadventurer/WhatWeb" one-link-mark="yes">https://github.com/urbanadventurer/WhatWeb</a></td>
+<td>Whatweb</td>
+</tr>
+<tr>
+<td>Golang 实现 Wappalyzer 指纹识别 </td>
+<td><a href="https://github.com/projectdiscovery/wappalyzergo" one-link-mark="yes">https://github.com/projectdiscovery/wappalyzergo</a></td>
+<td>wappalyzergo</td>
+</tr>
+<tr>
+<td> 一款红队在大量的资产中存活探测与重点攻击系统指纹探测工具 </td>
+<td><a href="https://github.com/EASY233/Finger" one-link-mark="yes">https://github.com/EASY233/Finger</a></td>
+<td>Finger</td>
+</tr>
+<tr>
+<td>Glass 是一款针对资产列表的快速指纹识别工具 </td>
+<td><a href="https://github.com/s7ckTeam/Glass" one-link-mark="yes">https://github.com/s7ckTeam/Glass</a></td>
+<td>Glass</td>
+</tr>
+</tbody>
+</table><p></p><h2 dir="auto" id="sr-toc-8"><a aria-hidden="true" href="#端口扫描工具" one-link-mark="yes"><svg viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>端口扫描工具</h2><p></p><table>
+<thead>
+<tr>
+<th>项目简介</th>
+<th>项目地址</th>
+<th>项目名称</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> TXPortMap 实用型的端口扫描、服务识别工具 </td>
+<td><a href="https://github.com/4dogs-cn/TXPortMap" one-link-mark="yes">https://github.com/4dogs-cn/TXPortMap</a></td>
+<td>TXPortMap</td>
+</tr>
+<tr>
+<td> 使用 Golang 开发的高并发网络扫描、服务探测工具 </td>
+<td><a href="https://github.com/Adminisme/ServerScan" one-link-mark="yes">https://github.com/Adminisme/ServerScan</a></td>
+<td>serverScan</td>
+</tr>
+<tr>
+<td>naabu 用 go 编写的快速端口扫描器 </td>
+<td><a href="https://github.com/projectdiscovery/naabu" one-link-mark="yes">https://github.com/projectdiscovery/naabu</a></td>
+<td>naabu</td>
+</tr>
+<tr>
+<td>masnmapscan 一款端口扫描器。整合了 masscan 和 nmap 两款扫描器 </td>
+<td><a href="https://github.com/hellogoldsnakeman/masnmapscan-V1.0" one-link-mark="yes">https://github.com/hellogoldsnakeman/masnmapscan-V1.0</a></td>
+<td> 整合扫描器</td>
+</tr>
+<tr>
+<td> gonmap 是一个 go 语言的 nmap 端口扫描库 </td>
+<td><a href="https://github.com/lcvvvv/gonmap" one-link-mark="yes">https://github.com/lcvvvv/gonmap</a></td>
+<td>gonmap</td>
+</tr>
+<tr>
+<td> 光速扫描 </td>
+<td><a href="http://pan.baidu.com/s/1pLjaQKF" rel="nofollow" one-link-mark="yes"><span one-id="pLjaQKF" one-source="baidu" one-tip-mark="yes">https://pan.baidu.com/s/1pLjaQKF</span></a></td>
+<td> 小米范</td>
+</tr>
+<tr>
+<td>在线端口扫描 1</td>
+<td><a href="http://coolaf.com/tool/port" rel="nofollow" one-link-mark="yes">http://coolaf.com/tool/port</a></td>
+<td> 在线工具</td>
+</tr>
+<tr>
+<td>在线端口扫描 2</td>
+<td><a href="http://tool.cc/port/" rel="nofollow" one-link-mark="yes">http://tool.cc/port/</a></td>
+<td> 在线工具 2</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table><p></p><h2 dir="auto" id="sr-toc-9"><a aria-hidden="true" href="#burp插件" one-link-mark="yes"><svg viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Burp 插件</h2><p></p><table>
+<thead>
+<tr>
+<th>项目简介</th>
+<th>项目地址</th>
+<th>项目名称</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>有关 burpsuite 的插件 (非商店), 文章以及使用技巧的收集 </td>
+<td><a href="https://github.com/Mr-xn/BurpSuite-collections" one-link-mark="yes">https://github.com/Mr-xn/BurpSuite-collections</a></td>
+<td>BurpSuite-collections</td>
+</tr>
+<tr>
+<td> 一款基于 BurpSuite 的被动式 shiro 检测插件 </td>
+<td><a href="https://github.com/pmiaowu/BurpShiroPassiveScan" one-link-mark="yes">https://github.com/pmiaowu/BurpShiroPassiveScan</a></td>
+<td>BurpShiroPassiveScan</td>
+</tr>
+<tr>
+<td> 一款基于 BurpSuite 的被动式 FastJson 检测插件 </td>
+<td><a href="https://github.com/pmiaowu/BurpFastJsonScan" one-link-mark="yes">https://github.com/pmiaowu/BurpFastJsonScan</a></td>
+<td>BurpFastJsonScan</td>
+</tr>
+<tr>
+<td>fastjson 漏洞 burp 插件，检测 fastjson 小于 1.2.68 基于 dnslog</td>
+<td><a href="https://github.com/zilong3033/fastjsonScan" one-link-mark="yes">https://github.com/zilong3033/fastjsonScan</a></td>
+<td>fastjsonScan</td>
+</tr>
+<tr>
+<td>HaE 请求高亮标记与信息提取的辅助型 BurpSuite 插件 </td>
+<td><a href="https://github.com/gh0stkey/HaE" one-link-mark="yes">https://github.com/gh0stkey/HaE</a></td>
+<td>HaE</td>
+</tr>
+<tr>
+<td>domain_hunter_pro 一个资产管理类的 Burp 插件 </td>
+<td><a href="https://github.com/bit4woo/domain_hunter_pro" one-link-mark="yes">https://github.com/bit4woo/domain_hunter_pro</a></td>
+<td>domain_hunter_pro</td>
+</tr>
+<tr>
+<td>GadgetProbe Burp 插件 用来爆破远程类查找 Java 反序列化 </td>
+<td><a href="https://github.com/BishopFox/GadgetProbe" one-link-mark="yes">https://github.com/BishopFox/GadgetProbe</a></td>
+<td>GadgetProbe</td>
+</tr>
+<tr>
+<td>HopLa 自动补全 Payload 的 BurpSuite 插件 </td>
+<td><a href="https://github.com/synacktiv/HopLa" one-link-mark="yes">https://github.com/synacktiv/HopLa</a></td>
+<td>HopLa</td>
+</tr>
+<tr>
+<td> 验证码识别 </td>
+<td><a href="https://github.com/f0ng/captcha-killer-modified" one-link-mark="yes">https://github.com/f0ng/captcha-killer-modified</a></td>
+<td>captcha-killer-modified</td>
+</tr>
+<tr>
+<td> 根据自定义来达到对数据包的处理（适用于加解密、爆破等），类似 mitmproxy，不同点在于经过了 burp 中转 </td>
+<td><a href="https://github.com/f0ng/autoDecoder" one-link-mark="yes">https://github.com/f0ng/autoDecoder</a></td>
+<td>autoDecoder</td>
+</tr>
+<tr>
+<td> 伪造 ip 地址 </td>
+<td><a href="https://github.com/TheKingOfDuck/burpFakeIP" one-link-mark="yes">https://github.com/TheKingOfDuck/burpFakeIP</a></td>
+<td>burpFakeIP</td>
+</tr>
+<tr>
+<td> 自动发送请求 </td>
+<td><a href="https://github.com/nccgroup/AutoRepeater" one-link-mark="yes">https://github.com/nccgroup/AutoRepeater</a></td>
+<td>AutoRepeater</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table><p></p><h2 dir="auto" id="sr-toc-10"><a aria-hidden="true" href="#浏览器插件" one-link-mark="yes"><svg viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>浏览器插件</h2><p></p><table>
+<thead>
+<tr>
+<th>项目简介</th>
+<th>项目地址</th>
+<th>项目名称</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> Hack-Tools  适用于红队的浏览器扩展插件 </td>
+<td><a href="https://github.com/LasCC/Hack-Tools" one-link-mark="yes">https://github.com/LasCC/Hack-Tools</a></td>
+<td>Hack-Tools</td>
+</tr>
+<tr>
+<td>SwitchyOmega 浏览器的代理插件 </td>
+<td><a href="https://github.com/FelisCatus/SwitchyOmega" one-link-mark="yes">https://github.com/FelisCatus/SwitchyOmega</a></td>
+<td>SwitchyOmega</td>
+</tr>
+<tr>
+<td>Chrome 插件。使用 DevTools 查找 DOM XSS</td>
+<td><a href="https://github.com/filedescriptor/untrusted-types" one-link-mark="yes">https://github.com/filedescriptor/untrusted-types</a></td>
+<td>untrusted-types</td>
+</tr>
+<tr>
+<td>FOFA Pro view 是一款 FOFA Pro 资产展示浏览器插件 </td>
+<td><a href="https://github.com/fofapro/fofa_view" one-link-mark="yes">https://github.com/fofapro/fofa_view</a></td>
+<td>fofa_view</td>
+</tr>
+<tr>
+<td>mitaka 用于 OSINT 搜索的 Chrome 和 Firefox 扩展 </td>
+<td><a href="https://github.com/ninoseki/mitaka" one-link-mark="yes">https://github.com/ninoseki/mitaka</a></td>
+<td>mitaka</td>
+</tr>
+<tr>
+<td>Git History 查看 git 存储库文件的历史记录 </td>
+<td><a href="https://githistory.xyz/" rel="nofollow" one-link-mark="yes">https://githistory.xyz/</a></td>
+<td>Git History</td>
+</tr>
+<tr>
+<td> 一款可以检测 WEB 蜜罐并阻断请求的 Chrome 插件 </td>
+<td><a href="https://github.com/cnrstar/anti-honeypot" one-link-mark="yes">https://github.com/cnrstar/anti-honeypot</a></td>
+<td>anti-honeypot</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table><p></p><h1 dir="auto" id="sr-toc-11"><a aria-hidden="true" href="#漏洞利用工具" one-link-mark="yes"><svg viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>漏洞利用工具</h1><p></p><h2 dir="auto" id="sr-toc-12"><a aria-hidden="true" href="#信息泄露利用工具" one-link-mark="yes"><svg viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>信息泄露利用工具</h2><p></p><table>
+<thead>
+<tr>
+<th>项目简介</th>
+<th>项目地址</th>
+<th>项目名称</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> swagger-exp Swagger  REST API 信息泄露利用工具 </td>
+<td><a href="https://github.com/lijiejie/swagger-exp" one-link-mark="yes">https://github.com/lijiejie/swagger-exp</a></td>
+<td>swagger-exp</td>
+</tr>
+<tr>
+<td>swagger-hack 自动化爬取并测试所有 swagger-ui.html 接口 </td>
+<td><a href="https://github.com/jayus0821/swagger-hack" one-link-mark="yes">https://github.com/jayus0821/swagger-hack</a></td>
+<td>swagger-hack</td>
+</tr>
+<tr>
+<td>Packer Fuzzer  针对 Webpack 等前端打包工具所构造的网站进行检测的扫描工具 </td>
+<td><a href="https://github.com/rtcatc/Packer-Fuzzer" one-link-mark="yes">https://github.com/rtcatc/Packer-Fuzzer</a></td>
+<td>Packer-Fuzzer</td>
+</tr>
+<tr>
+<td>SvnExploit 支持 SVN 源代码泄露全版本 Dump 源码 </td>
+<td><a href="https://github.com/admintony/svnExploit" one-link-mark="yes">https://github.com/admintony/svnExploit</a></td>
+<td>svnExploit</td>
+</tr>
+<tr>
+<td>git-dumper 从网站转储 git 存储库的工具 </td>
+<td><a href="https://github.com/arthaud/git-dumper" one-link-mark="yes">https://github.com/arthaud/git-dumper</a></td>
+<td>git-dumper</td>
+</tr>
+<tr>
+<td>GitDorker  通过使用大型的 dorks 库来从 GitHub 抓取敏感信息 </td>
+<td><a href="https://github.com/obheda12/GitDorker" one-link-mark="yes">https://github.com/obheda12/GitDorker</a></td>
+<td>GitDorker</td>
+</tr>
+<tr>
+<td> 从 JavaScript 文件中提取敏感信息 </td>
+<td><a href="https://github.com/m4ll0k/SecretFinder" one-link-mark="yes">https://github.com/m4ll0k/SecretFinder</a></td>
+<td>SecretFinder</td>
+</tr>
+<tr>
+<td> 功能比较多的一个 JavaScript 侦查自动化脚本 </td>
+<td><a href="https://github.com/KathanP19/JSFScan.sh" one-link-mark="yes">https://github.com/KathanP19/JSFScan.sh</a></td>
+<td>JSFScan</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table><p></p><h2 dir="auto" id="sr-toc-13"><a aria-hidden="true" href="#漏洞扫描框架工具" one-link-mark="yes"><svg viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>漏洞扫描框架 / 工具</h2><p></p><table>
+<thead>
+<tr>
+<th>项目简介</th>
+<th>项目地址</th>
+<th>项目名称</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>高危漏洞精准检测与深度利用框架 </td>
+<td><a href="https://github.com/woodpecker-framework/woodpecker-framwork-release" one-link-mark="yes">https://github.com/woodpecker-framework/woodpecker-framwork-release</a></td>
+<td>woodpecker-framwork</td>
+</tr>
+<tr>
+<td>Web 漏洞攻击框架 </td>
+<td><a href="https://github.com/Anonymous-ghost/AttackWebFrameworkTools" one-link-mark="yes">https://github.com/Anonymous-ghost/AttackWebFrameworkTools</a></td>
+<td>AttackWebFrameworkTools</td>
+</tr>
+<tr>
+<td> 开源的远程漏洞测试框架 </td>
+<td><a href="https://github.com/knownsec/pocsuite3" one-link-mark="yes">https://github.com/knownsec/pocsuite3</a></td>
+<td>pocsuite3</td>
+</tr>
+<tr>
+<td> 全新的开源在线 poc 测试框架 </td>
+<td><a href="https://github.com/jweny/pocassist" one-link-mark="yes">https://github.com/jweny/pocassist</a></td>
+<td>pocassist</td>
+</tr>
+<tr>
+<td> 一款功能强大的安全评估工具 </td>
+<td><a href="https://github.com/chaitin/xray" one-link-mark="yes">https://github.com/chaitin/xray</a></td>
+<td>Xray</td>
+</tr>
+<tr>
+<td> 网络安全测试工具 </td>
+<td><a href="https://github.com/gobysec/Goby" one-link-mark="yes">https://github.com/gobysec/Goby</a></td>
+<td>Goby</td>
+</tr>
+<tr>
+<td> 是一款 web 漏洞扫描和验证工具 </td>
+<td><a href="https://github.com/zhzyker/vulmap" one-link-mark="yes">https://github.com/zhzyker/vulmap</a></td>
+<td>Vulmap</td>
+</tr>
+</tbody>
+</table><p></p><h2 dir="auto" id="sr-toc-14"><a aria-hidden="true" href="#中间件漏洞利用工具" one-link-mark="yes"><svg viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>中间件漏洞利用工具</h2><p></p><table>
+<thead>
+<tr>
+<th>项目简介</th>
+<th>项目地址</th>
+<th>项目名称</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>综合高危漏洞利用工具 </td>
+<td><a href="https://github.com/Liqunkit/LiqunKit" one-link-mark="yes">https://github.com/Liqunkit/LiqunKit</a>_</td>
+<td>LiqunKit</td>
+</tr>
+<tr>
+<td>Spring 系列漏洞利用工具 </td>
+<td><a href="https://github.com/SummerSec/SpringExploit" one-link-mark="yes">https://github.com/SummerSec/SpringExploit</a></td>
+<td>SpringExploit</td>
+</tr>
+<tr>
+<td>shiro 反序列化漏洞综合利用，包含（回显执行命令 / 注入内存马）修复原版中 NoCC 的问题 </td>
+<td><a href="https://github.com/SummerSec/ShiroAttack2" one-link-mark="yes">https://github.com/SummerSec/ShiroAttack2</a></td>
+<td>ShiroAttack2</td>
+</tr>
+<tr>
+<td>shiro 反序列化漏洞综合利用，包含（回显执行命令 / 注入内存马）</td>
+<td><a href="https://github.com/j1anFen/shiro_attack" one-link-mark="yes">https://github.com/j1anFen/shiro_attack</a></td>
+<td>shiro_attack</td>
+</tr>
+<tr>
+<td>FastjonExploit | Fastjson 漏洞快速利用框架 </td>
+<td><a href="https://github.com/c0ny1/FastjsonExploit" one-link-mark="yes">https://github.com/c0ny1/FastjsonExploit</a></td>
+<td>FastjsonExploit</td>
+</tr>
+<tr>
+<td>fastjson_rce_tool fastjson 命令执行自动化利用工具 </td>
+<td><a href="https://github.com/wyzxxz/fastjson_rce_tool" one-link-mark="yes">https://github.com/wyzxxz/fastjson_rce_tool</a></td>
+<td>fastjson_rce_tool</td>
+</tr>
+<tr>
+<td>fastjson 一键命令执行 </td>
+<td><a href="https://github.com/mrknow001/fastjson_rec_exploit" one-link-mark="yes">https://github.com/mrknow001/fastjson_rec_exploit</a></td>
+<td>fastjson_rec_exploit</td>
+</tr>
+<tr>
+<td>Jboss（和 Java 反序列化漏洞）验证和利用工具 </td>
+<td><a href="https://github.com/joaomatosf/jexboss" one-link-mark="yes">https://github.com/joaomatosf/jexboss</a></td>
+<td>exBoss</td>
+</tr>
+<tr>
+<td>weblogic 利用工具 weblogic-framework</td>
+<td><a href="https://github.com/0nise/weblogic-framework" one-link-mark="yes">https://github.com/0nise/weblogic-framework</a></td>
+<td>weblogic-framework</td>
+</tr>
+<tr>
+<td>woodpecker 框架 weblogic 信息探测插件 </td>
+<td><a href="https://github.com/woodpecker-appstore/weblogic-infodetector" one-link-mark="yes">https://github.com/woodpecker-appstore/weblogic-infodetector</a></td>
+<td>weblogic-infodetector</td>
+</tr>
+<tr>
+<td>Dubbo 反序列化一键快速攻击测试工具 </td>
+<td><a href="https://github.com/threedr3am/dubbo-exp" one-link-mark="yes">https://github.com/threedr3am/dubbo-exp</a></td>
+<td>dubbo-exp</td>
+</tr>
+<tr>
+<td>jenkins-attack-framework 针对 Jenkins 的攻击框架 </td>
+<td><a href="https://github.com/Accenture" one-link-mark="yes">https://github.com/Accenture</a></td>
+<td>jenkins-attack-framework</td>
+</tr>
+<tr>
+<td>Jiraffe 是为利用 Jira 实例而编写的半自动安全工具。</td>
+<td><a href="https://github.com/0x48piraj/Jiraffe" one-link-mark="yes">https://github.com/0x48piraj/Jiraffe</a></td>
+<td>Jiraffe</td>
+</tr>
+<tr>
+<td>STS2G Struts2 漏洞扫描利用工具 - Golang 版 </td>
+<td><a href="https://github.com/xwuyi/STS2G" one-link-mark="yes">https://github.com/xwuyi/STS2G</a></td>
+<td>STS2G</td>
+</tr>
+<tr>
+<td>Struts2-Scan Struts2 全漏洞扫描利用工具 </td>
+<td><a href="https://github.com/HatBoy/Struts2-Scan" one-link-mark="yes">https://github.com/HatBoy/Struts2-Scan</a></td>
+<td>Struts2-Scan</td>
+</tr>
+<tr>
+<td>spring boot Fat Jar 任意写文件漏洞到稳定 RCE 利用技巧 </td>
+<td><a href="https://github.com/LandGrey/spring-boot-upload-file-lead-to-rce-tricks" one-link-mark="yes">https://github.com/LandGrey/spring-boot-upload-file-lead-to-rce-tricks</a></td>
+<td>Fat Jar</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table><p></p><h2 dir="auto" id="sr-toc-15"><a aria-hidden="true" href="#重点cms利用工具" one-link-mark="yes"><svg viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>重点 cms 利用工具</h2><p></p><table>
+<thead>
+<tr>
+<th>项目简介</th>
+<th>项目地址</th>
+<th>项目名称</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>综合高危漏洞利用工具 </td>
+<td><a href="https://github.com/Liqunkit/LiqunKit" one-link-mark="yes">https://github.com/Liqunkit/LiqunKit</a>_</td>
+<td>LiqunKit</td>
+</tr>
+<tr>
+<td> 致远 OA 综合利用工具 </td>
+<td><a href="https://github.com/Summer177/seeyon_exp" one-link-mark="yes">https://github.com/Summer177/seeyon_exp</a></td>
+<td>seeyon_exp</td>
+</tr>
+<tr>
+<td> 通达 OA 综合利用工具 </td>
+<td><a href="https://github.com/xinyu2428/TDOA_RCE" one-link-mark="yes">https://github.com/xinyu2428/TDOA_RCE</a></td>
+<td>TDOA_RCE</td>
+</tr>
+<tr>
+<td> 蓝凌 OA 漏洞利用工具 / 前台无条件 RCE / 文件写入 </td>
+<td><a href="https://github.com/yuanhaiGreg/LandrayExploit" one-link-mark="yes">https://github.com/yuanhaiGreg/LandrayExploit</a></td>
+<td>LandrayExploit</td>
+</tr>
+<tr>
+<td> 泛微 OA 漏洞综合利用脚本 </td>
+<td><a href="https://github.com/z1un/weaver_exp" one-link-mark="yes">https://github.com/z1un/weaver_exp</a></td>
+<td>weaver_exp</td>
+</tr>
+<tr>
+<td> 锐捷网络 EG 易网关 RCE 批量安全检测 </td>
+<td><a href="https://github.com/Tas9er/EgGateWayGetShell" one-link-mark="yes">https://github.com/Tas9er/EgGateWayGetShell</a></td>
+<td>EgGateWayGetShell</td>
+</tr>
+<tr>
+<td>CMSmap 针对流行 CMS 进行安全扫描的工具 </td>
+<td><a href="https://github.com/Dionach/CMSmap" one-link-mark="yes">https://github.com/Dionach/CMSmap</a></td>
+<td>CMSmap</td>
+</tr>
+<tr>
+<td> 使用 Go 开发的 WordPress 漏洞扫描工具 </td>
+<td><a href="https://github.com/blackbinn/wprecon" one-link-mark="yes">https://github.com/blackbinn/wprecon</a></td>
+<td>wprecon</td>
+</tr>
+<tr>
+<td> 一个 Ruby 框架，旨在帮助对 WordPress 系统进行渗透测试 </td>
+<td><a href="https://github.com/rastating/wordpress-exploit-framework" one-link-mark="yes">https://github.com/rastating/wordpress-exploit-framework</a></td>
+<td>wordpress-exploit-framework</td>
+</tr>
+<tr>
+<td>WPScan WordPress 安全扫描器 </td>
+<td><a href="https://github.com/wpscanteam/wpscan" one-link-mark="yes">https://github.com/wpscanteam/wpscan</a></td>
+<td>wpscan</td>
+</tr>
+<tr>
+<td>WPForce Wordpress 攻击套件 </td>
+<td><a href="https://github.com/n00py/WPForce" one-link-mark="yes">https://github.com/n00py/WPForce</a></td>
+<td>WPForce</td>
+</tr>
+<tr>
+<td> 漏洞 POC 基本适用 ThinkPHP 全版本漏洞 </td>
+<td><a href="https://github.com/zangcc/Aazhen-v3.1" one-link-mark="yes">https://github.com/zangcc/Aazhen-v3.1</a></td>
+<td>Aazhen-v3.1</td>
+</tr>
+<tr>
+<td>Thinkphp (GUI) 漏洞利用工具，支持各版本 TP 漏洞检测，命令执行，getshell。</td>
+<td><a href="https://github.com/Lotus6/ThinkphpGUI" one-link-mark="yes">https://github.com/Lotus6/ThinkphpGUI</a></td>
+<td>ThinkphpGUI</td>
+</tr>
+<tr>
+<td>ThinkPHP 漏洞 综合利用工具，图形化界面，命令执行，一键 getshell, 批量检测，日志遍历，session 包含，宝塔绕过 </td>
+<td><a href="https://github.com/bewhale/thinkphp_gui_tools" one-link-mark="yes">https://github.com/bewhale/thinkphp_gui_tools</a></td>
+<td>thinkphp_gui_tools</td>
+</tr>
+</tbody>
+</table><p></p><h2 dir="auto" id="sr-toc-16"><a aria-hidden="true" href="#常规漏洞利用工具" one-link-mark="yes"><svg viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>常规漏洞利用工具</h2><p></p><table>
+<thead>
+<tr>
+<th>项目简介</th>
+<th>项目地址</th>
+<th>项目名称</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>基于 DOM 的快速 XSS 漏洞扫描程序 </td>
+<td><a href="https://github.com/dwisiswant0/findom-xss" one-link-mark="yes">https://github.com/dwisiswant0/findom-xss</a></td>
+<td>findom-xss</td>
+</tr>
+<tr>
+<td> 很常用的 XSS 平台 </td>
+<td><a href="https://github.com/beefproject/beef" one-link-mark="yes">https://github.com/beefproject/beef</a></td>
+<td>beef</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table><p></p><h2 dir="auto" id="sr-toc-17"><a aria-hidden="true" href="#数据库利用工具" one-link-mark="yes"><svg viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>数据库利用工具</h2><p></p><table>
+<thead>
+<tr>
+<th>项目简介</th>
+<th>项目地址</th>
+<th>项目名称</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> MDUT 2.0 数据库利用工具 </td>
+<td><a href="https://github.com/SafeGroceryStore/MDUT" one-link-mark="yes">https://github.com/SafeGroceryStore/MDUT</a></td>
+<td>MDUT</td>
+</tr>
+<tr>
+<td> 综合高危漏洞利用工具 (包含各大数据库)</td>
+<td><a href="https://github.com/Liqunkit/LiqunKit" one-link-mark="yes">https://github.com/Liqunkit/LiqunKit</a>_</td>
+<td>LiqunKit</td>
+</tr>
+<tr>
+<td>sqlserver 利用工具 </td>
+<td><a href="https://github.com/uknowsec/SharpSQLTools" one-link-mark="yes">https://github.com/uknowsec/SharpSQLTools</a></td>
+<td>SharpSQLTools</td>
+</tr>
+<tr>
+<td> 通过套接字重用通过受损的 Microsoft SQL Server  在受限环境中执行横向移动 </td>
+<td><a href="https://github.com/blackarrowsec/mssqlproxy" one-link-mark="yes">https://github.com/blackarrowsec/mssqlproxy</a></td>
+<td>mssqlproxy</td>
+</tr>
+<tr>
+<td>ODAT：Oracle 数据库攻击工具 </td>
+<td><a href="https://github.com/quentinhardy/odat" one-link-mark="yes">https://github.com/quentinhardy/odat</a></td>
+<td>ODAT</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table><p></p><h2 dir="auto" id="sr-toc-18"><a aria-hidden="true" href="#爆破工具" one-link-mark="yes"><svg viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>爆破工具</h2><p></p><table>
+<thead>
+<tr>
+<th>项目简介</th>
+<th>项目地址</th>
+<th>项目名称</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>集合了 fscan 和 kscan 等优秀工具功能的扫描爆破工具。</td>
+<td><a href="https://github.com/i11us0ry/goon" one-link-mark="yes">https://github.com/i11us0ry/goon</a></td>
+<td>goon</td>
+</tr>
+<tr>
+<td> 超级弱口令检查工具是一款 Windows 平台的弱口令审计工具 </td>
+<td><a href="https://github.com/shack2/SNETCracker" one-link-mark="yes">https://github.com/shack2/SNETCracker</a></td>
+<td> 超级弱口令</td>
+</tr>
+<tr>
+<td> Web-Brutator 中间件接口爆破 </td>
+<td><a href="https://github.com/koutto/web-brutator" one-link-mark="yes">https://github.com/koutto/web-brutator</a></td>
+<td>Web-Brutator</td>
+</tr>
+<tr>
+<td>WebCrack 是一款 web 后台弱口令 / 万能密码批量检测工具 </td>
+<td><a href="https://github.com/yzddmr6/WebCrack" one-link-mark="yes">https://github.com/yzddmr6/WebCrack</a></td>
+<td>WebCrack</td>
+</tr>
+<tr>
+<td>zero-crack Web 应用 (webapps) 暴力破解小工具 </td>
+<td><a href="https://github.com/0-sec/zero-crack" one-link-mark="yes">https://github.com/0-sec/zero-crack</a></td>
+<td>zero-crack</td>
+</tr>
+<tr>
+<td>WordPress 超级快速暴力破解工具 </td>
+<td><a href="https://github.com/22XploiterCrew-Team/WordPress-Brute-Force" one-link-mark="yes">https://github.com/22XploiterCrew-Team/WordPress-Brute-Force</a></td>
+<td>WordPress</td>
+</tr>
+<tr>
+<td>ssb 一种更快更简单的爆破 SSH 服务器的工具 </td>
+<td><a href="https://github.com/kitabisa/ssb" one-link-mark="yes">https://github.com/kitabisa/ssb</a></td>
+<td>ssh 爆破</td>
+</tr>
+<tr>
+<td> rsync 弱密码扫描 (爆破)</td>
+<td><a href="https://github.com/hi-unc1e/some_scripts/blob/master/EXPs/rsync_weakpass.py" one-link-mark="yes">https://github.com/hi-unc1e/some_scripts/blob/master/EXPs/rsync_weakpass.py</a></td>
+<td>rsync</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table><p></p><h2 dir="auto" id="sr-toc-19"><a aria-hidden="true" href="#字典收集" one-link-mark="yes"><svg viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>字典收集</h2><p></p><table>
+<thead>
+<tr>
+<th>项目简介</th>
+<th>项目地址</th>
+<th>项目名称</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>在线整理的一些常见默认设备 / 应用密码 </td>
+<td><a href="https://forum.ywhack.com/bountytips.php?password" rel="nofollow" one-link-mark="yes">https://forum.ywhack.com/bountytips.php?password</a></td>
+<td>EdgeTeam</td>
+</tr>
+<tr>
+<td> 在线整理的一些华为系列设备默认密码表 </td>
+<td><a href="https://forum.ywhack.com/bountytips.php?huawei" rel="nofollow" one-link-mark="yes">https://forum.ywhack.com/bountytips.php?huawei</a></td>
+<td>EdgeTeam</td>
+</tr>
+<tr>
+<td> 渗透测试、SRC 漏洞挖掘、爆破、Fuzzing 等字典收集项目 </td>
+<td><a href="https://github.com/insightglacier/Dictionary-Of-Pentesting" one-link-mark="yes">https://github.com/insightglacier/Dictionary-Of-Pentesting</a></td>
+<td>Dictionary-Of-Pentesting</td>
+</tr>
+<tr>
+<td>Fuzz 字典，一个就够了 </td>
+<td><a href="https://github.com/TheKingOfDuck/fuzzDicts" one-link-mark="yes">https://github.com/TheKingOfDuck/fuzzDicts</a></td>
+<td>Web Pentesting</td>
+</tr>
+<tr>
+<td>Web 模糊测试字典与一些 Payloads</td>
+<td><a href="https://github.com/gh0stkey/Web-Fuzzing-Box" one-link-mark="yes">https://github.com/gh0stkey/Web-Fuzzing-Box</a></td>
+<td>Web Fuzzing Box</td>
+</tr>
+<tr>
+<td> 上传漏洞 fuzz 字典生成脚本 </td>
+<td><a href="https://github.com/c0ny1/upload-fuzz-dic-builder" one-link-mark="yes">https://github.com/c0ny1/upload-fuzz-dic-builder</a></td>
+<td>upload-fuzz-dic-builder</td>
+</tr>
+<tr>
+<td> 安全评估期间使用的多种类型列表的集合 </td>
+<td><a href="https://github.com/danielmiessler/SecLists" one-link-mark="yes">https://github.com/danielmiessler/SecLists</a></td>
+<td>SecLists</td>
+</tr>
+<tr>
+<td> 渗透测试仪和 Bug 赏金猎人的 Payload 库 </td>
+<td><a href="https://github.com/sh377c0d3/Payloads" one-link-mark="yes">https://github.com/sh377c0d3/Payloads</a></td>
+<td>Payloads</td>
+</tr>
+<tr>
+<td> 基于实战沉淀下的各种弱口令字典 </td>
+<td><a href="https://github.com/fuzz-security/SuperWordlist" one-link-mark="yes">https://github.com/fuzz-security/SuperWordlist</a></td>
+<td>SuperWordlist</td>
+</tr>
+<tr>
+<td> 各类漏洞的 TOP25 参数字典 </td>
+<td><a href="https://github.com/lutfumertceylan/top25-parameter" one-link-mark="yes">https://github.com/lutfumertceylan/top25-parameter</a></td>
+<td>top25-parameter</td>
+</tr>
+<tr>
+<td> 提取收集以往泄露的密码中符合条件的强弱密码 </td>
+<td><a href="https://github.com/r35tart/RW_Password" one-link-mark="yes">https://github.com/r35tart/RW_Password</a></td>
+<td>RW_Password</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table><p></p><h1 dir="auto" id="sr-toc-20"><a aria-hidden="true" href="#内网渗透工具" one-link-mark="yes"><svg viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>内网渗透工具</h1><p></p><h2 dir="auto" id="sr-toc-21"><a aria-hidden="true" href="#webshell托管工具" one-link-mark="yes"><svg viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>webshell 托管工具</h2><p></p><table>
+<thead>
+<tr>
+<th>项目简介</th>
+<th>项目地址</th>
+<th>项目名称</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>哥斯拉 </td>
+<td><a href="https://github.com/BeichenDream/Godzilla" one-link-mark="yes">https://github.com/BeichenDream/Godzilla</a></td>
+<td>Godzilla</td>
+</tr>
+<tr>
+<td>“冰蝎” 动态二进制加密网站管理客户端 </td>
+<td><a href="https://github.com/rebeyond/Behinder" one-link-mark="yes">https://github.com/rebeyond/Behinder</a></td>
+<td>Behinder</td>
+</tr>
+<tr>
+<td> 中国蚁剑是一款开源的跨平台网站管理工具 </td>
+<td><a href="https://github.com/AntSwordProject/antSword" one-link-mark="yes">https://github.com/AntSwordProject/antSword</a></td>
+<td>antSword</td>
+</tr>
+<tr>
+<td> 一句话 WEB 端管理工具 </td>
+<td><a href="https://github.com/boy-hack/WebshellManager" one-link-mark="yes">https://github.com/boy-hack/WebshellManager</a></td>
+<td>WebshellManager</td>
+</tr>
+<tr>
+<td> 跨平台版中国菜刀 </td>
+<td><a href="https://github.com/Chora10/Cknife" one-link-mark="yes">https://github.com/Chora10/Cknife</a></td>
+<td>Cknife</td>
+</tr>
+</tbody>
+</table><p></p><h2 dir="auto" id="sr-toc-22"><a aria-hidden="true" href="#密码提取工具" one-link-mark="yes"><svg viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>密码提取工具</h2><p></p><table>
+<thead>
+<tr>
+<th>项目简介</th>
+<th>项目地址</th>
+<th>项目名称</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>各种密码提取 </td>
+<td><a href="https://github.com/kerbyj/goLazagne" one-link-mark="yes">https://github.com/kerbyj/goLazagne</a></td>
+<td>goLazagne</td>
+</tr>
+<tr>
+<td> 用于读取常用程序密码，如 Navicat、TeamViewer、FileZilla、WinSCP 等 </td>
+<td><a href="https://github.com/RowTeam/SharpDecryptPwd" one-link-mark="yes">https://github.com/RowTeam/SharpDecryptPwd</a></td>
+<td>SharpDecryptPwd</td>
+</tr>
+<tr>
+<td>Xshell，Xftp 密码解密工具 </td>
+<td><a href="https://github.com/JDArmy/SharpXDecrypt" one-link-mark="yes">https://github.com/JDArmy/SharpXDecrypt</a></td>
+<td>SharpXDecrypt</td>
+</tr>
+<tr>
+<td> 解密浏览器数据（密码 | 历史记录 | Cookie | 书签 | 信用卡 | 下载记录）的导出工具，支持全平台主流浏览器。</td>
+<td><a href="https://github.com/moonD4rk/HackBrowserData/" one-link-mark="yes">https://github.com/moonD4rk/HackBrowserData/</a></td>
+<td>HackBrowserData</td>
+</tr>
+<tr>
+<td> 一款针对向日葵的识别码和验证码提取工具 </td>
+<td><a href="https://github.com/wafinfo/Sunflower_get_Password" one-link-mark="yes">https://github.com/wafinfo/Sunflower_get_Password</a></td>
+<td>Sunflower_get_Password</td>
+</tr>
+<tr>
+<td> 一键辅助抓取 360 安全浏览器密码的 CobaltStrike 脚本以及解密小工具 </td>
+<td><a href="https://github.com/hayasec/360SafeBrowsergetpass" one-link-mark="yes">https://github.com/hayasec/360SafeBrowsergetpass</a></td>
+<td>360SafeBrowsergetpass</td>
+</tr>
+<tr>
+<td>BrowserGhost  抓取浏览器密码的工具 </td>
+<td><a href="https://github.com/QAX-A-Team/BrowserGhost" one-link-mark="yes">https://github.com/QAX-A-Team/BrowserGhost</a></td>
+<td>BrowserGhost</td>
+</tr>
+<tr>
+<td>win-brute-logon  无需权限破解任何 Microsoft Windows 用户密码 </td>
+<td><a href="https://github.com/DarkCoderSc/win-brute-logon" one-link-mark="yes">https://github.com/DarkCoderSc/win-brute-logon</a></td>
+<td>win-brute-logon</td>
+</tr>
+<tr>
+<td>TeamViewer：Bypass 杀软 获取 Teamview 密码的工具 </td>
+<td><a href="https://github.com/wafinfo/TeamViewer" one-link-mark="yes">https://github.com/wafinfo/TeamViewer</a></td>
+<td>TeamViewer</td>
+</tr>
+<tr>
+<td>Xdecrypt Xshell  Xftp 密码解密 </td>
+<td><a href="https://github.com/dzxs/Xdecrypt" one-link-mark="yes">https://github.com/dzxs/Xdecrypt</a></td>
+<td>Xdecrypt</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table><p></p><h2 dir="auto" id="sr-toc-23"><a aria-hidden="true" href="#横向移动工具" one-link-mark="yes"><svg viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>横向移动工具</h2><p></p><table>
+<thead>
+<tr>
+<th>项目简介</th>
+<th>项目地址</th>
+<th>项目名称</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> Mimikatz  Windows 密码抓取神器 </td>
+<td><a href="https://github.com/gentilkiwi/mimikatz" one-link-mark="yes">https://github.com/gentilkiwi/mimikatz</a></td>
+<td>mimikatz</td>
+</tr>
+<tr>
+<td>sharpwmi 基于 rpc 的横向移动工具，具有上传和执行命令功能 </td>
+<td><a href="https://github.com/QAX-A-Team/sharpwmi" one-link-mark="yes">https://github.com/QAX-A-Team/sharpwmi</a></td>
+<td>sharpwmi</td>
+</tr>
+<tr>
+<td> 文件下载命令快捷生成 </td>
+<td><a href="https://forum.ywhack.com/bountytips.php?download" rel="nofollow" one-link-mark="yes">https://forum.ywhack.com/bountytips.php?download</a></td>
+<td> 快捷命令</td>
+</tr>
+<tr>
+<td>反弹 Shell 命令一键生成 </td>
+<td><a href="https://forum.ywhack.com/shell.php" rel="nofollow" one-link-mark="yes">https://forum.ywhack.com/shell.php</a></td>
+<td> 反弹 shell</td>
+</tr>
+<tr>
+<td>ATT&amp;CK 横向移动总结技巧 </td>
+<td><a href="https://attack.mitre.org/tactics/TA0008/" rel="nofollow" one-link-mark="yes">https://attack.mitre.org/tactics/TA0008/</a></td>
+<td>attack</td>
+</tr>
+<tr>
+<td> 将哈希传递到命名管道以进行令牌模拟 </td>
+<td><a href="https://github.com/S3cur3Th1sSh1t/NamedPipePTH" one-link-mark="yes">https://github.com/S3cur3Th1sSh1t/NamedPipePTH</a></td>
+<td>NamedPipePTH</td>
+</tr>
+<tr>
+<td> 常见横向移动与域控权限维持方法 </td>
+<td><a href="https://xz.aliyun.com/t/9382" rel="nofollow" one-link-mark="yes">https://xz.aliyun.com/t/9382</a></td>
+<td> 方法论</td>
+</tr>
+</tbody>
+</table><p></p><h2 dir="auto" id="sr-toc-24"><a aria-hidden="true" href="#隧道代理工具" one-link-mark="yes"><svg viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>隧道代理工具</h2><p></p><table>
+<thead>
+<tr>
+<th>项目简介</th>
+<th>项目地址</th>
+<th>项目名称</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>全平台代理工具，支持多种 socks 协议 </td>
+<td><a href="https://www.proxifier.com/" rel="nofollow" one-link-mark="yes">https://www.proxifier.com/</a></td>
+<td>proxifier</td>
+</tr>
+<tr>
+<td> 专注于内网穿透的高性能的反向代理应用 </td>
+<td><a href="https://github.com/fatedier/frp" one-link-mark="yes">https://github.com/fatedier/frp</a></td>
+<td>frp</td>
+</tr>
+<tr>
+<td> 轻量级、高性能、功能强大的内网穿透代理服务器 </td>
+<td><a href="https://github.com/ehang-io/nps" one-link-mark="yes">https://github.com/ehang-io/nps</a></td>
+<td>nps</td>
+</tr>
+<tr>
+<td> 改进的 reGeorg 版本 </td>
+<td><a href="https://github.com/L-codes/Neo-reGeorg" one-link-mark="yes">https://github.com/L-codes/Neo-reGeorg</a></td>
+<td>Neo-reGeorg</td>
+</tr>
+<tr>
+<td> 是一款利用 dns 协议传输 tcp 数据的工具 </td>
+<td><a href="https://github.com/alex-sector/dns2tcp" one-link-mark="yes">https://github.com/alex-sector/dns2tcp</a></td>
+<td>dns2tcp</td>
+</tr>
+<tr>
+<td> 是一个 DNS 隧道工具 </td>
+<td><a href="https://github.com/iagox86/dnscat2" one-link-mark="yes">https://github.com/iagox86/dnscat2</a></td>
+<td>dnscat2</td>
+</tr>
+<tr>
+<td> 内网渗透代理、端口转发工具 </td>
+<td><a href="http://rootkiter.com/Termite/" rel="nofollow" one-link-mark="yes">http://rootkiter.com/Termite/</a></td>
+<td>Termite</td>
+</tr>
+<tr>
+<td> 一个简单的 reverse ICMP shell</td>
+<td><a href="https://github.com/inquisb/icmpsh" one-link-mark="yes">https://github.com/inquisb/icmpsh</a></td>
+<td>icmpsh</td>
+</tr>
+<tr>
+<td> 正 / 反向代理，内网穿透，端口转发 </td>
+<td><a href="https://github.com/inconshreveable/ngrok" one-link-mark="yes">https://github.com/inconshreveable/ngrok</a></td>
+<td>ngrok</td>
+</tr>
+<tr>
+<td>pingtunnel 是把 tcp/udp/sock5 流量伪装成 icmp  流量进行转发的工具 </td>
+<td><a href="https://github.com/esrrhs/pingtunnel" one-link-mark="yes">https://github.com/esrrhs/pingtunnel</a></td>
+<td>pingtunnel</td>
+</tr>
+<tr>
+<td>pystinger - 一款使用 webshell 进行流量转发的出网工具 </td>
+<td><a href="https://github.com/FunnyWolf/pystinger" one-link-mark="yes">https://github.com/FunnyWolf/pystinger</a></td>
+<td>pystinger</td>
+</tr>
+<tr>
+<td>goproxy 一款轻量级、功能强大、高性能的多种代理工具 </td>
+<td><a href="https://github.com/snail007/goproxy" one-link-mark="yes">https://github.com/snail007/goproxy</a></td>
+<td>goproxy</td>
+</tr>
+<tr>
+<td> 一款可以在不出网的环境下进行反向代理及 cs 上线的工具 </td>
+<td><a href="https://github.com/Daybr4ak/C2ReverseProxy" one-link-mark="yes">https://github.com/Daybr4ak/C2ReverseProxy</a></td>
+<td>C2ReverseProxy</td>
+</tr>
+</tbody>
+</table><p></p><h1 dir="auto" id="sr-toc-25"><a aria-hidden="true" href="#运维甲方防守方工具" one-link-mark="yes"><svg viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>运维 &amp; 甲方 &amp; 防守方工具</h1><p></p><h2 dir="auto" id="sr-toc-26"><a aria-hidden="true" href="#linux应急响应工具" one-link-mark="yes"><svg viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Linux 应急响应工具</h2><p></p><table>
+<thead>
+<tr>
+<th>项目简介</th>
+<th>项目地址</th>
+<th>项目名称</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>主机侧 Checklist 的自动全面化检测脚本 </td>
+<td><a href="https://github.com/grayddq/GScan" one-link-mark="yes">https://github.com/grayddq/GScan</a></td>
+<td>Gscan</td>
+</tr>
+<tr>
+<td> 应急响应实战笔记，一个安全工程师的自我修养 </td>
+<td><a href="https://github.com/Bypass007/Emergency-Response-Notes" one-link-mark="yes">https://github.com/Bypass007/Emergency-Response-Notes</a></td>
+<td>Bypass007</td>
+</tr>
+<tr>
+<td>linux 信息收集 / 应急响应 / 常见后门 / 挖矿检测 /webshell 检测脚本 </td>
+<td><a href="https://github.com/al0ne/LinuxCheck" one-link-mark="yes">https://github.com/al0ne/LinuxCheck</a></td>
+<td>LinuxCheck</td>
+</tr>
+<tr>
+<td>uroboros - 一个 GNU/Linux 监视和概要分析工具，专注于单个进程 </td>
+<td><a href="https://github.com/evilsocket/uroboros" one-link-mark="yes">https://github.com/evilsocket/uroboros</a></td>
+<td>uroboros</td>
+</tr>
+<tr>
+<td>whohk linux 下一款强大的应急响应工具 </td>
+<td><a href="https://github.com/heikanet/whohk" one-link-mark="yes">https://github.com/heikanet/whohk</a></td>
+<td>whohk</td>
+</tr>
+<tr>
+<td>Malwoverview 是用于威胁搜寻的第一响应工具 </td>
+<td><a href="https://github.com/alexandreborges/malwoverview" one-link-mark="yes">https://github.com/alexandreborges/malwoverview</a></td>
+<td>malwoverview</td>
+</tr>
+<tr>
+<td>Rootkit Hunter Rootkit 猎手 </td>
+<td><a href="http://rkhunter.sourceforge.net/" rel="nofollow" one-link-mark="yes">http://rkhunter.sourceforge.net/</a></td>
+<td>Rootkitr</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table><p></p><h2 dir="auto" id="sr-toc-27"><a aria-hidden="true" href="#windows应急响应工具" one-link-mark="yes"><svg viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Windows 应急响应工具</h2><p></p><table>
+<thead>
+<tr>
+<th>项目简介</th>
+<th>项目地址</th>
+<th>项目名称</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> APT-Hunter Windows 日志事件应急工具 </td>
+<td><a href="https://github.com/ahmedkhlief/APT-Hunter" one-link-mark="yes">https://github.com/ahmedkhlief/APT-Hunter</a></td>
+<td>APT-Hunter</td>
+</tr>
+<tr>
+<td>Attack Surface Analyzer 可以帮助您分析操作系统的安全配置 </td>
+<td><a href="https://github.com/Microsoft/AttackSurfaceAnalyzer" one-link-mark="yes">https://github.com/Microsoft/AttackSurfaceAnalyzer</a></td>
+<td>AttackSurfaceAnalyzer</td>
+</tr>
+<tr>
+<td>SHELLPUB.COM 专注查杀 河马 webshell 查杀 </td>
+<td><a href="https://www.shellpub.com/" rel="nofollow" one-link-mark="yes">https://www.shellpub.com/</a></td>
+<td> 河马 webshell</td>
+</tr>
+<tr>
+<td> 火麒麟 - 网络安全应急响应工具 (系统痕迹采集)</td>
+<td><a href="https://github.com/MountCloud/FireKylin" one-link-mark="yes">https://github.com/MountCloud/FireKylin</a></td>
+<td>FireKylin</td>
+</tr>
+<tr>
+<td> 日志分析库，nuclei 的另一种用法 </td>
+<td><a href="https://github.com/ffffffff0x/LOG-HUB" one-link-mark="yes">https://github.com/ffffffff0x/LOG-HUB</a></td>
+<td>LOG-HUB</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table><p></p><h2 dir="auto" id="sr-toc-28"><a aria-hidden="true" href="#内存马查杀工具" one-link-mark="yes"><svg viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>内存马查杀工具</h2><p></p><table>
+<thead>
+<tr>
+<th>项目简介</th>
+<th>项目地址</th>
+<th>项目名称</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> Alibaba Java 诊断利器 Arthas</td>
+<td><a href="https://github.com/alibaba/arthas" one-link-mark="yes">https://github.com/alibaba/arthas</a></td>
+<td>arthas</td>
+</tr>
+<tr>
+<td> 检测绝大部分所谓的内存免杀马 </td>
+<td><a href="https://github.com/huoji120/DuckMemoryScan" one-link-mark="yes">https://github.com/huoji120/DuckMemoryScan</a></td>
+<td>DuckMemoryScan</td>
+</tr>
+<tr>
+<td> 通过 jsp 脚本扫描 java web Filter/Servlet 型内存马 </td>
+<td><a href="https://github.com/c0ny1/java-memshell-scanner" one-link-mark="yes">https://github.com/c0ny1/java-memshell-scanner</a></td>
+<td>java-memshell-scanner</td>
+</tr>
+<tr>
+<td>A java memory web shell extracting tool</td>
+<td><a href="https://github.com/LandGrey/copagent" one-link-mark="yes">https://github.com/LandGrey/copagent</a></td>
+<td>copagent</td>
+</tr>
+<tr>
+<td> 杀内存马的小工具 </td>
+<td><a href="https://github.com/r00t4dm/aLIEz" one-link-mark="yes">https://github.com/r00t4dm/aLIEz</a></td>
+<td>aLIEz</td>
+</tr>
+</tbody>
+</table><p></p><h2 dir="auto" id="sr-toc-29"><a aria-hidden="true" href="#xxxx" one-link-mark="yes"><svg viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>xxxx</h2><p></p><table>
+<thead>
+<tr>
+<th>项目简介</th>
+<th>项目地址</th>
+<th>项目名称</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>一款基于 IP 信誉度信息实现的实时检测 Web 恶意流量的工具 </td>
+<td><a href="https://github.com/CRED-CLUB/ARTIF" one-link-mark="yes">https://github.com/CRED-CLUB/ARTIF</a></td>
+<td>ARTIF</td>
+</tr>
+</tbody>
+</table><p></p><h1 dir="auto" id="sr-toc-30"><a aria-hidden="true" href="#安全资料整理" one-link-mark="yes"><svg viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>安全资料整理</h1><p></p><p dir="auto">正在整理中………………</p><p></p><p></p><p dir="auto"><a target="_blank" rel="noopener noreferrer" href="https://github.com/guchangan1/image/blob/main/%E5%BE%AE%E4%BF%A1.jpeg" one-link-mark="yes"><div class="sr-rd-content-center-small" data-balloon-pos="up" aria-label="点击重新加载"><img class="simpread-img-broken" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAACbklEQVRoQ+2aMU4dMRCGZw6RC1CSSyQdLZJtKQ2REgoiRIpQkCYClCYpkgIESQFIpIlkW+IIcIC0gUNwiEFGz+hlmbG9b1nesvGW++zxfP7H4/H6IYzkwZFwQAUZmpJVkSeniFJKA8ASIi7MyfkrRPxjrT1JjZ8MLaXUDiJuzwngn2GJaNd7vyP5IoIYY94Q0fEQIKIPRGS8947zSQTRWh8CwLuBgZx479+2BTkHgBdDAgGAC+fcywoyIFWqInWN9BSONbTmFVp/AeA5o+rjKRJ2XwBYRsRXM4ZXgAg2LAPzOCDTJYQx5pSIVlrC3EI45y611osMTHuQUPUiYpiVooerg7TWRwDAlhSM0TuI+BsD0x4kGCuFSRVzSqkfiLiWmY17EALMbCAlMCmI6IwxZo+INgQYEYKBuW5da00PKikjhNNiiPGm01rrbwDwofGehQjjNcv1SZgddALhlJEgwgJFxDNr7acmjFLqCyJuTd6LEGFttpmkYC91Hrk3s1GZFERMmUT01Xv/sQljjPlMRMsxO6WULwnb2D8FEs4j680wScjO5f3vzrlNJszESWq2LYXJgTzjZm56MCHf3zVBxH1r7ftU1splxxKYHEgoUUpTo+grEf303rPH5hxENJqDKQEJtko2q9zGeeycWy3JhpKhWT8+NM/sufIhBwKI+Mta+7pkfxKMtd8Qtdbcx4dUQZcFCQ2I6DcAnLUpf6YMPxhIDDOuxC4C6djoQUE6+tKpewWZ1wlRkq0qUhXptKTlzv93aI3jWmE0Fz2TeujpX73F9TaKy9CeMk8vZusfBnqZ1g5GqyIdJq+XrqNR5AahKr9CCcxGSwAAAABJRU5ErkJggg==" org-src="https://github.com/guchangan1/image/raw/main/%E5%BE%AE%E4%BF%A1.jpeg"></div></a><br></p><p></p><p dir="auto">如果你有更好的提议或者其他想法，欢迎联系。</p><p></p><p dir="auto">by--L0una(guchangan1)</p><p></p></sr-rd-content>
+                            <toc-bg><toc class="simpread-font simpread-theme-root" data-reactid=".1"><outline class="toc-level-h1" data-reactid=".1.0" style="width: 175px;"><active data-reactid=".1.0.0" ></active><a class="toc-outline-theme-github" href="#sr-toc-0" data-reactid=".1.0.1" one-link-mark="yes"><span data-reactid=".1.0.1.0">All-Defense-Tool</span></a></outline><outline class="toc-level-h1" data-reactid=".1.1" style="width: 175px;"><active data-reactid=".1.1.0" class=""></active><pangu> </pangu><a class="toc-outline-theme-github" href="#sr-toc-1" data-reactid=".1.1.1" one-link-mark="yes"><span data-reactid=".1.1.1.0">目录</span></a></outline><outline class="toc-level-h1" data-reactid=".1.2" style="width: 175px;"><active data-reactid=".1.2.0"></active><a class="toc-outline-theme-github" href="#sr-toc-2" data-reactid=".1.2.1" one-link-mark="yes"><span data-reactid=".1.2.1.0">半 / 全自动化利用工具</span></a></outline><outline class="toc-level-h1" data-reactid=".1.3" style="width: 175px;"><active data-reactid=".1.3.0"></active><a class="toc-outline-theme-github" href="#sr-toc-3" data-reactid=".1.3.1" one-link-mark="yes"><span data-reactid=".1.3.1.0">信息收集工具</span></a></outline><outline class="toc-level-h2" data-reactid=".1.4" style="width: 165px;"><active data-reactid=".1.4.0"></active><a class="toc-outline-theme-github" href="#sr-toc-4" data-reactid=".1.4.1" one-link-mark="yes"><span data-reactid=".1.4.1.0">资产发现工具</span></a></outline><outline class="toc-level-h2" data-reactid=".1.5" style="width: 165px;"><active data-reactid=".1.5.0"></active><a class="toc-outline-theme-github" href="#sr-toc-5" data-reactid=".1.5.1" one-link-mark="yes"><span data-reactid=".1.5.1.0">子域名收集工具</span></a></outline><outline class="toc-level-h2" data-reactid=".1.6" style="width: 165px;"><active data-reactid=".1.6.0"></active><a class="toc-outline-theme-github" href="#sr-toc-6" data-reactid=".1.6.1" one-link-mark="yes"><span data-reactid=".1.6.1.0">目录扫描工具</span></a></outline><outline class="toc-level-h2" data-reactid=".1.7" style="width: 165px;"><active data-reactid=".1.7.0"></active><a class="toc-outline-theme-github" href="#sr-toc-7" data-reactid=".1.7.1" one-link-mark="yes"><span data-reactid=".1.7.1.0">指纹识别工具</span></a></outline><outline class="toc-level-h2" data-reactid=".1.8" style="width: 165px;"><active data-reactid=".1.8.0"></active><a class="toc-outline-theme-github" href="#sr-toc-8" data-reactid=".1.8.1" one-link-mark="yes"><span data-reactid=".1.8.1.0">端口扫描工具</span></a></outline><outline class="toc-level-h2" data-reactid=".1.9" style="width: 165px;"><active data-reactid=".1.9.0"></active><pangu> </pangu><a class="toc-outline-theme-github" href="#sr-toc-9" data-reactid=".1.9.1" one-link-mark="yes"><span data-reactid=".1.9.1.0">Burp 插件</span></a></outline><outline class="toc-level-h2" data-reactid=".1.a" style="width: 165px;"><active data-reactid=".1.a.0"></active><a class="toc-outline-theme-github" href="#sr-toc-10" data-reactid=".1.a.1" one-link-mark="yes"><span data-reactid=".1.a.1.0">浏览器插件</span></a></outline><outline class="toc-level-h1" data-reactid=".1.b" style="width: 175px;"><active data-reactid=".1.b.0"></active><a class="toc-outline-theme-github" href="#sr-toc-11" data-reactid=".1.b.1" one-link-mark="yes"><span data-reactid=".1.b.1.0">漏洞利用工具</span></a></outline><outline class="toc-level-h2" data-reactid=".1.c" style="width: 165px;"><active data-reactid=".1.c.0"></active><a class="toc-outline-theme-github" href="#sr-toc-12" data-reactid=".1.c.1" one-link-mark="yes"><span data-reactid=".1.c.1.0">信息泄露利用工具</span></a></outline><outline class="toc-level-h2" data-reactid=".1.d" style="width: 165px;"><active data-reactid=".1.d.0"></active><a class="toc-outline-theme-github" href="#sr-toc-13" data-reactid=".1.d.1" one-link-mark="yes"><span data-reactid=".1.d.1.0">漏洞扫描框架 / 工具</span></a></outline><outline class="toc-level-h2" data-reactid=".1.e" style="width: 165px;"><active data-reactid=".1.e.0"></active><a class="toc-outline-theme-github" href="#sr-toc-14" data-reactid=".1.e.1" one-link-mark="yes"><span data-reactid=".1.e.1.0">中间件漏洞利用工具</span></a></outline><outline class="toc-level-h2" data-reactid=".1.f" style="width: 165px;"><active data-reactid=".1.f.0"></active><a class="toc-outline-theme-github" href="#sr-toc-15" data-reactid=".1.f.1" one-link-mark="yes"><span data-reactid=".1.f.1.0">重点 cms 利用工具</span></a></outline><outline class="toc-level-h2" data-reactid=".1.g" style="width: 165px;"><active data-reactid=".1.g.0"></active><a class="toc-outline-theme-github" href="#sr-toc-16" data-reactid=".1.g.1" one-link-mark="yes"><span data-reactid=".1.g.1.0">常规漏洞利用工具</span></a></outline><outline class="toc-level-h2" data-reactid=".1.h" style="width: 165px;"><active data-reactid=".1.h.0"></active><a class="toc-outline-theme-github" href="#sr-toc-17" data-reactid=".1.h.1" one-link-mark="yes"><span data-reactid=".1.h.1.0">数据库利用工具</span></a></outline><outline class="toc-level-h2" data-reactid=".1.i" style="width: 165px;"><active data-reactid=".1.i.0"></active><a class="toc-outline-theme-github" href="#sr-toc-18" data-reactid=".1.i.1" one-link-mark="yes"><span data-reactid=".1.i.1.0">爆破工具</span></a></outline><outline class="toc-level-h2" data-reactid=".1.j" style="width: 165px;"><active data-reactid=".1.j.0"></active><a class="toc-outline-theme-github" href="#sr-toc-19" data-reactid=".1.j.1" one-link-mark="yes"><span data-reactid=".1.j.1.0">字典收集</span></a></outline><outline class="toc-level-h1" data-reactid=".1.k" style="width: 175px;"><active data-reactid=".1.k.0"></active><a class="toc-outline-theme-github" href="#sr-toc-20" data-reactid=".1.k.1" one-link-mark="yes"><span data-reactid=".1.k.1.0">内网渗透工具</span></a></outline><outline class="toc-level-h2" data-reactid=".1.l" style="width: 165px;"><active data-reactid=".1.l.0"></active><pangu> </pangu><a class="toc-outline-theme-github" href="#sr-toc-21" data-reactid=".1.l.1" one-link-mark="yes"><span data-reactid=".1.l.1.0">webshell 托管工具</span></a></outline><outline class="toc-level-h2" data-reactid=".1.m" style="width: 165px;"><active data-reactid=".1.m.0"></active><a class="toc-outline-theme-github" href="#sr-toc-22" data-reactid=".1.m.1" one-link-mark="yes"><span data-reactid=".1.m.1.0">密码提取工具</span></a></outline><outline class="toc-level-h2" data-reactid=".1.n" style="width: 165px;"><active data-reactid=".1.n.0"></active><a class="toc-outline-theme-github" href="#sr-toc-23" data-reactid=".1.n.1" one-link-mark="yes"><span data-reactid=".1.n.1.0">横向移动工具</span></a></outline><outline class="toc-level-h2" data-reactid=".1.o" style="width: 165px;"><active data-reactid=".1.o.0"></active><a class="toc-outline-theme-github" href="#sr-toc-24" data-reactid=".1.o.1" one-link-mark="yes"><span data-reactid=".1.o.1.0">隧道代理工具</span></a></outline><outline class="toc-level-h1" data-reactid=".1.p" style="width: 175px;"><active data-reactid=".1.p.0"></active><a class="toc-outline-theme-github" href="#sr-toc-25" data-reactid=".1.p.1" one-link-mark="yes"><span data-reactid=".1.p.1.0">运维 &amp; 甲方 &amp; 防守方工具</span></a></outline><outline class="toc-level-h2" data-reactid=".1.q" style="width: 165px;"><active data-reactid=".1.q.0"></active><pangu> </pangu><a class="toc-outline-theme-github" href="#sr-toc-26" data-reactid=".1.q.1" one-link-mark="yes"><span data-reactid=".1.q.1.0">Linux 应急响应工具</span></a></outline><outline class="toc-level-h2" data-reactid=".1.r" style="width: 165px;"><active data-reactid=".1.r.0"></active><pangu> </pangu><a class="toc-outline-theme-github" href="#sr-toc-27" data-reactid=".1.r.1" one-link-mark="yes"><span data-reactid=".1.r.1.0">Windows 应急响应工具</span></a></outline><outline class="toc-level-h2" data-reactid=".1.s" style="width: 165px;"><active data-reactid=".1.s.0"></active><a class="toc-outline-theme-github" href="#sr-toc-28" data-reactid=".1.s.1" one-link-mark="yes"><span data-reactid=".1.s.1.0">内存马查杀工具</span></a></outline><outline class="toc-level-h2" data-reactid=".1.t" style="width: 165px;"><active data-reactid=".1.t.0"></active><pangu> </pangu><a class="toc-outline-theme-github" href="#sr-toc-29" data-reactid=".1.t.1" one-link-mark="yes"><span data-reactid=".1.t.1.0">xxxx</span></a></outline><outline class="toc-level-h1" data-reactid=".1.u" style="width: 175px;"><active data-reactid=".1.u.0"></active><pangu> </pangu><a class="toc-outline-theme-github" href="#sr-toc-30" data-reactid=".1.u.1" one-link-mark="yes"><span data-reactid=".1.u.1.0">安全资料整理</span></a></outline></toc></toc-bg>
+                            <sr-rd-footer>
+                                <sr-rd-footer-group>
+                                    <sr-rd-footer-line></sr-rd-footer-line>
+                                    <sr-rd-footer-text>全文完</sr-rd-footer-text>
+                                    <sr-rd-footer-line></sr-rd-footer-line>
+                                </sr-rd-footer-group>
+                                <sr-rd-footer-copywrite>
+                                    <div>本文由 <a href="http://ksria.com/simpread" target="_blank">简悦 SimpRead</a> 转码，用以提升阅读体验，<a href="https://github.com/guchangan1/All-Defense-Tool" target="_blank">原文地址 </a></div>
+                                </sr-rd-footer-copywrite>
+                            </sr-rd-footer>
+                        </sr-read>
+                    </body>
+                </html>
